@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://vfkak452dsnu"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_1abo1"]
+[ext_resource type="PackedScene" uid="uid://dhvvxloixgagb" path="res://Scenes/player.tscn" id="1_bchm0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87fbk"]
+size = Vector2(10, 820)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1abo1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 242.0
+offset_bottom = 218.0
+color = Color(0.380392, 1, 0.501961, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="wall_left" type="StaticBody2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/wall_left"]
+position = Vector2(-405, 0)
+shape = SubResource("RectangleShape2D_87fbk")
+
+[node name="wall_right" type="StaticBody2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/wall_right"]
+position = Vector2(405, 0)
+shape = SubResource("RectangleShape2D_87fbk")
+
+[node name="wall_top" type="StaticBody2D" parent="Camera2D"]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/wall_top"]
+position = Vector2(-405, 0)
+shape = SubResource("RectangleShape2D_87fbk")
+
+[node name="wall_bottom" type="StaticBody2D" parent="Camera2D"]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/wall_bottom"]
+position = Vector2(405, 0)
+shape = SubResource("RectangleShape2D_87fbk")
+
+[node name="Player1" parent="." instance=ExtResource("1_bchm0")]
+
+[node name="Player2" parent="." instance=ExtResource("1_bchm0")]
+position = Vector2(56, 0)
+input_map = {
+"move_down": "k",
+"move_left": "j",
+"move_right": "l",
+"move_up": "i"
+}
+
+[node name="Player3" parent="." instance=ExtResource("1_bchm0")]
+position = Vector2(56, 0)
+input_map = {
+"move_down": "g",
+"move_left": "f",
+"move_right": "h",
+"move_up": "t"
+}
