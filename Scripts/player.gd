@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 
 const SPEED := 400.0
@@ -9,6 +10,7 @@ const ACCELERATION := 2000.0
 	"move_left": "a",
 	"move_down": "s",
 	"move_right": "d",
+	"interact": "e",
 }:
 	set(val):
 		input_map = val
@@ -22,6 +24,7 @@ var id: int
 func _ready() -> void:
 	main.Players.append(self)
 	id = len(main.Players)
+	$Label.text = str(id)
 	
 	update_input_map()
 
