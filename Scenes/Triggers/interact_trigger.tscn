@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://df4qyihyayyvh"]
+
+[ext_resource type="Script" path="res://Scripts/Triggers/interact_trigger.gd" id="1_myx4l"]
+
+[node name="InteractTrigger" type="Area2D"]
+script = ExtResource("1_myx4l")
