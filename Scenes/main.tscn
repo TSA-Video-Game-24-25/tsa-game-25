@@ -1,17 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://vfkak452dsnu"]
+[gd_scene load_steps=7 format=3 uid="uid://vfkak452dsnu"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_1abo1"]
 [ext_resource type="PackedScene" uid="uid://dhvvxloixgagb" path="res://Scenes/player.tscn" id="1_bchm0"]
+[ext_resource type="PackedScene" uid="uid://syp2cqiaqxxd" path="res://Scenes/Triggerables/test_triggerable.tscn" id="3_6cux8"]
+[ext_resource type="PackedScene" uid="uid://df4qyihyayyvh" path="res://Scenes/Triggers/interact_trigger.tscn" id="4_7vux3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87fbk"]
 size = Vector2(10, 820)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njri4"]
+size = Vector2(40, 40)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1abo1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 242.0
-offset_bottom = 218.0
+offset_left = -121.0
+offset_top = -109.0
+offset_right = 121.0
+offset_bottom = 109.0
 color = Color(0.380392, 1, 0.501961, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -42,22 +49,24 @@ rotation = 1.5708
 position = Vector2(405, 0)
 shape = SubResource("RectangleShape2D_87fbk")
 
+[node name="TestTriggerable" parent="." instance=ExtResource("3_6cux8")]
+position = Vector2(236, -56)
+
+[node name="InteractTrigger" parent="TestTriggerable" instance=ExtResource("4_7vux3")]
+Triggerables = Array[NodePath]([NodePath("..")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestTriggerable/InteractTrigger"]
+shape = SubResource("RectangleShape2D_njri4")
+
 [node name="Player1" parent="." instance=ExtResource("1_bchm0")]
+position = Vector2(-64, -64)
 
 [node name="Player2" parent="." instance=ExtResource("1_bchm0")]
-position = Vector2(56, 0)
+position = Vector2(64, 64)
 input_map = {
+"interact": "o",
 "move_down": "k",
 "move_left": "j",
 "move_right": "l",
 "move_up": "i"
-}
-
-[node name="Player3" parent="." instance=ExtResource("1_bchm0")]
-position = Vector2(56, 0)
-input_map = {
-"move_down": "g",
-"move_left": "f",
-"move_right": "h",
-"move_up": "t"
 }
