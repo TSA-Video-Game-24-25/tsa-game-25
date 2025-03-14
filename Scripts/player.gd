@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 
-const SPEED := 400.0
+const SPEED := 100.0
 const ACCELERATION := 2000.0
 
 var canMove := true
@@ -37,9 +37,15 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction := get_dir()
 	
-	velocity = velocity.move_toward(direction * SPEED, delta * ACCELERATION)
-
+	if canMove:
+		velocity = velocity.move_toward(direction * SPEED, delta * ACCELERATION)
+	else:
+		velocity = Vector2.ZERO
+	
 	move_and_slide()
+	
+	interact_if_pressed()
+	process_if_pressed()
 
 
 func update_input_map():
@@ -99,7 +105,7 @@ func tryAddItem(item: Item) -> bool:
 
 
 func interact_if_pressed() -> void:
-	if not get_input("interact"):
+	if not Input.is_action_just_pressed(get_input("interact")):
 		return
 	
 	if not canMove:
@@ -120,7 +126,7 @@ func interact_if_pressed() -> void:
 
 
 func process_if_pressed() -> void:
-	if not get_input("process"):
+	if not Input.is_action_just_pressed(get_input("process")):
 		return
 	
 	var overlapping_bodies = $InteractArea.get_overlapping_bodies()

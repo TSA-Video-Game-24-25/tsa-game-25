@@ -101,3 +101,11 @@ position = Vector2(-80, 60)
 
 [node name="Player2" parent="." instance=ExtResource("1_qsjnw")]
 position = Vector2(-7, 44)
+input_map = {
+"interact": "o",
+"move_down": "k",
+"move_left": "j",
+"move_right": "l",
+"move_up": "i",
+"process": "u"
+}
