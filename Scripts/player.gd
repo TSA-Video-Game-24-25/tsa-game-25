@@ -5,12 +5,17 @@ class_name Player
 const SPEED := 400.0
 const ACCELERATION := 2000.0
 
+var canMove := true
+
+var heldItem: Item
+
 @export var input_map := {
 	"move_up": "w",
 	"move_left": "a",
 	"move_down": "s",
 	"move_right": "d",
 	"interact": "e",
+	"process": "q",
 }:
 	set(val):
 		input_map = val
@@ -62,3 +67,71 @@ func get_dir() -> Vector2:
 		get_input("move_up"), 
 		get_input("move_down")
 	)
+
+
+
+func tryAddItemFromScene(item: PackedScene) -> bool:
+	if heldItem != null:
+		return false
+	
+	heldItem = item.instantiate()
+	add_child(heldItem)
+	
+	heldItem.position = $HeldItemPos.position
+	return true
+
+
+func tryAddItem(item: Item) -> bool:
+	if heldItem != null:
+		return false
+	
+	if item == null:
+		return false
+	
+	if not item.Pickupable:
+		return false
+	
+	heldItem = item
+	item.reparent(self)
+	
+	heldItem.position = $HeldItemPos.position
+	return true
+
+
+func interact_if_pressed() -> void:
+	if not get_input("interact"):
+		return
+	
+	if not canMove:
+		return
+		
+	var overlapping_bodies = $InteractArea.get_overlapping_bodies()
+	overlapping_bodies.sort_custom(
+		func(a, b):
+			return position.distance_to(a.position) < position.distance_to(b.position)
+	)
+	
+	for body in overlapping_bodies:
+		if not body is Interactable:
+			continue
+		
+		body.interact(self)
+		return
+
+
+func process_if_pressed() -> void:
+	if not get_input("process"):
+		return
+	
+	var overlapping_bodies = $InteractArea.get_overlapping_bodies()
+	overlapping_bodies.sort_custom(
+		func(a, b):
+			return position.distance_to(a.position) < position.distance_to(b.position)
+	)
+	
+	for body in overlapping_bodies:
+		if not body is ProcessStation:
+			continue
+		
+		body.process(self)
+		return

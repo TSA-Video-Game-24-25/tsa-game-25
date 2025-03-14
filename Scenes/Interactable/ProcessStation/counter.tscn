@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://7e46q445uiq1"]
+
+[ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_l7cy8"]
+[ext_resource type="Script" path="res://Scripts/Interactable/ProcessStation/counter.gd" id="2_p85sc"]
+[ext_resource type="PackedScene" uid="uid://cyhhoqvrx8f8k" path="res://Scenes/GUI/ProcessGui/mix_gui.tscn" id="3_f4cst"]
+
+[node name="Counter" instance=ExtResource("1_l7cy8")]
+script = ExtResource("2_p85sc")
+ProcessGUI = ExtResource("3_f4cst")
+
+[node name="ColorRect" parent="." index="1"]
+color = Color(0.66771, 0.278543, 0.0856608, 1)

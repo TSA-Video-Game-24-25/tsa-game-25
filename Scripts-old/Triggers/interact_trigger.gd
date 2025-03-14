@@ -1,4 +1,4 @@
-extends "res://Scripts/Base Scripts/trigger.gd"
+extends "res://Scripts-old/Base Scripts/trigger.gd"
 
 
 @export var OverlappingBodies := []

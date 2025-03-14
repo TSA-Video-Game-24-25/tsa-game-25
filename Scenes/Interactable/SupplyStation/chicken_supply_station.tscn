@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://5m36fervimj6"]
+
+[ext_resource type="PackedScene" uid="uid://c7d2atcxh5pxm" path="res://Scenes/Interactable/supply_station.tscn" id="1_nmtk4"]
+[ext_resource type="PackedScene" uid="uid://bj41j6no6oepl" path="res://Scenes/Item/FoodItem/chicken.tscn" id="2_oiiq7"]
+
+[node name="ChickenSupplyStation" instance=ExtResource("1_nmtk4")]
+SuppliedItem = ExtResource("2_oiiq7")
+
+[node name="ColorRect" parent="." index="1"]
+color = Color(1, 0.384314, 0.45098, 1)

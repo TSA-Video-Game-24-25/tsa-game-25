@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb17bjmtmeii6"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_kw3h1"]
+
+[node name="CutCarrot" instance=ExtResource("1_kw3h1")]
+MixResult = null
+CookResult = null
+CookTime = 5
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(1, 0.529412, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" index="0"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 3.0
+offset_bottom = 10.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect" index="1"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 6.0
+offset_bottom = 10.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect" index="2"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 9.0
+offset_bottom = 10.0
+color = Color(0, 0, 0, 1)

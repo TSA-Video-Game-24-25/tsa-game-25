@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bae51ksecyhhu"]
+
+[ext_resource type="PackedScene" uid="uid://c7d2atcxh5pxm" path="res://Scenes/Interactable/supply_station.tscn" id="1_krk3v"]
+[ext_resource type="PackedScene" uid="uid://dbp03ukiy3pud" path="res://Scenes/Item/plate.tscn" id="2_76mt4"]
+
+[node name="PlateSupplyStation" instance=ExtResource("1_krk3v")]
+SuppliedItem = ExtResource("2_76mt4")

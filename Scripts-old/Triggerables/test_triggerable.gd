@@ -1,4 +1,4 @@
-extends "res://Scripts/Base Scripts/triggerable.gd"
+extends "res://Scripts-old/Base Scripts/triggerable.gd"
 
 
 func onTriggerAny(_trigger):

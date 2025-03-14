@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://k2nme2wplxyv"]
+
+[ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_dyheu"]
+[ext_resource type="Script" path="res://Scripts/Interactable/ProcessStation/deposit_station.gd" id="2_2tmys"]
+
+[node name="DepositStation" instance=ExtResource("1_dyheu")]
+script = ExtResource("2_2tmys")
+
+[node name="ColorRect" parent="." index="1"]
+color = Color(1, 0.25098, 0.12549, 1)

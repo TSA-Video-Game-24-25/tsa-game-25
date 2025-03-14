@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyhhoqvrx8f8k"]
+
+[ext_resource type="PackedScene" uid="uid://dyff8inj8vji1" path="res://Scenes/GUI/process_gui.tscn" id="1_a3rbk"]
+[ext_resource type="Texture2D" uid="uid://ckudxqg83yo6i" path="res://Art/mix.png" id="2_2lveg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tq1d"]
+atlas = ExtResource("2_2lveg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1dn0"]
+atlas = ExtResource("2_2lveg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oygmb"]
+atlas = ExtResource("2_2lveg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swt1e"]
+atlas = ExtResource("2_2lveg")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0qpo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tq1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1dn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oygmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swt1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tq1d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MixGui" instance=ExtResource("1_a3rbk")]
+actionList = Array[int]([3, 2, 1, 0])
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_a0qpo")

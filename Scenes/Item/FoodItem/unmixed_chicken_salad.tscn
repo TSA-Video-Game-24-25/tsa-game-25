@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce05guy01ej7f"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_juv1k"]
+[ext_resource type="PackedScene" uid="uid://gvoxq0467m2w" path="res://Scenes/Item/FoodItem/chicken_salad.tscn" id="2_fql7b"]
+
+[node name="UnmixedChickenSalad" instance=ExtResource("1_juv1k")]
+MixResult = ExtResource("2_fql7b")
+CookResult = null
+CookTime = 5
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRect" index="0"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 9.0
+offset_bottom = 9.0
+color = Color(0, 0.552941, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" index="1"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 3.0
+offset_bottom = 4.0
+color = Color(1, 0.572549, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect" index="2"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 4.0
+color = Color(1, 0.572549, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect" index="3"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 1.0
+offset_right = 7.0
+offset_bottom = 4.0
+color = Color(1, 0.572549, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="ColorRect" index="4"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 3.0
+offset_bottom = 8.0
+color = Color(0.819608, 0.72549, 0.615686, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="ColorRect" index="5"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 8.0
+color = Color(0.819608, 0.72549, 0.615686, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="ColorRect" index="6"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 7.0
+offset_bottom = 8.0
+color = Color(0.819608, 0.72549, 0.615686, 1)

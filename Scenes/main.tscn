@@ -1,72 +1,103 @@
-[gd_scene load_steps=7 format=3 uid="uid://vfkak452dsnu"]
+[gd_scene load_steps=11 format=3 uid="uid://bhbexrfd1uev4"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_1abo1"]
-[ext_resource type="PackedScene" uid="uid://dhvvxloixgagb" path="res://Scenes/player.tscn" id="1_bchm0"]
-[ext_resource type="PackedScene" uid="uid://syp2cqiaqxxd" path="res://Scenes/Triggerables/test_triggerable.tscn" id="3_6cux8"]
-[ext_resource type="PackedScene" uid="uid://df4qyihyayyvh" path="res://Scenes/Triggers/interact_trigger.tscn" id="4_7vux3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_87fbk"]
-size = Vector2(10, 820)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_njri4"]
-size = Vector2(40, 40)
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_5nuvl"]
+[ext_resource type="PackedScene" uid="uid://bp3u117gx1f5u" path="res://Scenes/player.tscn" id="1_qsjnw"]
+[ext_resource type="PackedScene" uid="uid://dm43gcpri3ibm" path="res://Scenes/Interactable/SupplyStation/carrot_supply_station.tscn" id="2_1lj87"]
+[ext_resource type="PackedScene" uid="uid://bwreigecxu74a" path="res://Scenes/Interactable/ProcessStation/cutting_station.tscn" id="3_3mog6"]
+[ext_resource type="PackedScene" uid="uid://7e46q445uiq1" path="res://Scenes/Interactable/ProcessStation/counter.tscn" id="4_4uqti"]
+[ext_resource type="PackedScene" uid="uid://cv6cm8ae5vudv" path="res://Scenes/Interactable/ProcessStation/cooking_station.tscn" id="5_nrck8"]
+[ext_resource type="PackedScene" uid="uid://5m36fervimj6" path="res://Scenes/Interactable/SupplyStation/chicken_supply_station.tscn" id="6_4gyfn"]
+[ext_resource type="PackedScene" uid="uid://c77pl81skwluk" path="res://Scenes/Interactable/SupplyStation/lettuce_supply_station.tscn" id="7_led01"]
+[ext_resource type="PackedScene" uid="uid://k2nme2wplxyv" path="res://Scenes/Interactable/ProcessStation/deposit_station.tscn" id="8_rl43a"]
+[ext_resource type="PackedScene" uid="uid://bae51ksecyhhu" path="res://Scenes/Interactable/SupplyStation/plate_supply_station.tscn" id="8_waob2"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_1abo1")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -121.0
-offset_top = -109.0
-offset_right = 121.0
-offset_bottom = 109.0
-color = Color(0.380392, 1, 0.501961, 1)
+script = ExtResource("1_5nuvl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
 
-[node name="wall_left" type="StaticBody2D" parent="Camera2D"]
+[node name="Kitchen" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/wall_left"]
-position = Vector2(-405, 0)
-shape = SubResource("RectangleShape2D_87fbk")
+[node name="CuttingStation" parent="Kitchen" instance=ExtResource("3_3mog6")]
+position = Vector2(-20, -60)
 
-[node name="wall_right" type="StaticBody2D" parent="Camera2D"]
+[node name="CarrotSupplyStation" parent="Kitchen" instance=ExtResource("2_1lj87")]
+position = Vector2(60, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/wall_right"]
-position = Vector2(405, 0)
-shape = SubResource("RectangleShape2D_87fbk")
+[node name="Counter3" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(40, 100)
 
-[node name="wall_top" type="StaticBody2D" parent="Camera2D"]
-rotation = 1.5708
+[node name="Counter6" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(60, -40)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/wall_top"]
-position = Vector2(-405, 0)
-shape = SubResource("RectangleShape2D_87fbk")
+[node name="Counter17" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(60, 40)
 
-[node name="wall_bottom" type="StaticBody2D" parent="Camera2D"]
-rotation = 1.5708
+[node name="Counter7" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(0, -60)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/wall_bottom"]
-position = Vector2(405, 0)
-shape = SubResource("RectangleShape2D_87fbk")
+[node name="Counter11" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-40, -60)
 
-[node name="TestTriggerable" parent="." instance=ExtResource("3_6cux8")]
-position = Vector2(236, -56)
+[node name="Counter8" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(20, -60)
 
-[node name="InteractTrigger" parent="TestTriggerable" instance=ExtResource("4_7vux3")]
-Triggerables = Array[NodePath]([NodePath("..")])
+[node name="Counter15" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(40, -60)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestTriggerable/InteractTrigger"]
-shape = SubResource("RectangleShape2D_njri4")
+[node name="Counter9" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-80, -40)
 
-[node name="Player1" parent="." instance=ExtResource("1_bchm0")]
-position = Vector2(-64, -64)
+[node name="Counter10" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-80, -20)
 
-[node name="Player2" parent="." instance=ExtResource("1_bchm0")]
-position = Vector2(64, 64)
-input_map = {
-"interact": "o",
-"move_down": "k",
-"move_left": "j",
-"move_right": "l",
-"move_up": "i"
-}
+[node name="Counter12" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-80, 20)
+
+[node name="Counter16" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-80, 40)
+
+[node name="Counter18" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(60, 60)
+
+[node name="Counter20" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(60, 80)
+
+[node name="Counter21" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-80, 80)
+
+[node name="Counter13" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-40, 100)
+
+[node name="Counter22" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-60, -60)
+
+[node name="Counter23" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-60, 100)
+
+[node name="Counter14" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-20, 100)
+
+[node name="Counter2" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(0, 100)
+
+[node name="cooking_station" parent="Kitchen" instance=ExtResource("5_nrck8")]
+position = Vector2(-80, 0)
+
+[node name="ChickenSupplyStation" parent="Kitchen" instance=ExtResource("6_4gyfn")]
+position = Vector2(60, 20)
+
+[node name="LettuceSupplyStation" parent="Kitchen" instance=ExtResource("7_led01")]
+position = Vector2(60, -20)
+
+[node name="PlateSupplyStation" parent="Kitchen" instance=ExtResource("8_waob2")]
+position = Vector2(20, 100)
+
+[node name="DepositStation" parent="Kitchen" instance=ExtResource("8_rl43a")]
+position = Vector2(-80, 60)
+
+[node name="Player" parent="." instance=ExtResource("1_qsjnw")]
+
+[node name="Player2" parent="." instance=ExtResource("1_qsjnw")]
+position = Vector2(-7, 44)

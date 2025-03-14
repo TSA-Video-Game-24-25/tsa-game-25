@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://dsoe517nl76mq"]
+
+[ext_resource type="PackedScene" uid="uid://dyff8inj8vji1" path="res://Scenes/GUI/process_gui.tscn" id="1_6r80g"]
+[ext_resource type="Texture2D" uid="uid://feoyn6bjjljc" path="res://Art/knife.png" id="2_n56mg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx1x0"]
+atlas = ExtResource("2_n56mg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaigs"]
+atlas = ExtResource("2_n56mg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt1lr"]
+atlas = ExtResource("2_n56mg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piwsi"]
+atlas = ExtResource("2_n56mg")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abgdv"]
+atlas = ExtResource("2_n56mg")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5rjw"]
+atlas = ExtResource("2_n56mg")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vplg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx1x0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaigs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt1lr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piwsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abgdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5rjw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CuttingGui" instance=ExtResource("1_6r80g")]
+actionList = Array[int]([2, 3, 2, 3, 2])
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7vplg")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7d2atcxh5pxm"]
+
+[ext_resource type="PackedScene" uid="uid://eb65st0khtil" path="res://Scenes/interactable.tscn" id="1_o3dce"]
+[ext_resource type="Script" path="res://Scripts/Interactable/supply_station.gd" id="2_w0nys"]
+
+[node name="SupplyStation" instance=ExtResource("1_o3dce")]
+script = ExtResource("2_w0nys")
+SuppliedItem = null

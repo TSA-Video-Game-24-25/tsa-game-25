@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ucprrty4qmpe"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_vy8pi"]
+[ext_resource type="PackedScene" uid="uid://byimqvb8rupxw" path="res://Scenes/Item/FoodItem/cut_cooked_chicken.tscn" id="2_6tq2h"]
+
+[node name="CookedChicken" instance=ExtResource("1_vy8pi")]
+CutResult = ExtResource("2_6tq2h")
+CookResult = null
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(0.819608, 0.72549, 0.615686, 1)
