@@ -56,7 +56,9 @@ func get_input(input_str: String) -> String:
 
 
 func get_dir() -> Vector2:
-	return Input.get_vector(get_input("move_left"), 
-							get_input("move_right"), 
-							get_input("move_up"), 
-							get_input("move_down"))
+	return Input.get_vector(
+		get_input("move_left"), 
+		get_input("move_right"), 
+		get_input("move_up"), 
+		get_input("move_down")
+	)
