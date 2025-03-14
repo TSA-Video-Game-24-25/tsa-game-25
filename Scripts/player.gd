@@ -3,7 +3,7 @@ class_name Player
 
 
 const SPEED := 100.0
-const ACCELERATION := 2000.0
+const ACCELERATION := 800.0
 
 var canMove := true
 
