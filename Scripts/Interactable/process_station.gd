@@ -51,7 +51,7 @@ func process(_player: Player):
 	if ProcessGUI:
 		player.canMove = false
 		gui = ProcessGUI.instantiate()
-		gui.player_id = str(player.id)
+		gui.player = player
 		add_child(gui)
 	else:
 		finish_processing()

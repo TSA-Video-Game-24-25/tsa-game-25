@@ -17,7 +17,7 @@ var action_to_string = {
 @export var actionList: Array[action]
 
 var done := false
-var player_id: String
+var player: Player
 
 
 func _process(_delta: float) -> void:
@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 	$Control/Down.visible = currAction == action.DOWN
 	$Control/Right.visible = currAction == action.RIGHT
 	
-	if not Input.is_action_just_pressed(player_id + action_to_string[currAction]):
+	if not Input.is_action_just_pressed(str(player.id) + action_to_string[currAction]):
 		return
 	
 	$AnimatedSprite2D.frame += 1
