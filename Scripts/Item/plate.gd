@@ -47,6 +47,10 @@ func get_names(list):
 
 
 func set_recipe_result():
+	CutResult = null
+	MixResult = null
+	CookResult = null
+	
 	for recipe in Recipes.recipes.keys():
 		if not array_has_all(get_names(heldItems), recipe):
 			return
