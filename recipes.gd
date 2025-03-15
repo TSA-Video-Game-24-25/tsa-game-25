@@ -7,6 +7,8 @@ enum actions {
 	COOK,
 }
 
+#	[ FoodItemName1, FoodItemName2, ... ]: [ Action, ResultItem ]
 const recipes = {
 	[ "Lettuce", "CutCarrot", "CutCookedChicken" ]: [ actions.MIX, preload("res://Scenes/Item/FoodItem/chicken_salad.tscn") ],
+	
 }
