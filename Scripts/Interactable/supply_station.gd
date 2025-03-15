@@ -5,4 +5,9 @@ extends Interactable
 
 
 func interact(player: Player):
-	player.tryAddItemFromScene(SuppliedItem)
+	if not player.heldItem:
+		player.tryAddItemFromScene(SuppliedItem)
+		return
+	if player.heldItem.name == SuppliedItem.instantiate().name:
+		player.heldItem.queue_free()
+		player.heldItem == null
