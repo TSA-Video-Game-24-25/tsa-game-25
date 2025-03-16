@@ -10,4 +10,4 @@ func interact(player: Player):
 		return
 	if player.heldItem.name == SuppliedItem.instantiate().name:
 		player.heldItem.queue_free()
-		player.heldItem == null
+		player.heldItem = null
