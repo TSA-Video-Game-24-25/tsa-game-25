@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhbexrfd1uev4"]
+[gd_scene load_steps=16 format=3 uid="uid://bhbexrfd1uev4"]
 
 [ext_resource type="Script" uid="uid://bo3eopk0qerr7" path="res://Scripts/main.gd" id="1_5nuvl"]
 [ext_resource type="PackedScene" uid="uid://bp3u117gx1f5u" path="res://Scenes/player.tscn" id="1_qsjnw"]
@@ -9,7 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://c77pl81skwluk" path="res://Scenes/Interactable/SupplyStation/lettuce_supply_station.tscn" id="7_led01"]
 [ext_resource type="PackedScene" uid="uid://k2nme2wplxyv" path="res://Scenes/Interactable/ProcessStation/deposit_station.tscn" id="8_rl43a"]
 [ext_resource type="PackedScene" uid="uid://bae51ksecyhhu" path="res://Scenes/Interactable/SupplyStation/plate_supply_station.tscn" id="8_waob2"]
+[ext_resource type="PackedScene" uid="uid://t120mkj5606e" path="res://Scenes/Interactable/ProcessStation/counter_side.tscn" id="10_6iyac"]
 [ext_resource type="PackedScene" uid="uid://dthl77ymbu0cj" path="res://Scenes/Interactable/SupplyStation/tomato_supply_station.tscn" id="10_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://b0s7x102xj4f0" path="res://Scenes/Interactable/ProcessStation/counter_top_left.tscn" id="11_6iyac"]
+[ext_resource type="PackedScene" uid="uid://c5l3a8eq4fadk" path="res://Scenes/Interactable/ProcessStation/counter_top_right.tscn" id="12_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://c11gpfcunn6ws" path="res://Scenes/Interactable/ProcessStation/counter_bottom_left.tscn" id="13_jkdf5"]
+[ext_resource type="PackedScene" uid="uid://dy7sqsmk5sbjj" path="res://Scenes/Interactable/ProcessStation/counter_bottom_right.tscn" id="14_wsu2k"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_5nuvl")
@@ -25,9 +30,6 @@ position = Vector2(-20, -60)
 [node name="Counter3" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(40, 100)
 
-[node name="Counter6" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(60, -40)
-
 [node name="Counter7" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(0, -60)
 
@@ -39,30 +41,6 @@ position = Vector2(20, -60)
 
 [node name="Counter15" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(40, -60)
-
-[node name="Counter9" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-80, -40)
-
-[node name="Counter10" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-80, -20)
-
-[node name="Counter12" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-80, 20)
-
-[node name="Counter16" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-80, 40)
-
-[node name="Counter18" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(60, 60)
-
-[node name="Counter19" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(60, 40)
-
-[node name="Counter20" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(60, 80)
-
-[node name="Counter21" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-80, 80)
 
 [node name="Counter13" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(-40, 100)
@@ -96,6 +74,45 @@ position = Vector2(-80, 60)
 
 [node name="TomatoSupplyStation" parent="Kitchen" instance=ExtResource("10_d1ilt")]
 position = Vector2(60, 20)
+
+[node name="Counter" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(60, -40)
+
+[node name="Counter4" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(60, 40)
+
+[node name="Counter5" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(60, 60)
+
+[node name="Counter6" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(60, 80)
+
+[node name="Counter9" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(-80, 80)
+
+[node name="Counter10" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(-80, 40)
+
+[node name="Counter12" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(-80, 20)
+
+[node name="Counter16" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(-80, -20)
+
+[node name="Counter17" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(-80, -40)
+
+[node name="Counter18" parent="Kitchen" instance=ExtResource("11_6iyac")]
+position = Vector2(-80, -60)
+
+[node name="Counter19" parent="Kitchen" instance=ExtResource("12_fdnlq")]
+position = Vector2(60, -60)
+
+[node name="Counter20" parent="Kitchen" instance=ExtResource("13_jkdf5")]
+position = Vector2(-80, 100)
+
+[node name="Counter21" parent="Kitchen" instance=ExtResource("14_wsu2k")]
+position = Vector2(60, 100)
 
 [node name="Player" parent="." instance=ExtResource("1_qsjnw")]
 
