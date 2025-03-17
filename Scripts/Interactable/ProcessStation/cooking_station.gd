@@ -3,6 +3,7 @@ extends "res://Scripts/Interactable/process_station.gd"
 
 @export var CookSpeedMult := 1.0
 var cook_time := 0.0
+@onready var sprite := $AnimatedSprite2D
 
 
 func try_add_item(item: FoodItem) -> bool:
@@ -21,7 +22,10 @@ func _process(delta: float) -> void:
 	$ProgressBar.visible = $ProgressBar.value
 	
 	if heldItem == null:
+		sprite.play("off")
 		return
+	else:
+		sprite.play("cooking")
 	
 	if not heldItem.CookResult:
 		return

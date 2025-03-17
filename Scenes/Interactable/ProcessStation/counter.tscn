@@ -1,12 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://7e46q445uiq1"]
+[gd_scene load_steps=7 format=3 uid="uid://7e46q445uiq1"]
 
 [ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_l7cy8"]
 [ext_resource type="Script" uid="uid://r5pvyg6iratd" path="res://Scripts/Interactable/ProcessStation/counter.gd" id="2_p85sc"]
 [ext_resource type="PackedScene" uid="uid://cyhhoqvrx8f8k" path="res://Scenes/GUI/ProcessGui/mix_gui.tscn" id="3_f4cst"]
+[ext_resource type="Texture2D" uid="uid://dwihfj6iwpfqb" path="res://Art/Counter.png" id="4_e4hf0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hefg"]
+atlas = ExtResource("4_e4hf0")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72gsp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hefg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Counter" instance=ExtResource("1_l7cy8")]
 script = ExtResource("2_p85sc")
 ProcessGUI = ExtResource("3_f4cst")
 
-[node name="ColorRect" parent="." index="1"]
-color = Color(0.66771, 0.278543, 0.0856608, 1)
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_72gsp")
