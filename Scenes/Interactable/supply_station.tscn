@@ -6,3 +6,9 @@
 [node name="SupplyStation" instance=ExtResource("1_o3dce")]
 script = ExtResource("2_w0nys")
 SuppliedItem = null
+
+[node name="ColorRect" type="ColorRect" parent="." index="2"]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
