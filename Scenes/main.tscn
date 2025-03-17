@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhbexrfd1uev4"]
+[gd_scene load_steps=11 format=3 uid="uid://bhbexrfd1uev4"]
 
 [ext_resource type="Script" uid="uid://bo3eopk0qerr7" path="res://Scripts/main.gd" id="1_5nuvl"]
 [ext_resource type="PackedScene" uid="uid://bp3u117gx1f5u" path="res://Scenes/player.tscn" id="1_qsjnw"]
-[ext_resource type="PackedScene" uid="uid://dm43gcpri3ibm" path="res://Scenes/Interactable/SupplyStation/carrot_supply_station.tscn" id="2_1lj87"]
 [ext_resource type="PackedScene" uid="uid://bwreigecxu74a" path="res://Scenes/Interactable/ProcessStation/cutting_station.tscn" id="3_3mog6"]
 [ext_resource type="PackedScene" uid="uid://7e46q445uiq1" path="res://Scenes/Interactable/ProcessStation/counter.tscn" id="4_4uqti"]
 [ext_resource type="PackedScene" uid="uid://cv6cm8ae5vudv" path="res://Scenes/Interactable/ProcessStation/cooking_station.tscn" id="5_nrck8"]
@@ -22,9 +21,6 @@ zoom = Vector2(4, 4)
 
 [node name="CuttingStation" parent="Kitchen" instance=ExtResource("3_3mog6")]
 position = Vector2(-20, -60)
-
-[node name="CarrotSupplyStation" parent="Kitchen" instance=ExtResource("2_1lj87")]
-position = Vector2(60, 0)
 
 [node name="Counter3" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(40, 100)
@@ -59,6 +55,9 @@ position = Vector2(-80, 40)
 [node name="Counter18" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(60, 60)
 
+[node name="Counter19" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(60, 40)
+
 [node name="Counter20" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(60, 80)
 
@@ -84,7 +83,7 @@ position = Vector2(0, 100)
 position = Vector2(-80, 0)
 
 [node name="ChickenSupplyStation" parent="Kitchen" instance=ExtResource("6_4gyfn")]
-position = Vector2(60, 20)
+position = Vector2(60, 0)
 
 [node name="LettuceSupplyStation" parent="Kitchen" instance=ExtResource("7_led01")]
 position = Vector2(60, -20)
@@ -96,7 +95,7 @@ position = Vector2(20, 100)
 position = Vector2(-80, 60)
 
 [node name="TomatoSupplyStation" parent="Kitchen" instance=ExtResource("10_d1ilt")]
-position = Vector2(60, 40)
+position = Vector2(60, 20)
 
 [node name="Player" parent="." instance=ExtResource("1_qsjnw")]
 
