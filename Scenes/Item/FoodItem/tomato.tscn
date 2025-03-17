@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwdcxnwc2u6st"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_xpqbo"]
+[ext_resource type="PackedScene" uid="uid://c0tbqjajk1641" path="res://Scenes/Item/FoodItem/tomato_paste.tscn" id="2_clia5"]
+
+[node name="Tomato" instance=ExtResource("1_xpqbo")]
+MixResult = ExtResource("2_clia5")
+CookResult = null
+CookTime = 5
+IsDone = false
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(1, 0.227451, 0, 1)

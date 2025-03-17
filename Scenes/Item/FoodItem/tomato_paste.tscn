@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0tbqjajk1641"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_aab6s"]
+
+[node name="TomatoPaste" instance=ExtResource("1_aab6s")]
+MixResult = null
+CookResult = null
+CookTime = 5
+IsDone = false
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(0.407826, 0.183033, 0.0148916, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." index="1"]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.766463, 0.164927, 3.85046e-07, 1)
