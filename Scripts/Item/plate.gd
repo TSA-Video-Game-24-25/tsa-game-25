@@ -53,7 +53,7 @@ func set_recipe_result():
 	
 	for recipe in Recipes.recipes.keys():
 		if not array_has_all(get_names(heldItems), recipe):
-			return
+			continue
 		
 		var action = Recipes.recipes[recipe][0]
 		var result = Recipes.recipes[recipe][1]
