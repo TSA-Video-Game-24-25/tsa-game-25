@@ -9,6 +9,5 @@ enum actions {
 
 #	[ FoodItemName1, FoodItemName2, ... ]: [ Action, ResultItem ]
 const recipes = {
-	[ "Lettuce", "CutCookedChicken" ]: [ actions.MIX, preload("res://Scenes/Item/FoodItem/chicken_salad.tscn") ],
-	[ "Lettuce", "CutCarrot", "CutCookedChicken" ]: [ actions.MIX, preload("res://Scenes/Item/FoodItem/chicken_salad_carrot.tscn") ],
+	[ "Lettuce", "Tomato", "CookedChicken" ]: [ actions.MIX, preload("res://Scenes/Item/FoodItem/chicken_salad.tscn") ],
 }
