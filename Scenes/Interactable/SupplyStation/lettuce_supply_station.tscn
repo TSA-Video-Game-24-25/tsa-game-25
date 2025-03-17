@@ -6,5 +6,5 @@
 [node name="LettuceSupplyStation" instance=ExtResource("1_x5m2a")]
 SuppliedItem = ExtResource("2_mcyl2")
 
-[node name="ColorRect" parent="." index="1"]
-color = Color(0, 0.4, 0, 1)
+[node name="ColorRect" parent="." index="2"]
+color = Color(0, 0.717923, 0, 1)
