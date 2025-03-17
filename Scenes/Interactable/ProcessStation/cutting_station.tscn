@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwreigecxu74a"]
 
 [ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_jcghn"]
-[ext_resource type="Script" path="res://Scripts/Interactable/ProcessStation/cutting_station.gd" id="2_cfj0t"]
+[ext_resource type="Script" uid="uid://c0m46vgj1kpmt" path="res://Scripts/Interactable/ProcessStation/cutting_station.gd" id="2_cfj0t"]
 [ext_resource type="PackedScene" uid="uid://dsoe517nl76mq" path="res://Scenes/GUI/ProcessGui/cutting_gui.tscn" id="3_72dws"]
 
 [node name="CuttingStation" instance=ExtResource("1_jcghn")]

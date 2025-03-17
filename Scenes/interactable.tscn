@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://eb65st0khtil"]
 
-[ext_resource type="Script" path="res://Scripts/interactable.gd" id="1_bjh8p"]
+[ext_resource type="Script" uid="uid://coujg1b0v2o3j" path="res://Scripts/interactable.gd" id="1_bjh8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yrkha"]
 

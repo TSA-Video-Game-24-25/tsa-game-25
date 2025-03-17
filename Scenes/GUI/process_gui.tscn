@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dyff8inj8vji1"]
 
-[ext_resource type="Script" path="res://Scripts/GUI/process_gui.gd" id="1_u6nko"]
+[ext_resource type="Script" uid="uid://ijlj2ygtd3w" path="res://Scripts/GUI/process_gui.gd" id="1_u6nko"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b4sfb"]
 font_color = Color(0, 1, 1, 1)

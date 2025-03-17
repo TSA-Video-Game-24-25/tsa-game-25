@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://vfkak452dsnu"]
 
-[ext_resource type="Script" path="res://Scripts-old/main.gd" id="1_1abo1"]
+[ext_resource type="Script" uid="uid://ye1v71101wuw" path="res://Scripts-old/main.gd" id="1_1abo1"]
 [ext_resource type="PackedScene" uid="uid://dhvvxloixgagb" path="res://Scenes-old/player.tscn" id="1_bchm0"]
 [ext_resource type="PackedScene" uid="uid://syp2cqiaqxxd" path="res://Scenes-old/Triggerables/test_triggerable.tscn" id="3_6cux8"]
 [ext_resource type="PackedScene" uid="uid://df4qyihyayyvh" path="res://Scenes-old/Triggers/interact_trigger.tscn" id="4_7vux3"]
