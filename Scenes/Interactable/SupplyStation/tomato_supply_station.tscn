@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://dthl77ymbu0cj"]
+[gd_scene load_steps=6 format=3 uid="uid://dthl77ymbu0cj"]
 
 [ext_resource type="PackedScene" uid="uid://c7d2atcxh5pxm" path="res://Scenes/Interactable/supply_station.tscn" id="1_s52rt"]
 [ext_resource type="PackedScene" uid="uid://cwdcxnwc2u6st" path="res://Scenes/Item/FoodItem/tomato.tscn" id="2_70nrq"]
+[ext_resource type="Texture2D" uid="uid://cgmi2iepq0td2" path="res://Art/Tomato Storage.png" id="3_70nrq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfnt4"]
+atlas = ExtResource("3_70nrq")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvpvw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfnt4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TomatoSupplyStation" instance=ExtResource("1_s52rt")]
 SuppliedItem = ExtResource("2_70nrq")
 
-[node name="ColorRect" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_lvpvw")
+
+[node name="ColorRect" parent="." index="2"]
+visible = false
 color = Color(1, 0.227451, 0, 1)

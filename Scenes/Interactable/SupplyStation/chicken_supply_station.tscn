@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://5m36fervimj6"]
+[gd_scene load_steps=6 format=3 uid="uid://5m36fervimj6"]
 
 [ext_resource type="PackedScene" uid="uid://c7d2atcxh5pxm" path="res://Scenes/Interactable/supply_station.tscn" id="1_nmtk4"]
 [ext_resource type="PackedScene" uid="uid://bj41j6no6oepl" path="res://Scenes/Item/FoodItem/chicken.tscn" id="2_oiiq7"]
+[ext_resource type="Texture2D" uid="uid://kaan4dbou5rq" path="res://Art/Chicken Storage.png" id="3_a38d0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp5n0"]
+atlas = ExtResource("3_a38d0")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t80sc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yp5n0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="ChickenSupplyStation" instance=ExtResource("1_nmtk4")]
 SuppliedItem = ExtResource("2_oiiq7")
 
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_t80sc")
+
 [node name="ColorRect" parent="." index="2"]
+visible = false
 color = Color(0.844136, 0.585443, 0.646043, 1)

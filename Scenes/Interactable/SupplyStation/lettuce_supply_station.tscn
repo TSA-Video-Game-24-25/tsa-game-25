@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://c77pl81skwluk"]
+[gd_scene load_steps=6 format=3 uid="uid://c77pl81skwluk"]
 
 [ext_resource type="PackedScene" uid="uid://c7d2atcxh5pxm" path="res://Scenes/Interactable/supply_station.tscn" id="1_x5m2a"]
 [ext_resource type="PackedScene" uid="uid://76qhqw8c8muv" path="res://Scenes/Item/FoodItem/lettuce.tscn" id="2_mcyl2"]
+[ext_resource type="Texture2D" uid="uid://bi8w4agtbrjrl" path="res://Art/Greens Storage.png" id="3_kwyon"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0aib"]
+atlas = ExtResource("3_kwyon")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_thib0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0aib")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="LettuceSupplyStation" instance=ExtResource("1_x5m2a")]
 SuppliedItem = ExtResource("2_mcyl2")
 
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_thib0")
+
 [node name="ColorRect" parent="." index="2"]
+visible = false
 color = Color(0, 0.717923, 0, 1)
