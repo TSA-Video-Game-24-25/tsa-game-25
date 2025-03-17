@@ -8,8 +8,9 @@ CookResult = null
 CookTime = 5
 IsDone = false
 
-[node name="ColorRect" parent="." index="0"]
-color = Color(0.407826, 0.183033, 0.0148916, 1)
+[node name="AnimatedSprite2D" parent="." index="0"]
+texture_filter = 0
+scale = Vector2(1, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="." index="1"]
 offset_left = -4.0

@@ -1,8 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://76qhqw8c8muv"]
+[gd_scene load_steps=5 format=3 uid="uid://76qhqw8c8muv"]
 
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_xuudt"]
+[ext_resource type="Texture2D" uid="uid://c7ujpmpahsv7y" path="res://Art/Food/Greens.png" id="2_6pxa5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pddqg"]
+atlas = ExtResource("2_6pxa5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c40ju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pddqg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Lettuce" instance=ExtResource("1_xuudt")]
 
-[node name="ColorRect" parent="." index="0"]
-color = Color(0, 0.666667, 0, 1)
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_c40ju")

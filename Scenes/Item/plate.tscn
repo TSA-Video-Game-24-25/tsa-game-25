@@ -1,7 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbp03ukiy3pud"]
+[gd_scene load_steps=6 format=3 uid="uid://dbp03ukiy3pud"]
 
 [ext_resource type="PackedScene" uid="uid://b7g20lxgahn0e" path="res://Scenes/item.tscn" id="1_kt00x"]
 [ext_resource type="Script" uid="uid://biyc386totwtx" path="res://Scripts/Item/plate.gd" id="2_rwq1w"]
+[ext_resource type="Texture2D" uid="uid://c2sl3fdkx24xq" path="res://Art/Plate.png" id="3_76ubn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atjt6"]
+atlas = ExtResource("3_76ubn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_88yqo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atjt6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Plate" instance=ExtResource("1_kt00x")]
 script = ExtResource("2_rwq1w")
+MixResult = null
+CutResult = null
+CookResult = null
+CookTime = 5
+IsDone = false
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_88yqo")

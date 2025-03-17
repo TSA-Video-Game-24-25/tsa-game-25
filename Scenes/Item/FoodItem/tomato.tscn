@@ -1,13 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwdcxnwc2u6st"]
+[gd_scene load_steps=6 format=3 uid="uid://cwdcxnwc2u6st"]
 
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_xpqbo"]
 [ext_resource type="PackedScene" uid="uid://c0tbqjajk1641" path="res://Scenes/Item/FoodItem/tomato_paste.tscn" id="2_clia5"]
+[ext_resource type="Texture2D" uid="uid://p8sjut7rps81" path="res://Art/Food/Tomato.png" id="3_vkvus"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuyqv"]
+atlas = ExtResource("3_vkvus")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uyog0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuyqv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Tomato" instance=ExtResource("1_xpqbo")]
 MixResult = ExtResource("2_clia5")
-CookResult = null
-CookTime = 5
-IsDone = false
 
-[node name="ColorRect" parent="." index="0"]
-color = Color(1, 0.227451, 0, 1)
+[node name="AnimatedSprite2D" parent="." index="0"]
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_uyog0")

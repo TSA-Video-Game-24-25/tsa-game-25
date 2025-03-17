@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhl2gtvy2ky7g"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_mgl28"]
+[ext_resource type="Texture2D" uid="uid://4isemb70c5pm" path="res://Art/Food/Cheese.png" id="2_vbvir"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4xyg"]
+atlas = ExtResource("2_vbvir")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tgdqb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4xyg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cheese" instance=ExtResource("1_mgl28")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_tgdqb")

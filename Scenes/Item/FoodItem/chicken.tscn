@@ -1,10 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj41j6no6oepl"]
+[gd_scene load_steps=6 format=3 uid="uid://bj41j6no6oepl"]
 
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_fv8in"]
 [ext_resource type="PackedScene" uid="uid://ucprrty4qmpe" path="res://Scenes/Item/FoodItem/cooked_chicken.tscn" id="2_jjy53"]
+[ext_resource type="Texture2D" uid="uid://5b1bvtagpggq" path="res://Art/Food/Chicken.png" id="3_1jodu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpop2"]
+atlas = ExtResource("3_1jodu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0gq3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpop2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Chicken" instance=ExtResource("1_fv8in")]
 CookResult = ExtResource("2_jjy53")
 
-[node name="ColorRect" parent="." index="0"]
-color = Color(0.925446, 0.723182, 0.727936, 1)
+[node name="AnimatedSprite2D" parent="." index="0"]
+modulate = Color(0.996803, 0.731463, 0.842932, 1)
+sprite_frames = SubResource("SpriteFrames_0gq3w")

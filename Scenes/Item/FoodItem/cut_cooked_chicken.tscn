@@ -3,28 +3,3 @@
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_cm8v1"]
 
 [node name="CutCookedChicken" instance=ExtResource("1_cm8v1")]
-CookResult = null
-
-[node name="ColorRect" parent="." index="0"]
-color = Color(0.820554, 0.724254, 0.61561, 1)
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect" index="0"]
-layout_mode = 0
-offset_left = 2.0
-offset_right = 3.0
-offset_bottom = 10.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="ColorRect" index="1"]
-layout_mode = 0
-offset_left = 5.0
-offset_right = 6.0
-offset_bottom = 10.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="ColorRect" index="2"]
-layout_mode = 0
-offset_left = 8.0
-offset_right = 9.0
-offset_bottom = 10.0
-color = Color(0, 0, 0, 1)
