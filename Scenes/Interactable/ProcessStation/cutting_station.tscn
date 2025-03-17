@@ -1,15 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwreigecxu74a"]
+[gd_scene load_steps=7 format=3 uid="uid://bwreigecxu74a"]
 
 [ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_jcghn"]
 [ext_resource type="Script" uid="uid://c0m46vgj1kpmt" path="res://Scripts/Interactable/ProcessStation/cutting_station.gd" id="2_cfj0t"]
 [ext_resource type="PackedScene" uid="uid://dsoe517nl76mq" path="res://Scenes/GUI/ProcessGui/cutting_gui.tscn" id="3_72dws"]
+[ext_resource type="Texture2D" uid="uid://dwihfj6iwpfqb" path="res://Art/Counter.png" id="4_844a5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krvjm"]
+atlas = ExtResource("4_844a5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_afo01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krvjm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CuttingStation" instance=ExtResource("1_jcghn")]
 script = ExtResource("2_cfj0t")
 ProcessGUI = ExtResource("3_72dws")
 
-[node name="ColorRect" parent="." index="1"]
-color = Color(0.282353, 1, 0.403922, 1)
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_afo01")
 
 [node name="Label" type="Label" parent="." index="2"]
 offset_left = -7.0
