@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7g20lxgahn0e"]
 
-[ext_resource type="Script" path="res://Scripts/item.gd" id="1_rgb1i"]
+[ext_resource type="Script" uid="uid://b41o80ny2gppv" path="res://Scripts/item.gd" id="1_rgb1i"]
 
 [node name="Item" type="Node2D"]
 script = ExtResource("1_rgb1i")
