@@ -2,8 +2,10 @@ extends "res://Scripts/Interactable/process_station.gd"
 
 
 @export var CookSpeedMult := 1.0
-var cook_time := 0.0
+
 @onready var sprite := $AnimatedSprite2D
+
+var cook_time := 0.0
 
 
 func try_add_item(item: FoodItem) -> bool:
