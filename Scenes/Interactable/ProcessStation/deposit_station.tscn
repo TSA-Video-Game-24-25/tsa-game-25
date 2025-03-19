@@ -5,6 +5,3 @@
 
 [node name="DepositStation" instance=ExtResource("1_dyheu")]
 script = ExtResource("2_2tmys")
-
-[node name="ColorRect" parent="." index="1"]
-color = Color(1, 0.25098, 0.12549, 1)

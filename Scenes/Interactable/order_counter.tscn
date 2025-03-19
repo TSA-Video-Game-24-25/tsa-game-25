@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx0tpug4tqa5b"]
+
+[ext_resource type="PackedScene" uid="uid://eb65st0khtil" path="res://Scenes/interactable.tscn" id="1_oeyvk"]
+[ext_resource type="Script" uid="uid://exjdv225stl5" path="res://Scripts/Interactable/order_counter.gd" id="2_6l211"]
+
+[node name="OrderCounter" instance=ExtResource("1_oeyvk")]
+script = ExtResource("2_6l211")

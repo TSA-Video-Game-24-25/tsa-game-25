@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhbexrfd1uev4"]
+[gd_scene load_steps=20 format=4 uid="uid://bhbexrfd1uev4"]
 
 [ext_resource type="Script" uid="uid://bo3eopk0qerr7" path="res://Scripts/main.gd" id="1_5nuvl"]
 [ext_resource type="PackedScene" uid="uid://bp3u117gx1f5u" path="res://Scenes/player.tscn" id="1_qsjnw"]
+[ext_resource type="Texture2D" uid="uid://bliplpjcx64ue" path="res://Art/Floor Kitchen-1.png (1).png" id="2_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://bwreigecxu74a" path="res://Scenes/Interactable/ProcessStation/cutting_station.tscn" id="3_3mog6"]
 [ext_resource type="PackedScene" uid="uid://7e46q445uiq1" path="res://Scenes/Interactable/ProcessStation/counter.tscn" id="4_4uqti"]
 [ext_resource type="PackedScene" uid="uid://cv6cm8ae5vudv" path="res://Scenes/Interactable/ProcessStation/cooking_station.tscn" id="5_nrck8"]
@@ -15,12 +16,34 @@
 [ext_resource type="PackedScene" uid="uid://c5l3a8eq4fadk" path="res://Scenes/Interactable/ProcessStation/counter_top_right.tscn" id="12_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://c11gpfcunn6ws" path="res://Scenes/Interactable/ProcessStation/counter_bottom_left.tscn" id="13_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://dy7sqsmk5sbjj" path="res://Scenes/Interactable/ProcessStation/counter_bottom_right.tscn" id="14_wsu2k"]
+[ext_resource type="PackedScene" uid="uid://bx0tpug4tqa5b" path="res://Scenes/Interactable/order_counter.tscn" id="15_k12tt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3802"]
+texture = ExtResource("2_h1bgf")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k12tt"]
+tile_size = Vector2i(20, 20)
+sources/3 = SubResource("TileSetAtlasSource_b3802")
 
 [node name="Main" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_5nuvl")
+CameraMode = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(10, 10)
+tile_map_data = PackedByteArray("AAD5//z/AwAAAAAAAAD5//3/AwAAAAAAAAD5//7/AwAAAAAAAAD5////AwAAAAAAAAD5/wAAAwAAAAAAAAD5/wEAAwAAAAAAAAD5/wIAAwABAAAAAAD6//z/AwAAAAAAAAD6//3/AwAAAAAAAAD6//7/AwAAAAAAAAD6////AwAAAAAAAAD6/wAAAwAAAAAAAAD6/wEAAwAAAAAAAAD6/wIAAwABAAAAAAD7//z/AwAAAAAAAAD7//3/AwAAAAAAAAD7//7/AwAAAAAAAAD7////AwAAAAAAAAD7/wAAAwAAAAAAAAD7/wEAAwAAAAAAAAD7/wIAAwABAAAAAAD8//z/AwAAAAAAAAD8//3/AwAAAAAAAAD8//7/AwAAAAAAAAD8////AwAAAAAAAAD8/wAAAwAAAAAAAAD8/wEAAwAAAAAAAAD8/wIAAwABAAAAAAD9//z/AwAAAAAAAAD9//3/AwAAAAAAAAD9//7/AwAAAAAAAAD9////AwAAAAAAAAD9/wAAAwAAAAAAAAD9/wEAAwAAAAAAAAD9/wIAAwABAAAAAAD+//z/AwAAAAAAAAD+//3/AwAAAAAAAAD+//7/AwAAAAAAAAD+////AwAAAAAAAAD+/wAAAwAAAAAAAAD+/wEAAwAAAAAAAAD+/wIAAwABAAAAAAD///z/AwAAAAAAAAD///3/AwAAAAAAAAD///7/AwAAAAAAAAD/////AwAAAAAAAAD//wAAAwAAAAAAAAD//wEAAwAAAAAAAAD//wIAAwABAAAAAAAAAPz/AwAAAAAAAAAAAP3/AwAAAAAAAAAAAP7/AwAAAAAAAAAAAP//AwAAAAAAAAAAAAAAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAAIAAwABAAAAAAABAPz/AwAAAAAAAAABAP3/AwAAAAAAAAABAP7/AwAAAAAAAAABAP//AwAAAAAAAAABAAAAAwAAAAAAAAABAAEAAwAAAAAAAAABAAIAAwABAAAAAAACAPz/AwAAAAAAAAACAP3/AwAAAAAAAAACAP7/AwAAAAAAAAACAP//AwAAAAAAAAACAAAAAwAAAAAAAAACAAEAAwAAAAAAAAACAAIAAwABAAAAAAADAPz/AwAAAAAAAAADAP3/AwAAAAAAAAADAP7/AwAAAAAAAAADAP//AwAAAAAAAAADAAAAAwAAAAAAAAADAAEAAwAAAAAAAAADAAIAAwABAAAAAAD5/wMAAwAAAAEAAAD5/wQAAwAAAAEAAAD5/wUAAwAAAAEAAAD5/wYAAwAAAAEAAAD6/wMAAwAAAAEAAAD6/wQAAwAAAAEAAAD6/wUAAwAAAAEAAAD6/wYAAwAAAAEAAAD7/wMAAwAAAAEAAAD7/wQAAwAAAAEAAAD7/wUAAwAAAAEAAAD7/wYAAwAAAAEAAAD8/wMAAwAAAAEAAAD8/wQAAwAAAAEAAAD8/wUAAwAAAAEAAAD8/wYAAwAAAAEAAAD9/wMAAwAAAAEAAAD9/wQAAwAAAAEAAAD9/wUAAwAAAAEAAAD9/wYAAwAAAAEAAAD+/wMAAwAAAAEAAAD+/wQAAwAAAAEAAAD+/wUAAwAAAAEAAAD+/wYAAwAAAAEAAAD//wMAAwAAAAEAAAD//wQAAwAAAAEAAAD//wUAAwAAAAEAAAD//wYAAwAAAAEAAAAAAAMAAwAAAAEAAAAAAAQAAwAAAAEAAAAAAAUAAwAAAAEAAAAAAAYAAwAAAAEAAAABAAMAAwAAAAEAAAABAAQAAwAAAAEAAAABAAUAAwAAAAEAAAABAAYAAwAAAAEAAAACAAMAAwAAAAEAAAACAAQAAwAAAAEAAAACAAUAAwAAAAEAAAACAAYAAwAAAAEAAAADAAMAAwAAAAEAAAADAAQAAwAAAAEAAAADAAUAAwAAAAEAAAADAAYAAwAAAAEAAAA=")
+tile_set = SubResource("TileSet_k12tt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+offset = Vector2(-20, 40)
+zoom = Vector2(5, 5)
 
 [node name="Kitchen" type="Node2D" parent="."]
 
@@ -31,108 +54,128 @@ position = Vector2(0, -60)
 position = Vector2(20, -60)
 
 [node name="Counter3" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(40, 100)
+position = Vector2(60, 60)
 
 [node name="Counter7" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(-20, -60)
 
 [node name="Counter11" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-40, -60)
+position = Vector2(-60, -60)
 
 [node name="Counter15" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(60, -60)
+
+[node name="Counter5" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(40, 60)
+
+[node name="Counter26" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(40, -60)
 
 [node name="Counter13" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-60, 100)
-
-[node name="Counter22" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-60, -60)
-
-[node name="Counter14" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-20, 100)
-
-[node name="Counter2" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(0, 100)
-
-[node name="Counter26" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(20, 100)
-
-[node name="cooking_station" parent="Kitchen" instance=ExtResource("5_nrck8")]
-position = Vector2(-60, -40)
-
-[node name="cooking_station2" parent="Kitchen" instance=ExtResource("5_nrck8")]
-position = Vector2(-40, -40)
-
-[node name="ChickenSupplyStation" parent="Kitchen" instance=ExtResource("6_4gyfn")]
-position = Vector2(40, 0)
-
-[node name="LettuceSupplyStation" parent="Kitchen" instance=ExtResource("7_led01")]
-position = Vector2(40, 40)
-
-[node name="DepositStation" parent="Kitchen" instance=ExtResource("8_rl43a")]
-position = Vector2(-40, 100)
-
-[node name="TomatoSupplyStation" parent="Kitchen" instance=ExtResource("10_d1ilt")]
-position = Vector2(40, 20)
-
-[node name="Counter" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(60, -40)
-
-[node name="Counter8" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(60, -20)
-
-[node name="Counter24" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(60, 0)
-
-[node name="Counter25" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(60, 20)
-
-[node name="Counter4" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(60, 40)
-
-[node name="Counter5" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(60, 60)
-
-[node name="Counter6" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(60, 80)
-
-[node name="Counter9" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(-80, 80)
-
-[node name="Counter23" parent="Kitchen" instance=ExtResource("10_6iyac")]
 position = Vector2(-80, 60)
 
-[node name="Counter10" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(-80, 40)
+[node name="Counter16" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-100, -60)
 
-[node name="Counter12" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(-80, 0)
+[node name="Counter23" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-100, 60)
 
-[node name="Counter16" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(-80, -20)
-
-[node name="Counter17" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(-80, -40)
-
-[node name="Counter18" parent="Kitchen" instance=ExtResource("11_6iyac")]
+[node name="Counter22" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(-80, -60)
 
+[node name="Counter14" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-20, 60)
+
+[node name="Counter8" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-40, -60)
+
+[node name="Counter27" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-40, 60)
+
+[node name="Counter2" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(0, 60)
+
+[node name="cooking_station" parent="Kitchen" instance=ExtResource("5_nrck8")]
+position = Vector2(-71, -40)
+
+[node name="cooking_station2" parent="Kitchen" instance=ExtResource("5_nrck8")]
+position = Vector2(-51, -40)
+
+[node name="ChickenSupplyStation" parent="Kitchen" instance=ExtResource("6_4gyfn")]
+position = Vector2(60, -40)
+
+[node name="LettuceSupplyStation" parent="Kitchen" instance=ExtResource("7_led01")]
+position = Vector2(60, 0)
+
+[node name="DepositStation" parent="Kitchen" instance=ExtResource("8_rl43a")]
+position = Vector2(-60, 60)
+
+[node name="TomatoSupplyStation" parent="Kitchen" instance=ExtResource("10_d1ilt")]
+position = Vector2(60, -20)
+
+[node name="Counter" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(80, -40)
+
+[node name="Counter24" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(80, -20)
+
+[node name="Counter25" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(80, 0)
+
+[node name="Counter4" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(80, 20)
+
+[node name="Counter6" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(80, 40)
+
+[node name="Counter9" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(-120, 40)
+
+[node name="Counter10" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(-120, 20)
+
+[node name="Counter12" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(-120, -20)
+
+[node name="Counter17" parent="Kitchen" instance=ExtResource("10_6iyac")]
+position = Vector2(-120, -40)
+
+[node name="Counter18" parent="Kitchen" instance=ExtResource("11_6iyac")]
+position = Vector2(-120, -60)
+
 [node name="Counter19" parent="Kitchen" instance=ExtResource("12_fdnlq")]
-position = Vector2(60, -60)
+position = Vector2(80, -60)
 
 [node name="Counter20" parent="Kitchen" instance=ExtResource("13_jkdf5")]
-position = Vector2(-80, 100)
+position = Vector2(-120, 60)
 
 [node name="PlateSupplyStation" parent="Kitchen" instance=ExtResource("8_waob2")]
-position = Vector2(-80, 20)
+position = Vector2(-120, 0)
 
 [node name="Counter21" parent="Kitchen" instance=ExtResource("14_wsu2k")]
-position = Vector2(60, 100)
+position = Vector2(80, 60)
+
+[node name="OrderCounter" parent="Kitchen" instance=ExtResource("15_k12tt")]
+position = Vector2(20, 60)
+
+[node name="CustomerOrderPos" type="Marker2D" parent="Kitchen"]
+position = Vector2(20, 81)
+
+[node name="CustomerPickupPos" type="Marker2D" parent="Kitchen"]
+position = Vector2(-60, 81)
+
+[node name="CustomerExitPos" type="Marker2D" parent="Kitchen"]
+position = Vector2(80, 120)
+
+[node name="CustomerOutPos" type="Marker2D" parent="Kitchen"]
+position = Vector2(120, 120)
+
+[node name="DiningArea" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_qsjnw")]
 
 [node name="Player2" parent="." instance=ExtResource("1_qsjnw")]
-position = Vector2(-7, 44)
+position = Vector2(-50, 16)
 input_map = {
 "interact": "o",
 "move_down": "k",
