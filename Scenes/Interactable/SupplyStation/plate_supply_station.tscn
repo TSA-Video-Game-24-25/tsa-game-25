@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bae51ksecyhhu"]
+[gd_scene load_steps=6 format=3 uid="uid://bae51ksecyhhu"]
 
 [ext_resource type="PackedScene" uid="uid://c7d2atcxh5pxm" path="res://Scenes/Interactable/supply_station.tscn" id="1_krk3v"]
 [ext_resource type="PackedScene" uid="uid://dbp03ukiy3pud" path="res://Scenes/Item/plate.tscn" id="2_76mt4"]
+[ext_resource type="Texture2D" uid="uid://ltt1yttr6c6t" path="res://Art/Plate-supply.png" id="3_fiy1m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yevg"]
+atlas = ExtResource("3_fiy1m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyuuv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yevg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="PlateSupplyStation" instance=ExtResource("1_krk3v")]
 SuppliedItem = ExtResource("2_76mt4")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_vyuuv")
