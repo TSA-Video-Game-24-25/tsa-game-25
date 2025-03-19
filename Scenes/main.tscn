@@ -43,7 +43,7 @@ position = Vector2(-40, -60)
 position = Vector2(40, -60)
 
 [node name="Counter13" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-40, 100)
+position = Vector2(-60, 100)
 
 [node name="Counter22" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(-60, -60)
@@ -53,6 +53,9 @@ position = Vector2(-20, 100)
 
 [node name="Counter2" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(0, 100)
+
+[node name="Counter26" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(20, 100)
 
 [node name="cooking_station" parent="Kitchen" instance=ExtResource("5_nrck8")]
 position = Vector2(-60, -40)
@@ -66,11 +69,8 @@ position = Vector2(40, 0)
 [node name="LettuceSupplyStation" parent="Kitchen" instance=ExtResource("7_led01")]
 position = Vector2(40, 40)
 
-[node name="PlateSupplyStation" parent="Kitchen" instance=ExtResource("8_waob2")]
-position = Vector2(20, 100)
-
 [node name="DepositStation" parent="Kitchen" instance=ExtResource("8_rl43a")]
-position = Vector2(-60, 100)
+position = Vector2(-40, 100)
 
 [node name="TomatoSupplyStation" parent="Kitchen" instance=ExtResource("10_d1ilt")]
 position = Vector2(40, 20)
@@ -122,6 +122,9 @@ position = Vector2(60, -60)
 
 [node name="Counter20" parent="Kitchen" instance=ExtResource("13_jkdf5")]
 position = Vector2(-80, 100)
+
+[node name="PlateSupplyStation" parent="Kitchen" instance=ExtResource("8_waob2")]
+position = Vector2(-80, 20)
 
 [node name="Counter21" parent="Kitchen" instance=ExtResource("14_wsu2k")]
 position = Vector2(60, 100)
