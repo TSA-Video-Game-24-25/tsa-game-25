@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bhbexrfd1uev4"]
+[gd_scene load_steps=32 format=4 uid="uid://bhbexrfd1uev4"]
 
 [ext_resource type="Script" uid="uid://bo3eopk0qerr7" path="res://Scripts/main.gd" id="1_5nuvl"]
 [ext_resource type="PackedScene" uid="uid://bp3u117gx1f5u" path="res://Scenes/player.tscn" id="1_qsjnw"]
@@ -16,7 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://c5l3a8eq4fadk" path="res://Scenes/Interactable/ProcessStation/counter_top_right.tscn" id="12_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://c11gpfcunn6ws" path="res://Scenes/Interactable/ProcessStation/counter_bottom_left.tscn" id="13_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://dy7sqsmk5sbjj" path="res://Scenes/Interactable/ProcessStation/counter_bottom_right.tscn" id="14_wsu2k"]
-[ext_resource type="PackedScene" uid="uid://bx0tpug4tqa5b" path="res://Scenes/Interactable/order_counter.tscn" id="15_k12tt"]
+[ext_resource type="PackedScene" path="res://Scenes/Interactable/order_counter.tscn" id="15_k12tt"]
+[ext_resource type="Texture2D" uid="uid://cputwghyptueh" path="res://Art/Chef Rat.png" id="18_fevyy"]
+[ext_resource type="Texture2D" uid="uid://bxdroedmdd05u" path="res://Art/Chef Coon.png" id="19_hibaj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3802"]
 texture = ExtResource("2_h1bgf")
@@ -30,6 +32,108 @@ texture_region_size = Vector2i(20, 20)
 [sub_resource type="TileSet" id="TileSet_k12tt"]
 tile_size = Vector2i(20, 20)
 sources/3 = SubResource("TileSetAtlasSource_b3802")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdsj5"]
+atlas = ExtResource("18_fevyy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee4r6"]
+atlas = ExtResource("18_fevyy")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt3je"]
+atlas = ExtResource("18_fevyy")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pmx8"]
+atlas = ExtResource("18_fevyy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u50mg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdsj5")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee4r6")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt3je")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pmx8")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbgmd"]
+atlas = ExtResource("19_hibaj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w6v2"]
+atlas = ExtResource("19_hibaj")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueoa1"]
+atlas = ExtResource("19_hibaj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vcvc"]
+atlas = ExtResource("19_hibaj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7k868"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbgmd")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1w6v2")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueoa1")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vcvc")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D"]
 texture_filter = 1
@@ -174,6 +278,10 @@ position = Vector2(120, 120)
 
 [node name="Player" parent="." instance=ExtResource("1_qsjnw")]
 
+[node name="AnimatedSprite2D" parent="Player" index="4"]
+sprite_frames = SubResource("SpriteFrames_u50mg")
+animation = &"down"
+
 [node name="Player2" parent="." instance=ExtResource("1_qsjnw")]
 position = Vector2(-50, 16)
 input_map = {
@@ -184,3 +292,10 @@ input_map = {
 "move_up": "i",
 "process": "u"
 }
+
+[node name="AnimatedSprite2D" parent="Player2" index="4"]
+sprite_frames = SubResource("SpriteFrames_7k868")
+animation = &"down"
+
+[editable path="Player"]
+[editable path="Player2"]
