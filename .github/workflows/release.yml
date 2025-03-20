@@ -84,11 +84,6 @@ jobs:
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Web" "$EXPORT_DIR/web/index.html"
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: web-build
-          path: build/web
       - name: Install rsync 📚
         run: |
           apt-get update && apt-get install -y rsync
@@ -98,6 +93,7 @@ jobs:
           repository-name: TSA-Video-Game-24-24/game.github.io
           ssh-key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           branch: main
+          folder: build/web
           git-config-name: 'game-builder[bot]'
           git-config-email: 'github-actions[bot]@users.noreply.github.com'
           commit-message: ${{ github.ref_name }}
