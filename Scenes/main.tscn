@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c5l3a8eq4fadk" path="res://Scenes/Interactable/ProcessStation/counter_top_right.tscn" id="12_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://c11gpfcunn6ws" path="res://Scenes/Interactable/ProcessStation/counter_bottom_left.tscn" id="13_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://dy7sqsmk5sbjj" path="res://Scenes/Interactable/ProcessStation/counter_bottom_right.tscn" id="14_wsu2k"]
-[ext_resource type="PackedScene" path="res://Scenes/Interactable/order_counter.tscn" id="15_k12tt"]
+[ext_resource type="PackedScene" uid="uid://bx0tpug4tqa5b" path="res://Scenes/Interactable/order_counter.tscn" id="15_k12tt"]
 [ext_resource type="Texture2D" uid="uid://cputwghyptueh" path="res://Art/Chef Rat.png" id="18_fevyy"]
 [ext_resource type="Texture2D" uid="uid://bxdroedmdd05u" path="res://Art/Chef Coon.png" id="19_hibaj"]
 
