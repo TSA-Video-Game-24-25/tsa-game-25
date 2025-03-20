@@ -4,6 +4,7 @@ class_name Player
 
 const SPEED := 100.0
 const ACCELERATION := 800.0
+@onready var sprite := $AnimatedSprite2D
 
 var canMove := true
 
@@ -36,13 +37,14 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var direction := get_dir()
-	
 	if canMove:
 		velocity = velocity.move_toward(direction * SPEED, delta * ACCELERATION)
 	else:
 		velocity = Vector2.ZERO
 	
 	move_and_slide()
+	
+	play_animation()
 	
 	interact_if_pressed()
 	process_if_pressed()
@@ -141,3 +143,17 @@ func process_if_pressed() -> void:
 		
 		body.process(self)
 		return
+
+func play_animation() -> void:
+	if velocity == Vector2.ZERO:
+		return
+	
+	if velocity.y > 0: 
+		sprite.play("down")
+	if velocity.y < 0: 
+		sprite.play("up")
+	
+	if velocity.x > 0: 
+		sprite.play("right")
+	if velocity.x < 0: 
+		sprite.play("left")
