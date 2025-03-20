@@ -12,4 +12,4 @@ func interact(_player: Player):
 	
 	main.new_customers.remove_at(0)
 	main.waiting_customers.append(customer)
-	customer.targetPos = Vector2(-50, 120)
+	customer.lineUp(Vector2(-50, 120), main.waiting_customers)
