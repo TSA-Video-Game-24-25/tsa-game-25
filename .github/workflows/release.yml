@@ -84,9 +84,10 @@ jobs:
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Web" "$EXPORT_DIR/web/index.html"
-      - name: Install rsync 📚
+      - name: Install deps
         run: |
           apt-get update && apt-get install -y rsync
+          apt-get update && apt-get install -y openssh-client
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
