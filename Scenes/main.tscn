@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bhbexrfd1uev4"]
+[gd_scene load_steps=34 format=4 uid="uid://bhbexrfd1uev4"]
 
 [ext_resource type="Script" uid="uid://bo3eopk0qerr7" path="res://Scripts/main.gd" id="1_5nuvl"]
 [ext_resource type="PackedScene" uid="uid://bp3u117gx1f5u" path="res://Scenes/player.tscn" id="1_qsjnw"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bx0tpug4tqa5b" path="res://Scenes/Interactable/order_counter.tscn" id="15_k12tt"]
 [ext_resource type="PackedScene" uid="uid://blxp4mgixcyo5" path="res://Scenes/Interactable/SupplyStation/cheese_supply_station.tscn" id="17_b3802"]
 [ext_resource type="Texture2D" uid="uid://cputwghyptueh" path="res://Art/Chef Rat.png" id="18_fevyy"]
+[ext_resource type="PackedScene" uid="uid://tjwdyxv2bbu4" path="res://Scenes/Interactable/SupplyStation/flour_supply_station.tscn" id="18_pdsj5"]
 [ext_resource type="Texture2D" uid="uid://bxdroedmdd05u" path="res://Art/Chef Coon.png" id="19_hibaj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3802"]
@@ -204,16 +205,16 @@ position = Vector2(-71, -40)
 position = Vector2(-51, -40)
 
 [node name="ChickenSupplyStation" parent="Kitchen" instance=ExtResource("6_4gyfn")]
-position = Vector2(60, -30)
+position = Vector2(60, -40)
 
 [node name="LettuceSupplyStation" parent="Kitchen" instance=ExtResource("7_led01")]
-position = Vector2(60, 10)
+position = Vector2(60, 0)
 
 [node name="DepositStation" parent="Kitchen" instance=ExtResource("8_rl43a")]
 position = Vector2(-70, 60)
 
 [node name="TomatoSupplyStation" parent="Kitchen" instance=ExtResource("10_d1ilt")]
-position = Vector2(60, -10)
+position = Vector2(60, -20)
 
 [node name="Counter" parent="Kitchen" instance=ExtResource("10_6iyac")]
 position = Vector2(80, -40)
@@ -273,7 +274,10 @@ position = Vector2(80, 120)
 position = Vector2(120, 120)
 
 [node name="CheeseSupplyStation" parent="Kitchen" instance=ExtResource("17_b3802")]
-position = Vector2(60, 30)
+position = Vector2(60, 20)
+
+[node name="FlourSupplyStation" parent="Kitchen" instance=ExtResource("18_pdsj5")]
+position = Vector2(60, 40)
 
 [node name="DiningArea" type="Node2D" parent="."]
 

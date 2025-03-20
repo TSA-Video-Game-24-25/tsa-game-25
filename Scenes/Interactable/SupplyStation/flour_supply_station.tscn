@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://tjwdyxv2bbu4"]
+
+[ext_resource type="PackedScene" uid="uid://c7d2atcxh5pxm" path="res://Scenes/Interactable/supply_station.tscn" id="1_sw5qh"]
+[ext_resource type="PackedScene" uid="uid://1jidqaec03as" path="res://Scenes/Item/FoodItem/flour.tscn" id="2_ugdo8"]
+
+[node name="FlourSupplyStation" instance=ExtResource("1_sw5qh")]
+SuppliedItem = ExtResource("2_ugdo8")
+
+[node name="ColorRect" type="ColorRect" parent="." index="2"]
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0

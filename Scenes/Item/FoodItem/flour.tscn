@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://1jidqaec03as"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_kq0kn"]
+[ext_resource type="PackedScene" uid="uid://l4xac7p5a161" path="res://Scenes/Item/FoodItem/dough.tscn" id="2_2nims"]
+
+[node name="Flour" instance=ExtResource("1_kq0kn")]
+MixResult = ExtResource("2_2nims")
+
+[node name="Label" type="Label" parent="." index="1"]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+text = "Flour"
+horizontal_alignment = 1
+vertical_alignment = 1

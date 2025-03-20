@@ -24,6 +24,7 @@ func can_process_item() -> bool:
 
 
 func process_item() -> void:
+	main.waiting_customers.erase(customer)
 	await customer.pickup_item()
 	
 	heldItem.queue_free()
