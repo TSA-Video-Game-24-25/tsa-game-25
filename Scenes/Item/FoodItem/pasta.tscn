@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cea534aba0dhb"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_gr0oo"]
+
+[node name="Pasta" instance=ExtResource("1_gr0oo")]

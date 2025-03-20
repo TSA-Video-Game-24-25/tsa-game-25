@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1k3s66u2ncof"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_70dyw"]
+
+[node name="GratedCheese" instance=ExtResource("1_70dyw")]
+
+[node name="Label" type="Label" parent="." index="1"]
+offset_left = -28.0
+offset_top = -25.0
+offset_right = 28.0
+offset_bottom = 25.0
+text = "Grated
+Cheese"
+horizontal_alignment = 1
+vertical_alignment = 1

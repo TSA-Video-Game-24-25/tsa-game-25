@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://l4xac7p5a161"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_irk6a"]
+[ext_resource type="PackedScene" uid="uid://cxpjpu6guqahu" path="res://Scenes/Item/FoodItem/bread.tscn" id="2_ipm30"]
+[ext_resource type="PackedScene" uid="uid://cea534aba0dhb" path="res://Scenes/Item/FoodItem/pasta.tscn" id="2_lobm2"]
+
+[node name="Dough" instance=ExtResource("1_irk6a")]
+CutResult = ExtResource("2_lobm2")
+CookResult = ExtResource("2_ipm30")
+
+[node name="Label" type="Label" parent="." index="1"]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+text = "Dough"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxpjpu6guqahu"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_xwc1q"]
+
+[node name="Bread" instance=ExtResource("1_xwc1q")]
+
+[node name="Label" type="Label" parent="." index="1"]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+text = "Bread"
+horizontal_alignment = 1
+vertical_alignment = 1
