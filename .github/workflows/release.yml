@@ -91,13 +91,11 @@ jobs:
           mkdir -p /root/.ssh
           ssh-keyscan github.com >> /root/.ssh/known_hosts
           echo "added github to hosts"
-          cat ~/.ssh/known_hosts
       - name: Debug SSH Key and Connection
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.ACTIONS_DEPLOY_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
           ssh -vT -i ~/.ssh/id_rsa git@github.com || true
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v4
