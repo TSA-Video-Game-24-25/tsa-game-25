@@ -65,3 +65,10 @@ func set_recipe_result():
 				MixResult = result
 			Recipes.actions.COOK:
 				CookResult = result
+			Recipes.actions.AUTO:
+				var parent = get_parent()
+				var new_item = result.instantiate()
+				
+				parent.add_item(new_item)
+				
+				queue_free()

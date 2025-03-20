@@ -13,14 +13,22 @@ func try_add_item(item: FoodItem) -> bool:
 	if heldItem != null:
 		return false
 	
-	heldItem = item
-	
-	item.reparent(self)
-	item.position = $HoldPos.position
+	add_item(item)
 	
 	_on_add_item()
 	
 	return true
+
+
+func add_item(item: Item):
+	heldItem = item
+	
+	if item.get_parent():
+		item.reparent(self)
+	else:
+		add_child(item)
+	
+	item.position = $HoldPos.position
 
 
 func interact(_player: Player) -> void:

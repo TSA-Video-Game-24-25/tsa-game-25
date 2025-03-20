@@ -5,6 +5,7 @@ enum actions {
 	CUT,
 	MIX,
 	COOK,
+	AUTO,
 }
 
 #	[ FoodItemName1, FoodItemName2, ... ]: [ Action, ResultItem ]
