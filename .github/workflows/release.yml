@@ -88,8 +88,8 @@ jobs:
         run: |
           apt-get update && apt-get install -y rsync
           apt-get update && apt-get install -y openssh-client
-          mkdir -p ~/.ssh
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          mkdir -p /root/.ssh
+          ssh-keyscan github.com >> /root/.ssh/known_hosts
           echo "added github to hosts"
           cat ~/.ssh/known_hosts
       - name: Debug SSH Key and Connection
