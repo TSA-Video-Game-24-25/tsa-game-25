@@ -24,4 +24,5 @@ MixResult = ExtResource("2_clia5")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 texture_filter = 0
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_uyog0")
