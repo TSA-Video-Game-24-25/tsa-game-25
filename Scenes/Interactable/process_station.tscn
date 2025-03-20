@@ -6,3 +6,5 @@
 [node name="ProcessStation" instance=ExtResource("1_62ucs")]
 script = ExtResource("2_1mvlc")
 ProcessGUI = null
+
+[node name="HoldPos" type="Marker2D" parent="." index="2"]

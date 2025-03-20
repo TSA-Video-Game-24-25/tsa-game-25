@@ -84,13 +84,17 @@ jobs:
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Web" "$EXPORT_DIR/web/index.html"
-      - name: Install rsync 📚
+      - name: Install deps
         run: |
           apt-get update && apt-get install -y rsync
+          apt-get update && apt-get install -y openssh-client
+          mkdir -p /root/.ssh
+          ssh-keyscan github.com >> /root/.ssh/known_hosts
+          echo "added github to hosts"
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          repository-name: TSA-Video-Game-24-24/game.github.io
+          repository-name: TSA-Video-Game-24-25/game.github.io
           ssh-key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           branch: main
           folder: build/web
@@ -162,16 +166,20 @@ jobs:
         with:
           name: mac-build
           path: build/mac
-
+      - name: Rename files
+        run: |
+          mv build/windows/app.exe build/Windows.exe
+          mv build/linux/app.x86_64 build/Linux.x86_64
+          mv build/mac/app.zip build/MacOS.zip
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ env.VERSION }}
           files: |
-            build/windows/*
-            build/linux/*
-            build/mac/*
-          body: "Web build: hosted on GitHub Pages (will be a link soon)"
+            build/Windows.exe
+            build/Linux.x86_64
+            build/MacOS.zip
+          body: "Web build: [Github Pages](https://tsa-video-game-24-25.github.io/game.github.io/)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

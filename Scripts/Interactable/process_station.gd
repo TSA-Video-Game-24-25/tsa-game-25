@@ -16,7 +16,7 @@ func try_add_item(item: FoodItem) -> bool:
 	heldItem = item
 	
 	item.reparent(self)
-	item.position = Vector2.ZERO
+	item.position = $HoldPos.position
 	
 	_on_add_item()
 	

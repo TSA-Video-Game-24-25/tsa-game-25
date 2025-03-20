@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://k2nme2wplxyv"]
+[gd_scene load_steps=4 format=3 uid="uid://k2nme2wplxyv"]
 
 [ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_dyheu"]
 [ext_resource type="Script" uid="uid://c8m837ko0avot" path="res://Scripts/Interactable/ProcessStation/deposit_station.gd" id="2_2tmys"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rn26"]
+size = Vector2(40, 20)
+
 [node name="DepositStation" instance=ExtResource("1_dyheu")]
 script = ExtResource("2_2tmys")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_4rn26")

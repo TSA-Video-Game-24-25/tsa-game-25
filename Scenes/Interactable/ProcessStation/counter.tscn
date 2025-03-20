@@ -42,3 +42,6 @@ ProcessGUI = ExtResource("3_f4cst")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_72gsp")
+
+[node name="HoldPos" parent="." index="2"]
+position = Vector2(0, -5)

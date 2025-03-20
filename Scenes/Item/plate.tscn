@@ -28,4 +28,5 @@ CookTime = 5
 IsDone = false
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_88yqo")
