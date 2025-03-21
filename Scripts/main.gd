@@ -13,7 +13,8 @@ class_name Main
 @onready var exit_pos: Vector2 = $Kitchen/CustomerExitPos.position
 @onready var out_pos: Vector2 = $Kitchen/CustomerOutPos.position
 
-var day_num := 1
+var day_num := 0
+var time_remaining: float = 0
 var score := 0
 
 enum cameraMode {
@@ -24,16 +25,16 @@ enum cameraMode {
 
 
 func _ready() -> void:
-	for x in range(3):
-		var new_customer = load("res://Scenes/Customer.tscn").instantiate()
-		new_customer.position = Vector2(50, 150 + (x*50))
-		new_customers.append(new_customer)
-		add_child(new_customer)
-		await new_customer.done_moving
+	start_day()
 
 
 func _process(_delta: float) -> void:
 	$Camera2D.global_position = get_camera_pos()
+	
+	time_remaining -= _delta
+	
+	if time_remaining <= 0:
+		end_day()
 
 
 func get_available_recipes() -> Array[PackedScene]:
@@ -72,3 +73,27 @@ func get_camera_pos():
 			new_pos = Players[0].global_position
 		
 	return new_pos
+
+
+func spawn_customer() -> Customer:
+	var new_customer = load("res://Scenes/Customer.tscn").instantiate()
+	
+	new_customers.append(new_customer)
+	new_customer.position = $Kitchen/CustomerOutPos.position
+	add_child(new_customer)
+	
+	return new_customer
+
+
+func start_day():
+	day_num += 1
+	
+	time_remaining = 120 + (day_num * 15)
+	
+	for x in range(3):
+		var new_customer = spawn_customer()
+		await get_tree().create_timer(1).timeout
+
+
+func end_day():
+	pass
