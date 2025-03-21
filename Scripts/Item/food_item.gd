@@ -8,3 +8,4 @@ class_name FoodItem
 @export var StoveResult: PackedScene
 @export var CookTime: int = 5
 @export var IsDone := false
+@export var Score := 0
