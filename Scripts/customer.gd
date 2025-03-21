@@ -8,6 +8,7 @@ signal done_moving
 
 @onready var main: Main = get_tree().get_root().get_node("Main")
 @onready var possible_orders = main.get_available_recipes()
+@onready var baseUi := main.find_child("Ui").find_child("CanvasLayer").find_child("VBoxContainer").find_child("base")
 
 var speed := 50
 var order: FoodItem
