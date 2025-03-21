@@ -25,7 +25,7 @@ var lineStart: Vector2
 
 func _ready() -> void:
 	var animations = $AnimatedSprite2D.sprite_frames.get_animation_names()
-	if randf() < .05:
+	if randf() < .02:
 		$AnimatedSprite2D.animation = animations[animations.size() - 1]
 	else:
 		$AnimatedSprite2D.animation = animations[randi_range(0, animations.size() - 2)]
