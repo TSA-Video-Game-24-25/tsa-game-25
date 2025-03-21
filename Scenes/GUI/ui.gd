@@ -27,6 +27,8 @@ func startDay() -> void:
 func endDay() -> void:
 	DayEnd.find_child("Label").text = DayEndStr % [main.day_num, main.score, main.total_score]
 	DayEnd.visible = true
-	await get_tree().create_timer(2.0).timeout
+	var dayEndBtn:Button = DayEnd.find_child("Button")
+	await dayEndBtn.pressed
 	DayEnd.visible = false
+	main.start_day()
 	return
