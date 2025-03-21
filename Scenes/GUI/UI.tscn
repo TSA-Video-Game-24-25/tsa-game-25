@@ -785,6 +785,7 @@ theme_override_font_sizes/font_size = 80
 text = "Next Day"
 
 [node name="EscapeMenu" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("3_csd48")
 
 [node name="Control" type="Control" parent="EscapeMenu"]
