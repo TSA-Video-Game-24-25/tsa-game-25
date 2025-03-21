@@ -4,30 +4,30 @@
 [ext_resource type="Texture2D" uid="uid://bav1kmqt0ci8o" path="res://Art/Stove (1).png" id="2_8kg6b"]
 [ext_resource type="Script" uid="uid://b6ex75kmjgnea" path="res://Scripts/Interactable/ProcessStation/stove.gd" id="2_yaluu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eeylc"]
-atlas = ExtResource("2_8kg6b")
-region = Rect2(0, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_yaluu"]
 atlas = ExtResource("2_8kg6b")
 region = Rect2(0, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_eeylc"]
+atlas = ExtResource("2_8kg6b")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_fv717"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaluu")
+}],
+"loop": true,
+"name": &"cooking",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eeylc")
 }],
 "loop": true,
 "name": &"off",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yaluu")
-}],
-"loop": true,
-"name": &"on",
 "speed": 5.0
 }]
 
@@ -41,7 +41,7 @@ CookSpeedMult = 1.0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_fv717")
-animation = &"off"
+animation = &"cooking"
 
 [node name="HoldPos" parent="." index="2"]
 position = Vector2(0, -2)
