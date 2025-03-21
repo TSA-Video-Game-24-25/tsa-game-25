@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bhbexrfd1uev4"]
+[gd_scene load_steps=35 format=4 uid="uid://bhbexrfd1uev4"]
 
 [ext_resource type="Script" uid="uid://bo3eopk0qerr7" path="res://Scripts/main.gd" id="1_5nuvl"]
 [ext_resource type="PackedScene" uid="uid://bp3u117gx1f5u" path="res://Scenes/player.tscn" id="1_qsjnw"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cputwghyptueh" path="res://Art/Chef Rat.png" id="18_fevyy"]
 [ext_resource type="PackedScene" uid="uid://bh6kj0jj7ehwr" path="res://Scenes/Interactable/SupplyStation/flour_supply_station.tscn" id="18_pdsj5"]
 [ext_resource type="Texture2D" uid="uid://bxdroedmdd05u" path="res://Art/Chef Coon.png" id="19_hibaj"]
+[ext_resource type="PackedScene" uid="uid://vkbkwsv4qhrx" path="res://Scenes/GUI/UI.tscn" id="22_ee4r6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3802"]
 texture = ExtResource("2_h1bgf")
@@ -311,6 +312,8 @@ input_map = {
 [node name="AnimatedSprite2D" parent="Player2" index="4"]
 sprite_frames = SubResource("SpriteFrames_7k868")
 animation = &"down"
+
+[node name="Ui" parent="." instance=ExtResource("22_ee4r6")]
 
 [editable path="Player"]
 [editable path="Player2"]
