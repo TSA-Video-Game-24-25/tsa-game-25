@@ -24,7 +24,3 @@ SuppliedItem = ExtResource("2_70nrq")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_lvpvw")
-
-[node name="ColorRect" parent="." index="2"]
-visible = false
-color = Color(1, 0.227451, 0, 1)
