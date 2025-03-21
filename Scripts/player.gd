@@ -9,6 +9,7 @@ const ACCELERATION := 800.0
 var canMove := true
 
 var heldItem: Item
+var preferredDirection := Vector2.UP
 
 @export var input_map := {
 	"move_up": "w",
@@ -37,6 +38,10 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var direction := get_dir()
+	
+	if direction.length_squared() != 0:
+		preferredDirection = direction
+	
 	if canMove:
 		velocity = velocity.move_toward(direction * SPEED, delta * ACCELERATION)
 	else:
@@ -116,7 +121,7 @@ func interact_if_pressed() -> void:
 	var overlapping_bodies = $InteractArea.get_overlapping_bodies()
 	overlapping_bodies.sort_custom(
 		func(a, b):
-			return position.distance_to(a.position) < position.distance_to(b.position)
+			return (position + preferredDirection).distance_to(a.position) < (position + preferredDirection).distance_to(b.position)
 	)
 	
 	for body in overlapping_bodies:
@@ -136,7 +141,7 @@ func process_if_pressed() -> void:
 	var overlapping_bodies = $InteractArea.get_overlapping_bodies()
 	overlapping_bodies.sort_custom(
 		func(a, b):
-			return position.distance_to(a.position) < position.distance_to(b.position)
+			return (position + preferredDirection).distance_to(a.position) < (position + preferredDirection).distance_to(b.position)
 	)
 	
 	for body in overlapping_bodies:
