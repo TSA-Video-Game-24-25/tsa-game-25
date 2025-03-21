@@ -31,6 +31,10 @@ func _ready() -> void:
 		$AnimatedSprite2D.animation = animations[randi_range(0, animations.size() - 2)]
 	
 	order = possible_orders.pick_random().instantiate()
+	await move_to_pos(main.exit_pos)
+	
+	if self in main.new_customers:
+		lineUpVertical(main.order_pos, main.new_customers)
 
 
 func addToUi() -> void:
@@ -51,8 +55,8 @@ func addToUi() -> void:
 	else:
 		print(order.name, " does not have a spriteframe!")
 		
-	newUi.get_child(1).animation = $AnimatedSprite2D.animation
-	newUi.visible = true
+	customerUi.get_child(1).animation = $AnimatedSprite2D.animation
+	customerUi.visible = true
 
 
 func _process(delta: float) -> void:

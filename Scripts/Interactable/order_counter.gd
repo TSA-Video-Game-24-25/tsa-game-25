@@ -12,14 +12,11 @@ func interact(_player: Player):
 	
 	main.new_customers.remove_at(0)
 	main.waiting_customers.append(customer)
-<<<<<<< HEAD
-	customer.lineUp(Vector2(-50, 120), main.waiting_customers)
-	customer.addToUi()
-=======
+
 	customer.lineUpHorizontal(Vector2(-100, 100), main.waiting_customers)
+	customer.addToUi()
 	
 	if len(main.new_customers) >= 3:
 		return
 	
 	main.spawn_customer()
->>>>>>> 891ee79fe5326003f6bdc2cab675360eb3840e15
