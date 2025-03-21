@@ -16,6 +16,7 @@ class_name Main
 var day_num := 0
 var time_remaining: float = 0
 var score := 0
+var total_score := 0
 
 enum cameraMode {
 	DEFAULT,
@@ -31,9 +32,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	$Camera2D.global_position = get_camera_pos()
 	
-	time_remaining -= _delta
+	time_remaining = max( 0, time_remaining - _delta )
 	
-	if time_remaining <= 0:
+	if time_remaining == 0:
 		end_day()
 
 
@@ -86,9 +87,13 @@ func spawn_customer() -> Customer:
 
 
 func start_day():
+	score = 0
 	day_num += 1
 	
 	time_remaining = 120 + (day_num * 15)
+	
+	for player: Player in Players:
+		player.canMove = true
 	
 	for x in range(3):
 		var new_customer = spawn_customer()
@@ -96,4 +101,7 @@ func start_day():
 
 
 func end_day():
-	pass
+	total_score += score
+	
+	for player: Player in Players:
+		player.canMove = false
