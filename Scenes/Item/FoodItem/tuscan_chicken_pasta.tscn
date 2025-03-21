@@ -4,6 +4,7 @@
 
 [node name="TuscanChickenPasta" instance=ExtResource("1_qnvmc")]
 IsDone = true
+Score = 250
 
 [node name="Label" type="Label" parent="." index="1"]
 offset_left = -50.0

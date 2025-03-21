@@ -4,6 +4,7 @@
 
 [node name="ChickenSandwich" instance=ExtResource("1_5hts4")]
 IsDone = true
+Score = 220
 
 [node name="Label" type="Label" parent="." index="1"]
 offset_left = -50.0
