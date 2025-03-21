@@ -34,3 +34,4 @@ func process_item() -> void:
 	can_interact = true
 	
 	customer.leave()
+	main.score += customer.order.Score
