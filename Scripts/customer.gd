@@ -49,6 +49,7 @@ func _process(delta: float) -> void:
 
 
 func move_to_pos(pos: Vector2) -> void:
+	inLine = false
 	targetPos = pos
 	
 	await done_moving
