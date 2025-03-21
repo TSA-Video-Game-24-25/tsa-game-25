@@ -34,6 +34,9 @@ func lineUp(startPos: Vector2, customersArray: Array[Customer]):
 	setTargetPositionInLine()
 
 func _ready() -> void:
+	var animations = $AnimatedSprite2D.sprite_frames.get_animation_names()
+	$AnimatedSprite2D.animation = animations[randi_range(0, animations.size()-1)]
+	
 	lineUp(main.order_pos, main.new_customers)
 	order = possible_orders.pick_random().instantiate()
 
