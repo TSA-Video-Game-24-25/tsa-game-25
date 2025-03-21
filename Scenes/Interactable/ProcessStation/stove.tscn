@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://c16kec6l8yuek"]
+
+[ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_80540"]
+[ext_resource type="Texture2D" uid="uid://bav1kmqt0ci8o" path="res://Art/Stove (1).png" id="2_8kg6b"]
+[ext_resource type="Script" uid="uid://b6ex75kmjgnea" path="res://Scripts/Interactable/ProcessStation/stove.gd" id="2_yaluu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eeylc"]
+atlas = ExtResource("2_8kg6b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaluu"]
+atlas = ExtResource("2_8kg6b")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fv717"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eeylc")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaluu")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_8kg6b"]
+/colors/a = Color(0, 0.815686, 0, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0.745098, 0, 1)
+
+[node name="Stove" instance=ExtResource("1_80540")]
+script = ExtResource("2_yaluu")
+CookSpeedMult = 1.0
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_fv717")
+animation = &"off"
+
+[node name="HoldPos" parent="." index="2"]
+position = Vector2(0, -2)
+
+[node name="ProgressBar" type="ProgressBar" parent="." index="3"]
+offset_left = -10.0
+offset_top = -15.0
+offset_right = 10.0
+offset_bottom = -10.0
+theme = SubResource("Theme_8kg6b")
+show_percentage = false
