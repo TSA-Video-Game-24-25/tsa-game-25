@@ -13,10 +13,13 @@ class_name Main
 @onready var exit_pos: Vector2 = $Kitchen/CustomerExitPos.position
 @onready var out_pos: Vector2 = $Kitchen/CustomerOutPos.position
 
+@onready var ui:UI = $Ui
+
 var day_num := 0
 var time_remaining: float = 0
 var score := 0
 var total_score := 0
+var game_running := false
 
 enum cameraMode {
 	DEFAULT,
@@ -34,7 +37,7 @@ func _process(_delta: float) -> void:
 	
 	time_remaining = max( 0, time_remaining - _delta )
 	
-	if time_remaining == 0:
+	if time_remaining == 0 && game_running:
 		end_day()
 
 
@@ -89,8 +92,10 @@ func spawn_customer() -> Customer:
 func start_day():
 	score = 0
 	day_num += 1
+	ui.startDay()
 	
 	time_remaining = 150 + (day_num * 20)
+	game_running = true
 	
 	for player: Player in Players:
 		player.canMove = true
@@ -101,7 +106,10 @@ func start_day():
 
 
 func end_day():
+	game_running = false
 	total_score += score
 	
 	for player: Player in Players:
 		player.canMove = false
+	
+	ui.endDay()
