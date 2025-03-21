@@ -112,7 +112,7 @@ func interact_if_pressed() -> void:
 	
 	if not canMove:
 		return
-		
+	
 	var overlapping_bodies = $InteractArea.get_overlapping_bodies()
 	overlapping_bodies.sort_custom(
 		func(a, b):

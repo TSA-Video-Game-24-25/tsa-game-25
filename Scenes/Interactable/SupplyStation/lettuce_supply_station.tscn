@@ -24,7 +24,3 @@ SuppliedItem = ExtResource("2_mcyl2")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_thib0")
-
-[node name="ColorRect" parent="." index="2"]
-visible = false
-color = Color(0, 0.717923, 0, 1)
