@@ -4,45 +4,37 @@ class_name Customer
 
 signal done_moving
 
-@onready var main: Main = get_tree().get_root().get_node("Main")
-
-var aStar = AStar2D.new()
-
-@onready var possible_orders = main.get_available_recipes()
-var speed := 50
-
 @export var targetPos: Vector2
+
+@onready var main: Main = get_tree().get_root().get_node("Main")
+@onready var possible_orders = main.get_available_recipes()
+
+var speed := 50
 var order: FoodItem
 
-@export var inLine: bool = false
+var inLineVertical: bool = false
+var inLineHorizontal: bool = false
 var line: Array[Customer]
 var lineStart: Vector2
 
-func setTargetPositionInLine():
-	var linePosition := line.find(self)
-	if linePosition > 0:
-		var customerInfront := line[linePosition-1]
-		var collisionInfront: CollisionShape2D = customerInfront.find_child("CollisionShape2D")
-		targetPos = customerInfront.targetPos + Vector2(0, collisionInfront.shape.get_rect().size.y * 1.1)
-	else:
-		targetPos = lineStart
-
-func lineUp(startPos: Vector2, customersArray: Array[Customer]):
-	lineStart = startPos
-	line = customersArray
-	inLine = true
-	setTargetPositionInLine()
 
 func _ready() -> void:
 	var animations = $AnimatedSprite2D.sprite_frames.get_animation_names()
-	$AnimatedSprite2D.animation = animations[randi_range(0, animations.size()-1)]
+	if randf() < .05:
+		$AnimatedSprite2D.animation = animations[animations.size() - 1]
+	else:
+		$AnimatedSprite2D.animation = animations[randi_range(0, animations.size() - 2)]
 	
-	lineUp(main.order_pos, main.new_customers)
 	order = possible_orders.pick_random().instantiate()
+	
+	await move_to_pos(main.exit_pos)
+	
+	if self in main.new_customers:
+		lineUpVertical(main.order_pos, main.new_customers)
 
 
 func _process(delta: float) -> void:
-	if inLine:
+	if inLineVertical or inLineHorizontal:
 		setTargetPositionInLine()
 		
 	if targetPos:
@@ -51,8 +43,38 @@ func _process(delta: float) -> void:
 		done_moving.emit()
 
 
+func setTargetPositionInLine():
+	var linePosition := line.find(self)
+	if linePosition > 0:
+		var customerInfront := line[linePosition-1]
+		var collisionInfront: CollisionShape2D = customerInfront.find_child("CollisionShape2D")
+		targetPos = customerInfront.targetPos + Vector2(
+			collisionInfront.shape.get_rect().size.x * 1.1 if inLineHorizontal else 0,
+			collisionInfront.shape.get_rect().size.y * 1.1 if inLineVertical else 0
+		)
+	else:
+		targetPos = lineStart
+
+
+func lineUpVertical(startPos: Vector2, customersArray: Array[Customer]):
+	lineStart = startPos
+	line = customersArray
+	inLineVertical = true
+	inLineHorizontal = false
+	setTargetPositionInLine()
+
+
+func lineUpHorizontal(startPos: Vector2, customersArray: Array[Customer]):
+	lineStart = startPos
+	line = customersArray
+	inLineHorizontal = true
+	inLineVertical = false
+	setTargetPositionInLine()
+
+
 func move_to_pos(pos: Vector2) -> void:
-	inLine = false
+	inLineVertical = false
+	inLineHorizontal = false
 	targetPos = pos
 	
 	await done_moving
