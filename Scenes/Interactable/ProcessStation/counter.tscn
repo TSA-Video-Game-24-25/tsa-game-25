@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://7e46q445uiq1"]
 
 [ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_l7cy8"]
-[ext_resource type="Script" uid="uid://by6v281f8c156" path="res://Scripts/Interactable/ProcessStation/counter.gd" id="2_p85sc"]
+[ext_resource type="Script" uid="uid://r5pvyg6iratd" path="res://Scripts/Interactable/ProcessStation/counter.gd" id="2_p85sc"]
 [ext_resource type="PackedScene" uid="uid://cyhhoqvrx8f8k" path="res://Scenes/GUI/ProcessGui/mix_gui.tscn" id="3_f4cst"]
 [ext_resource type="Texture2D" uid="uid://dwihfj6iwpfqb" path="res://Art/Counter.png" id="4_e4hf0"]
 [ext_resource type="Texture2D" uid="uid://c0r784bumr0hh" path="res://Art/Counter-corner.png" id="5_72gsp"]

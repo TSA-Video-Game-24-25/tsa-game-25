@@ -122,6 +122,8 @@ func interact_if_pressed() -> void:
 	for body in overlapping_bodies:
 		if not body is Interactable:
 			continue
+		if not body.can_interact:
+			continue
 		
 		body.interact(self)
 		return
