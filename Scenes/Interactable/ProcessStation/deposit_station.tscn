@@ -1,13 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://k2nme2wplxyv"]
+[gd_scene load_steps=7 format=3 uid="uid://k2nme2wplxyv"]
 
 [ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_dyheu"]
 [ext_resource type="Script" uid="uid://c8m837ko0avot" path="res://Scripts/Interactable/ProcessStation/deposit_station.gd" id="2_2tmys"]
+[ext_resource type="Texture2D" uid="uid://cec0b1dycf0xu" path="res://Art/Pick up_Order Counter.png" id="3_4cmtu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rn26"]
-size = Vector2(40, 20)
+size = Vector2(25, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm0ag"]
+atlas = ExtResource("3_4cmtu")
+region = Rect2(1, 1, 32, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrkcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm0ag")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="DepositStation" instance=ExtResource("1_dyheu")]
 script = ExtResource("2_2tmys")
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("RectangleShape2D_4rn26")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -0.32)
+sprite_frames = SubResource("SpriteFrames_nrkcc")

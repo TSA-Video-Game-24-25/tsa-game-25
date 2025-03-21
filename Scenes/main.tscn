@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bx0tpug4tqa5b" path="res://Scenes/Interactable/order_counter.tscn" id="15_k12tt"]
 [ext_resource type="PackedScene" uid="uid://blxp4mgixcyo5" path="res://Scenes/Interactable/SupplyStation/cheese_supply_station.tscn" id="17_b3802"]
 [ext_resource type="Texture2D" uid="uid://cputwghyptueh" path="res://Art/Chef Rat.png" id="18_fevyy"]
-[ext_resource type="PackedScene" path="res://Scenes/Interactable/SupplyStation/flour_supply_station.tscn" id="18_pdsj5"]
+[ext_resource type="PackedScene" uid="uid://bh6kj0jj7ehwr" path="res://Scenes/Interactable/SupplyStation/flour_supply_station.tscn" id="18_pdsj5"]
 [ext_resource type="Texture2D" uid="uid://bxdroedmdd05u" path="res://Art/Chef Coon.png" id="19_hibaj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3802"]
@@ -194,6 +194,12 @@ position = Vector2(-40, -60)
 
 [node name="Counter27" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(-40, 60)
+
+[node name="Counter28" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-56, 60)
+
+[node name="Counter29" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-80, 60)
 
 [node name="Counter2" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(0, 60)
