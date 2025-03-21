@@ -351,8 +351,6 @@ can_interact = false
 [node name="Stove2" parent="Kitchen" instance=ExtResource("19_ee4r6")]
 position = Vector2(-60, 10)
 
-[node name="DiningArea" type="Node2D" parent="."]
-
 [node name="Player" parent="." instance=ExtResource("1_qsjnw")]
 position = Vector2(20, 36)
 
