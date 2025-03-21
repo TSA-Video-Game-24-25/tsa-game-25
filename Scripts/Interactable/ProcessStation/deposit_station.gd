@@ -24,10 +24,13 @@ func can_process_item() -> bool:
 
 
 func process_item() -> void:
+	can_interact = false
 	main.waiting_customers.erase(customer)
+	
 	await customer.pickup_item()
 	
 	heldItem.queue_free()
 	heldItem = null
+	can_interact = true
 	
 	customer.leave()

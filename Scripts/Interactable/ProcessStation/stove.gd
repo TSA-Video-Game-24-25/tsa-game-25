@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 	else:
 		sprite.play("cooking")
 	
-	if not heldItem.CookResult:
+	if not heldItem.StoveResult:
 		return
 	
 	cook_time = max(0, cook_time - delta * CookSpeedMult)
