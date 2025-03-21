@@ -154,7 +154,28 @@ offset_left = -150.0
 offset_top = -90.0
 offset_right = 110.0
 offset_bottom = 60.0
-color = Color(0, 0, 0, 0.117647)
+color = Color(0, 0, 0, 0.196078)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -150.0
+offset_top = -90.0
+offset_right = -128.0
+offset_bottom = 60.0
+color = Color(0, 0, 0, 0.196078)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 88.0
+offset_top = -90.0
+offset_right = 110.0
+offset_bottom = 60.0
+color = Color(0, 0, 0, 0.196078)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = -128.0
+offset_top = -90.0
+offset_right = 88.0
+offset_bottom = -68.0
+color = Color(0, 0, 0, 0.196078)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(-20, 40)
@@ -333,14 +354,14 @@ position = Vector2(-60, 10)
 [node name="DiningArea" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_qsjnw")]
-position = Vector2(26, -21)
+position = Vector2(20, 36)
 
 [node name="AnimatedSprite2D" parent="Player" index="4"]
 sprite_frames = SubResource("SpriteFrames_u50mg")
 animation = &"down"
 
 [node name="Player2" parent="." instance=ExtResource("1_qsjnw")]
-position = Vector2(-93, 35)
+position = Vector2(-69, 35)
 input_map = {
 "interact": "o",
 "move_down": "k",
