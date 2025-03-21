@@ -65,6 +65,9 @@ func set_recipe_result():
 				MixResult = result
 			Recipes.actions.COOK:
 				CookResult = result
+			Recipes.actions.STOVE:
+				StoveResult = result
+			
 			Recipes.actions.AUTO:
 				var parent = get_parent()
 				var new_item = result.instantiate()

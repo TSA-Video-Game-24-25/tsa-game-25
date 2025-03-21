@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://blxp4mgixcyo5" path="res://Scenes/Interactable/SupplyStation/cheese_supply_station.tscn" id="17_b3802"]
 [ext_resource type="Texture2D" uid="uid://cputwghyptueh" path="res://Art/Chef Rat.png" id="18_fevyy"]
 [ext_resource type="PackedScene" uid="uid://bh6kj0jj7ehwr" path="res://Scenes/Interactable/SupplyStation/flour_supply_station.tscn" id="18_pdsj5"]
+[ext_resource type="PackedScene" uid="uid://c16kec6l8yuek" path="res://Scenes/Interactable/ProcessStation/stove.tscn" id="19_ee4r6"]
 [ext_resource type="Texture2D" uid="uid://bxdroedmdd05u" path="res://Art/Chef Coon.png" id="19_hibaj"]
 [ext_resource type="PackedScene" uid="uid://vkbkwsv4qhrx" path="res://Scenes/GUI/UI.tscn" id="22_ee4r6"]
 
@@ -209,6 +210,27 @@ can_interact = false
 position = Vector2(0, 60)
 can_interact = false
 
+[node name="Counter13" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-20, 10)
+
+[node name="Counter31" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-80, 10)
+
+[node name="Counter32" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-100, 10)
+
+[node name="Counter33" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-118, 10)
+can_interact = false
+
+[node name="Counter35" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-60, 10)
+can_interact = false
+
+[node name="Counter34" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-40, 10)
+can_interact = false
+
 [node name="cooking_station" parent="Kitchen" instance=ExtResource("5_nrck8")]
 position = Vector2(-71, -40)
 
@@ -249,7 +271,7 @@ position = Vector2(-120, 40)
 position = Vector2(-120, 20)
 
 [node name="Counter12" parent="Kitchen" instance=ExtResource("10_6iyac")]
-position = Vector2(-120, -20)
+position = Vector2(-120, 0)
 
 [node name="Counter17" parent="Kitchen" instance=ExtResource("10_6iyac")]
 position = Vector2(-120, -40)
@@ -264,7 +286,7 @@ position = Vector2(80, -60)
 position = Vector2(-120, 60)
 
 [node name="PlateSupplyStation" parent="Kitchen" instance=ExtResource("8_waob2")]
-position = Vector2(-120, 0)
+position = Vector2(-120, -20)
 
 [node name="Counter21" parent="Kitchen" instance=ExtResource("14_wsu2k")]
 position = Vector2(80, 60)
@@ -290,16 +312,24 @@ position = Vector2(60, 20)
 [node name="FlourSupplyStation" parent="Kitchen" instance=ExtResource("18_pdsj5")]
 position = Vector2(60, 40)
 
+[node name="Stove" parent="Kitchen" instance=ExtResource("19_ee4r6")]
+position = Vector2(-40, 10)
+can_interact = false
+
+[node name="Stove2" parent="Kitchen" instance=ExtResource("19_ee4r6")]
+position = Vector2(-60, 10)
+
 [node name="DiningArea" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_qsjnw")]
+position = Vector2(26, -21)
 
 [node name="AnimatedSprite2D" parent="Player" index="4"]
 sprite_frames = SubResource("SpriteFrames_u50mg")
 animation = &"down"
 
 [node name="Player2" parent="." instance=ExtResource("1_qsjnw")]
-position = Vector2(-50, 16)
+position = Vector2(-93, 35)
 input_map = {
 "interact": "o",
 "move_down": "k",

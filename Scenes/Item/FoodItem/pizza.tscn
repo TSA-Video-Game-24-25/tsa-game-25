@@ -1,14 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpjrmed4r7ges"]
+[gd_scene load_steps=5 format=3 uid="uid://cpjrmed4r7ges"]
 
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_pe6g8"]
+[ext_resource type="Texture2D" uid="uid://bo1xidxpfxbed" path="res://Art/Food/Meals.png" id="2_ft6e3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5qtq"]
+atlas = ExtResource("2_ft6e3")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ayun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5qtq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Pizza" instance=ExtResource("1_pe6g8")]
+Score = 150
 
-[node name="Label" type="Label" parent="." index="1"]
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-text = "Pizza"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_5ayun")

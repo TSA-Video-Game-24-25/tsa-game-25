@@ -1,12 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://dg67nqellhdvi"]
 
 [ext_resource type="PackedScene" uid="uid://b7g20lxgahn0e" path="res://Scenes/item.tscn" id="1_bpxn0"]
-[ext_resource type="Script" uid="uid://c03dryanwd8xl" path="res://Scripts/Item/food_item.gd" id="2_nspga"]
+[ext_resource type="Script" uid="uid://bvi4o18f26hkn" path="res://Scripts/Item/food_item.gd" id="2_nspga"]
 
 [node name="FoodItem" instance=ExtResource("1_bpxn0")]
 script = ExtResource("2_nspga")
 MixResult = null
 CutResult = null
 CookResult = null
+StoveResult = null
 CookTime = 5
 IsDone = false
+Score = 0
