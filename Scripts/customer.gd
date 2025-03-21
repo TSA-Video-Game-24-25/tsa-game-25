@@ -7,6 +7,10 @@ signal done_moving
 @export var targetPos: Vector2
 
 @onready var main: Main = get_tree().get_root().get_node("Main")
+
+var aStar = AStar2D.new()
+var customerUi:Control
+
 @onready var possible_orders = main.get_available_recipes()
 @onready var baseUi := main.find_child("Ui").find_child("CanvasLayer").find_child("VBoxContainer").find_child("base")
 
@@ -27,24 +31,32 @@ func _ready() -> void:
 		$AnimatedSprite2D.animation = animations[randi_range(0, animations.size() - 2)]
 	
 	order = possible_orders.pick_random().instantiate()
-	var newUi := baseUi.duplicate()
-	baseUi.get_parent().add_child(newUi)
-	
-	var orderSpriteframes = order.find_child("AnimatedSprite2D").sprite_frames
-	if orderSpriteframes != null:
-		var foodFrame:AnimatedSprite2D = newUi.get_child(1)
-		foodFrame.sprite_frames.set_frame("default", 0, orderSpriteframes.get_frame_texture("default", 0))
-		#foodFrame.animation = "default"
-	else:
-		print(order.name, " does not have a spriteframe!")
-		
-	newUi.get_child(1).animation = $AnimatedSprite2D.animation
-	newUi.visible = true
-	
 	await move_to_pos(main.exit_pos)
 	
 	if self in main.new_customers:
 		lineUpVertical(main.order_pos, main.new_customers)
+
+
+func addToUi() -> void:
+	customerUi = baseUi.duplicate()
+	baseUi.get_parent().add_child(customerUi)
+	
+	customerUi.get_child(1).animation = $AnimatedSprite2D.animation
+	customerUi.visible = true
+	
+	var orderSpriteframes = order.find_child("AnimatedSprite2D")
+	if orderSpriteframes != null:
+		var foodFrame:AnimatedSprite2D = customerUi.get_child(2)
+		var clonedFrame:AnimatedSprite2D = orderSpriteframes.duplicate()
+		clonedFrame.global_scale = foodFrame.global_scale
+		clonedFrame.position = foodFrame.position
+		customerUi.add_child(clonedFrame)
+		
+	else:
+		print(order.name, " does not have a spriteframe!")
+		
+	customerUi.get_child(1).animation = $AnimatedSprite2D.animation
+	customerUi.visible = true
 
 
 func _process(delta: float) -> void:
@@ -99,6 +111,7 @@ func pickup_item() -> void:
 
 
 func leave() -> void:
+	customerUi.queue_free()
 	await move_to_pos(main.exit_pos)
 	await move_to_pos(main.out_pos)
 	queue_free()
