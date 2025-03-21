@@ -8,7 +8,7 @@ signal done_moving
 
 var aStar = AStar2D.new()
 
-var possible_orders = Recipes.recipes.values().map( func(x): return x[1] )
+@onready var possible_orders = main.get_available_recipes()
 var speed := 50
 
 @export var targetPos: Vector2
