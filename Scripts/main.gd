@@ -90,7 +90,7 @@ func start_day():
 	score = 0
 	day_num += 1
 	
-	time_remaining = 120 + (day_num * 15)
+	time_remaining = 150 + (day_num * 20)
 	
 	for player: Player in Players:
 		player.canMove = true
