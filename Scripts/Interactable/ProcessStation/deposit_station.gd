@@ -17,7 +17,7 @@ func can_process_item() -> bool:
 		return false
 	
 	for _customer in main.waiting_customers:
-		if heldItem.get_class() == _customer.order.get_class():
+		if heldItem.name == _customer.order.name:
 			customer = _customer
 			return true
 	return false
