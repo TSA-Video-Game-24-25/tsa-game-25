@@ -339,7 +339,6 @@ position = Vector2(60, 40)
 
 [node name="Stove" parent="Kitchen" instance=ExtResource("19_ee4r6")]
 position = Vector2(-40, 10)
-can_interact = false
 
 [node name="Stove2" parent="Kitchen" instance=ExtResource("19_ee4r6")]
 position = Vector2(-60, 10)
