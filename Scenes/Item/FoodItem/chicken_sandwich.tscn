@@ -1,16 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs4jqisssrgip"]
+[gd_scene load_steps=5 format=3 uid="uid://cs4jqisssrgip"]
 
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_5hts4"]
+[ext_resource type="Texture2D" uid="uid://bo1xidxpfxbed" path="res://Art/Food/Meals.png" id="2_wqdep"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kybq"]
+atlas = ExtResource("2_wqdep")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6oh3e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kybq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="ChickenSandwich" instance=ExtResource("1_5hts4")]
 IsDone = true
+Score = 220
 
-[node name="Label" type="Label" parent="." index="1"]
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-text = "Chicken
-Sandwich"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_6oh3e")

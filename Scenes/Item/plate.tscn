@@ -24,6 +24,7 @@ script = ExtResource("2_rwq1w")
 MixResult = null
 CutResult = null
 CookResult = null
+StoveResult = null
 CookTime = 5
 IsDone = false
 

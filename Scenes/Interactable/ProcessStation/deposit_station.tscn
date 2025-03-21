@@ -31,3 +31,6 @@ shape = SubResource("RectangleShape2D_4rn26")
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(0, -0.32)
 sprite_frames = SubResource("SpriteFrames_nrkcc")
+
+[node name="HoldPos" parent="." index="2"]
+position = Vector2(0, -6)
