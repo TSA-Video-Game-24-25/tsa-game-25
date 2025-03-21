@@ -26,6 +26,19 @@ func _ready() -> void:
 		$AnimatedSprite2D.animation = animations[randi_range(0, animations.size() - 2)]
 	
 	order = possible_orders.pick_random().instantiate()
+	var newUi := baseUi.duplicate()
+	baseUi.get_parent().add_child(newUi)
+	
+	var orderSpriteframes = order.find_child("AnimatedSprite2D").sprite_frames
+	if orderSpriteframes != null:
+		var foodFrame:AnimatedSprite2D = newUi.get_child(1)
+		foodFrame.sprite_frames.set_frame("default", 0, orderSpriteframes.get_frame_texture("default", 0))
+		#foodFrame.animation = "default"
+	else:
+		print(order.name, " does not have a spriteframe!")
+		
+	newUi.get_child(1).animation = $AnimatedSprite2D.animation
+	newUi.visible = true
 	
 	await move_to_pos(main.exit_pos)
 	
