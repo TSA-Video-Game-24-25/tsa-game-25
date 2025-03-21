@@ -1,15 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkv3wyu7vyvfy"]
+[gd_scene load_steps=5 format=3 uid="uid://dkv3wyu7vyvfy"]
 
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_w3d15"]
+[ext_resource type="Texture2D" uid="uid://cs0n6cpmbsdqb" path="res://Art/Food/Tomato Paste & slice.png" id="2_vnow3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyxbn"]
+atlas = ExtResource("2_vnow3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3d15"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyxbn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="SlicedTomato" instance=ExtResource("1_w3d15")]
 
-[node name="Label" type="Label" parent="." index="1"]
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-text = "Sliced
-Tomato"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_w3d15")

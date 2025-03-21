@@ -1,17 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://1jidqaec03as"]
+[gd_scene load_steps=6 format=3 uid="uid://1jidqaec03as"]
 
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_kq0kn"]
 [ext_resource type="PackedScene" uid="uid://l4xac7p5a161" path="res://Scenes/Item/FoodItem/dough.tscn" id="2_2nims"]
+[ext_resource type="Texture2D" uid="uid://b1vc4os31okwy" path="res://Art/Food/Ingrediants.png" id="3_c7ila"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h67jv"]
+atlas = ExtResource("3_c7ila")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l3pi8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h67jv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Flour" instance=ExtResource("1_kq0kn")]
 MixResult = ExtResource("2_2nims")
-StoveResult = null
 
-[node name="Label" type="Label" parent="." index="1"]
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-text = "Flour"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_l3pi8")
