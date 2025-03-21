@@ -140,6 +140,7 @@ animations = [{
 }]
 
 [node name="Main" type="Node2D"]
+process_mode = 1
 texture_filter = 1
 script = ExtResource("1_5nuvl")
 CameraMode = 2

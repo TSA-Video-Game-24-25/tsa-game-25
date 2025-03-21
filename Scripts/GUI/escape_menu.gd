@@ -8,6 +8,7 @@ var page = 1
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("open_menu"):
 		visible = !visible
+		main.set_process(!visible)
 	
 	if not visible:
 		return
