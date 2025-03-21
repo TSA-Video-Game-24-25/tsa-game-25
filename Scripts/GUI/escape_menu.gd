@@ -15,3 +15,4 @@ func _process(delta: float) -> void:
 	for player: Player in main.Players:
 		if Input.is_action_just_pressed(player.get_input("move_left")) and page > 1:
 			pass
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://vkbkwsv4qhrx"]
+[gd_scene load_steps=82 format=3 uid="uid://vkbkwsv4qhrx"]
 
 [ext_resource type="Script" uid="uid://cgh2qpdg3a2vs" path="res://Scenes/GUI/ui.gd" id="1_2rnfa"]
 [ext_resource type="Texture2D" uid="uid://duhj3mbxxwy1l" path="res://Art/Customer Faces.png" id="1_huqb3"]
