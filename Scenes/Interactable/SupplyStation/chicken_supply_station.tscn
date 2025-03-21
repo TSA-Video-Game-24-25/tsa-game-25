@@ -24,7 +24,3 @@ SuppliedItem = ExtResource("2_oiiq7")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_t80sc")
-
-[node name="ColorRect" parent="." index="2"]
-visible = false
-color = Color(0.844136, 0.585443, 0.646043, 1)
