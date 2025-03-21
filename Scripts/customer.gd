@@ -24,17 +24,22 @@ var lineStart: Vector2
 
 
 func _ready() -> void:
-	var animations = $AnimatedSprite2D.sprite_frames.get_animation_names()
-	if randf() < .02:
-		$AnimatedSprite2D.animation = animations[animations.size() - 1]
-	else:
-		$AnimatedSprite2D.animation = animations[randi_range(0, animations.size() - 2)]
+	set_animation()
 	
 	order = possible_orders.pick_random().instantiate()
 	await move_to_pos(main.exit_pos)
 	
 	if self in main.new_customers:
 		lineUpVertical(main.order_pos, main.new_customers)
+
+
+func set_animation():
+	var animations = $AnimatedSprite2D.sprite_frames.get_animation_names()
+	if randf() < .02:
+		$AnimatedSprite2D.animation = animations[animations.size() - 1]
+	else:
+		$AnimatedSprite2D.animation = animations[randi_range(0, animations.size() - 2)]
+
 
 
 func addToUi() -> void:
