@@ -137,7 +137,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5mw1m"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_huqb3"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -156,6 +156,7 @@ offset_bottom = 192.0
 theme_override_constants/separation = 0
 
 [node name="base" type="Control" parent="CanvasLayer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 
@@ -174,4 +175,4 @@ animation = &"10"
 [node name="Food" type="AnimatedSprite2D" parent="CanvasLayer/VBoxContainer/base"]
 position = Vector2(96, 32)
 scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_5mw1m")
+sprite_frames = SubResource("SpriteFrames_huqb3")

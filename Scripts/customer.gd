@@ -7,6 +7,7 @@ signal done_moving
 @onready var main: Main = get_tree().get_root().get_node("Main")
 
 var aStar = AStar2D.new()
+var customerUi:Control
 
 @onready var possible_orders = main.get_available_recipes()
 var speed := 50
@@ -40,19 +41,25 @@ func _ready() -> void:
 	
 	lineUp(main.order_pos, main.new_customers)
 	order = possible_orders.pick_random().instantiate()
-	var newUi := baseUi.duplicate()
-	baseUi.get_parent().add_child(newUi)
+
+
+func addToUi() -> void:
+	customerUi = baseUi.duplicate()
+	baseUi.get_parent().add_child(customerUi)
 	
-	var orderSpriteframes = order.find_child("AnimatedSprite2D").sprite_frames
+	customerUi.get_child(1).animation = $AnimatedSprite2D.animation
+	customerUi.visible = true
+	
+	var orderSpriteframes = order.find_child("AnimatedSprite2D")
 	if orderSpriteframes != null:
-		var foodFrame:AnimatedSprite2D = newUi.get_child(1)
-		foodFrame.sprite_frames.set_frame("default", 0, orderSpriteframes.get_frame_texture("default", 0))
-		#foodFrame.animation = "default"
+		var foodFrame:AnimatedSprite2D = customerUi.get_child(2)
+		var clonedFrame:AnimatedSprite2D = orderSpriteframes.duplicate()
+		clonedFrame.global_scale = foodFrame.global_scale
+		clonedFrame.position = foodFrame.position
+		customerUi.add_child(clonedFrame)
+		
 	else:
 		print(order.name, " does not have a spriteframe!")
-		
-	newUi.get_child(1).animation = $AnimatedSprite2D.animation
-	newUi.visible = true
 
 
 func _process(delta: float) -> void:
@@ -77,6 +84,7 @@ func pickup_item() -> void:
 
 
 func leave() -> void:
+	customerUi.queue_free()
 	await move_to_pos(main.exit_pos)
 	await move_to_pos(main.out_pos)
 	queue_free()
