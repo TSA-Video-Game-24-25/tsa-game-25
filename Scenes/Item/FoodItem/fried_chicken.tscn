@@ -1,17 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://i1dydiafh7ex"]
+[gd_scene load_steps=5 format=3 uid="uid://i1dydiafh7ex"]
 
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_7f435"]
+[ext_resource type="Texture2D" uid="uid://bo1xidxpfxbed" path="res://Art/Food/Meals.png" id="2_16swe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmc4i"]
+atlas = ExtResource("2_16swe")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ftwfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmc4i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="FriedChicken" instance=ExtResource("1_7f435")]
 IsDone = true
 Score = 90
 
-[node name="Label" type="Label" parent="." index="1"]
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-text = "Fried
-Chicken"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ftwfa")
