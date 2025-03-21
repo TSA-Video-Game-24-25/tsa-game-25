@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://vkbkwsv4qhrx"]
+[gd_scene load_steps=20 format=3 uid="uid://vkbkwsv4qhrx"]
 
-[ext_resource type="Script" path="res://Scenes/GUI/ui.gd" id="1_2rnfa"]
+[ext_resource type="Script" uid="uid://cgh2qpdg3a2vs" path="res://Scenes/GUI/ui.gd" id="1_2rnfa"]
 [ext_resource type="Texture2D" uid="uid://duhj3mbxxwy1l" path="res://Art/Customer Faces.png" id="1_huqb3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mw1m"]
@@ -140,6 +140,12 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_huqb3"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rnfa"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adret"]
+bg_color = Color(1, 1, 1, 0.376471)
+
 [sub_resource type="LabelSettings" id="LabelSettings_huqb3"]
 font_size = 24
 
@@ -172,7 +178,7 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 64.0
-color = Color(0.698039, 0.698039, 0.698039, 0.792157)
+color = Color(0.513233, 0.513233, 0.513233, 0.815686)
 
 [node name="Customer" type="AnimatedSprite2D" parent="CanvasLayer/VBoxContainer/base"]
 position = Vector2(32, 32)
@@ -185,21 +191,37 @@ position = Vector2(96, 32)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_huqb3")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+offset_left = -146.0
+offset_right = 146.0
+offset_bottom = 63.0
 grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2rnfa")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -25.0
+offset_right = 134.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Panel"]
+[node name="DayLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -210,11 +232,12 @@ text = "Day 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="CanvasLayer/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Panel2"]
+[node name="TimeLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/Panel2"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -224,7 +247,7 @@ text = "110"
 label_settings = SubResource("LabelSettings_huqb3")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/Panel2"]
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/HBoxContainer/Panel2"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -237,19 +260,20 @@ text = "Seconds Remaining"
 label_settings = SubResource("LabelSettings_2rnfa")
 horizontal_alignment = 1
 
-[node name="Panel3" type="Panel" parent="CanvasLayer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 30)
+[node name="Panel3" type="Panel" parent="CanvasLayer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(90, 30)
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Panel3"]
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/Panel3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Day 1"
+text = "Score 9999"
 horizontal_alignment = 1
 vertical_alignment = 1
 
