@@ -171,13 +171,18 @@ func play_animation() -> void:
 func can_grab() -> bool:
 	var overlapping_bodies = $InteractArea.get_overlapping_bodies()
 	
+	overlapping_bodies.sort_custom(
+		func(a, b):
+			return (position + preferredDirection).distance_to(a.position) < (position + preferredDirection).distance_to(b.position)
+	)
+	
 	for body in overlapping_bodies:
 		if not body is Interactable:
 			continue
 		if not body.can_interact:
 			continue
 		
-		if body is SupplyStation and heldItem == null:
+		if body is SupplyStation and (heldItem == null or heldItem.name == body.SuppliedItem.instantiate().name):
 				return true
 			
 		if body is ProcessStation:
@@ -185,13 +190,25 @@ func can_grab() -> bool:
 				return true
 			if (heldItem and true) != (body.heldItem and true): #xor
 				return true
+		return false
+		
 	return false
 
 
 func can_use() -> bool:
 	var overlapping_bodies = $InteractArea.get_overlapping_bodies()
 	
+	overlapping_bodies.sort_custom(
+		func(a, b):
+			return (position + preferredDirection).distance_to(a.position) < (position + preferredDirection).distance_to(b.position)
+	)
+	
 	for body in overlapping_bodies:
-		if body is ProcessStation and body.can_process_item():
+		if not body is ProcessStation:
+			continue
+			
+		if body.can_process_item():
 			return true
+		return false
+		
 	return false
