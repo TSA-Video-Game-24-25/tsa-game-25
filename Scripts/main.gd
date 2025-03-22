@@ -2,6 +2,8 @@ extends Node2D
 class_name Main
 
 
+signal day_starting
+
 @export var Players := []
 @export var CameraMode := cameraMode.DEFAULT
 
@@ -96,8 +98,12 @@ func spawn_customer() -> Customer:
 
 
 func start_day():
-	for customer in new_customers + waiting_customers:
+	day_starting.emit()
+	
+	for customer in waiting_customers:
 		customer.customerUi.queue_free()
+	
+	for customer in new_customers + waiting_customers:
 		customer.queue_free()
 		new_customers = []
 		waiting_customers = []
