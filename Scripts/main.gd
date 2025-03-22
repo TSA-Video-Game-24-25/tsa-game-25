@@ -97,6 +97,7 @@ func spawn_customer() -> Customer:
 
 func start_day():
 	for customer in new_customers + waiting_customers:
+		customer.customerUi.queue_free()
 		customer.queue_free()
 		new_customers = []
 		waiting_customers = []
