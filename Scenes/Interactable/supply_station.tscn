@@ -6,3 +6,4 @@
 [node name="SupplyStation" instance=ExtResource("1_o3dce")]
 script = ExtResource("2_w0nys")
 SuppliedItem = null
+can_interact = null

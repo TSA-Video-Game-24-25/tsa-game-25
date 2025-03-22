@@ -31,7 +31,6 @@ var id: int
 func _ready() -> void:
 	main.Players.append(self)
 	id = len(main.Players)
-	$Label.text = str(id)
 	
 	update_input_map()
 
@@ -167,3 +166,32 @@ func play_animation() -> void:
 		sprite.play("right")
 	if velocity.x < 0: 
 		sprite.play("left")
+
+
+func can_grab() -> bool:
+	var overlapping_bodies = $InteractArea.get_overlapping_bodies()
+	
+	for body in overlapping_bodies:
+		if not body is Interactable:
+			continue
+		if not body.can_interact:
+			continue
+		
+		if body is SupplyStation and heldItem == null:
+				return true
+			
+		if body is ProcessStation:
+			if body.heldItem is Plate:
+				return true
+			if (heldItem and true) != (body.heldItem and true): #xor
+				return true
+	return false
+
+
+func can_use() -> bool:
+	var overlapping_bodies = $InteractArea.get_overlapping_bodies()
+	
+	for body in overlapping_bodies:
+		if body is ProcessStation and body.can_process_item():
+			return true
+	return false

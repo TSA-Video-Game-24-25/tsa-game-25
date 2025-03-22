@@ -818,7 +818,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BottomPanel" type="Panel" parent="CanvasLayer"]
-custom_minimum_size = Vector2(315, 0)
+custom_minimum_size = Vector2(315, 70)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -846,39 +846,81 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Panel" type="Panel" parent="CanvasLayer/BottomPanel/HBoxContainer"]
-custom_minimum_size = Vector2(150, 30)
+[node name="Player1" type="Panel" parent="CanvasLayer/BottomPanel/HBoxContainer"]
+custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="DayLabel" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Day 1"
+text = "Player 1"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Panel3" type="Panel" parent="CanvasLayer/BottomPanel/HBoxContainer"]
-custom_minimum_size = Vector2(150, 30)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
-
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Panel3"]
+[node name="GrabLabel1" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Score 9999"
+text = "Press \"E\" to grab"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="UseLabel1" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press \"Q\" to use"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Player2" type="Panel" parent="CanvasLayer/BottomPanel/HBoxContainer"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
+
+[node name="Label" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player 2"
+horizontal_alignment = 1
+
+[node name="GrabLabel2" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press \"O\" to grab"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UseLabel2" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press \"U\" to use"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="DayStart" type="CanvasLayer" parent="."]
 visible = false

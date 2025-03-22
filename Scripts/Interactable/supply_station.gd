@@ -1,4 +1,5 @@
 extends Interactable
+class_name SupplyStation
 
 
 @export var SuppliedItem: PackedScene

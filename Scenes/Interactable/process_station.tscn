@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjsj0wd06mjy5"]
 
 [ext_resource type="PackedScene" uid="uid://eb65st0khtil" path="res://Scenes/interactable.tscn" id="1_62ucs"]
-[ext_resource type="Script" uid="uid://cfwpstrbhrs4" path="res://Scripts/Interactable/process_station.gd" id="2_1mvlc"]
+[ext_resource type="Script" uid="uid://enf10c1h5s7k" path="res://Scripts/Interactable/process_station.gd" id="2_1mvlc"]
 
 [node name="ProcessStation" instance=ExtResource("1_62ucs")]
 script = ExtResource("2_1mvlc")

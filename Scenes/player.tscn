@@ -25,14 +25,6 @@ shape = SubResource("CircleShape2D_h0sej")
 [node name="HeldItemPos" type="Marker2D" parent="."]
 position = Vector2(0, -14)
 
-[node name="Label" type="Label" parent="."]
-offset_left = -10.0
-offset_top = -12.0
-offset_right = 10.0
-offset_bottom = 12.0
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.65, 0.65)
 sprite_frames = SubResource("SpriteFrames_v0iea")
