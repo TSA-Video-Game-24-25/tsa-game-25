@@ -18,12 +18,16 @@ func can_process_item() -> bool:
 	
 	for _customer in main.waiting_customers:
 		if heldItem.name == _customer.order.name:
-			customer = _customer
 			return true
 	return false
 
 
 func process_item() -> void:
+	for _customer in main.waiting_customers:
+		if heldItem.name == _customer.order.name:
+			customer = _customer
+			break
+	
 	can_interact = false
 	main.waiting_customers.erase(customer)
 	

@@ -96,6 +96,10 @@ func spawn_customer() -> Customer:
 
 
 func start_day():
+	for customer in new_customers + waiting_customers:
+		customer.queue_free()
+		new_customers = []
+		waiting_customers = []
 	score = 0
 	day_num += 1
 	ui.startDay()

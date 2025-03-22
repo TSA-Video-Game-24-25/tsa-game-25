@@ -346,7 +346,7 @@ position = Vector2(-60, 10)
 [node name="Player" parent="." instance=ExtResource("1_qsjnw")]
 position = Vector2(20, 36)
 
-[node name="AnimatedSprite2D" parent="Player" index="4"]
+[node name="AnimatedSprite2D" parent="Player" index="3"]
 sprite_frames = SubResource("SpriteFrames_u50mg")
 animation = &"down"
 
@@ -361,7 +361,7 @@ input_map = {
 "process": "u"
 }
 
-[node name="AnimatedSprite2D" parent="Player2" index="4"]
+[node name="AnimatedSprite2D" parent="Player2" index="3"]
 sprite_frames = SubResource("SpriteFrames_7k868")
 animation = &"down"
 
