@@ -101,9 +101,13 @@ func start_day():
 		customer.queue_free()
 		new_customers = []
 		waiting_customers = []
+	
 	score = 0
 	day_num += 1
 	ui.startDay()
+	
+	Players[0].position = $Kitchen/Player1Pos.position
+	Players[1].position = $Kitchen/Player2Pos.position
 	
 	time_remaining = 150 + (day_num * 20)
 	paused = false
