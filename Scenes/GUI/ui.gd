@@ -6,8 +6,12 @@ class_name UI
 @onready var DayStart = $DayStart
 @onready var DayEnd = $DayEnd
 
-const DayStartStr = "Day %d\n%d Total Pts"
-const DayEndStr = "Day %d\n%d Earned Pts\n%d Total Pts\n"
+const DayStartStr = "Day %d\nScore: %d"
+const DayEndStr = "Day %d\nEarned %d Points\nCurrent Score: %d\n"
+
+
+func _ready() -> void:
+	$MainMenu/VBoxContainer/CookbookButton.pressed.connect(func(): $EscapeMenu.visible = true; $MainMenu/VBoxContainer/CookbookButton.release_focus())
 
 
 func _process(delta: float) -> void:
@@ -25,10 +29,10 @@ func _process(delta: float) -> void:
 func startDay() -> void:
 	$DayStart/PanelContainer/Label.text = DayStartStr % [main.day_num, main.total_score]
 	$DayStart.visible = true
+	$MainMenu.visible = false
 	
 	await get_tree().create_timer(2.0).timeout
 	DayStart.visible = false
-	return
 
 
 func endDay() -> void:
@@ -39,4 +43,3 @@ func endDay() -> void:
 	await dayEndBtn.pressed
 	$DayEnd.visible = false
 	main.start_day()
-	return

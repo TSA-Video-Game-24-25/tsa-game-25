@@ -31,6 +31,8 @@ enum cameraMode {
 
 
 func _ready() -> void:
+	await $Ui/MainMenu/VBoxContainer/PlayButton.pressed
+	
 	start_day()
 
 
