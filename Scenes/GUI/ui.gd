@@ -16,7 +16,7 @@ func _ready() -> void:
 	$MainMenu/VBoxContainer/CookbookButton.pressed.connect(func(): $EscapeMenu.visible = true; $MainMenu/VBoxContainer/CookbookButton.release_focus())
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Overlay/TopPanel/HBoxContainer/Panel/DayLabel.text = "Day " + str(main.day_num)
 	$Overlay/TopPanel/HBoxContainer/Panel2/TimeLabel.text = str(snapped(main.time_remaining, .1))
 	$Overlay/TopPanel/HBoxContainer/Panel3/ScoreLabel.text = "Score: " + str(main.score)

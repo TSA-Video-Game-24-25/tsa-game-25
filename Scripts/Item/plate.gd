@@ -29,11 +29,11 @@ func can_add_item(item: FoodItem) -> bool:
 	return false
 
 
-func array_has_all(main, checkItems):
+func array_has_all(main_list, checkItems):
 	for item in checkItems:
-		if !main.has(item):
+		if !main_list.has(item):
 			return false
-		if checkItems.count(item) != main.count(item):
+		if checkItems.count(item) != main_list.count(item):
 			return false
 	return true
 

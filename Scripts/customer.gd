@@ -83,8 +83,8 @@ func setTargetPositionInLine():
 		var customerInfront := line[linePosition-1]
 		var collisionInfront: CollisionShape2D = customerInfront.find_child("CollisionShape2D")
 		targetPos = customerInfront.targetPos + Vector2(
-			collisionInfront.shape.get_rect().size.x * 1.1 if inLineHorizontal else 0,
-			collisionInfront.shape.get_rect().size.y * 1.1 if inLineVertical else 0
+			collisionInfront.shape.get_rect().size.x * 1.1 if inLineHorizontal else 0.0,
+			collisionInfront.shape.get_rect().size.y * 1.1 if inLineVertical else 0.0
 		)
 	else:
 		targetPos = lineStart

@@ -124,7 +124,7 @@ func start_day():
 		player.canMove = true
 	
 	for x in range(3):
-		var new_customer = spawn_customer()
+		spawn_customer()
 		await get_tree().create_timer(1).timeout
 
 

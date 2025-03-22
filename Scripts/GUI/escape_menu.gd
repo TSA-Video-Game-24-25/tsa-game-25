@@ -24,7 +24,7 @@ func _ready() -> void:
 	visibility_changed.connect(func(): if visible: $Control/AnimatedSprite2D.play("open"))
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("open_menu") and (visible or not main.paused):
 		visible = !visible
 		main.paused = visible
