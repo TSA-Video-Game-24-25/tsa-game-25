@@ -11,19 +11,21 @@ const DayEndStr = "Day %d\nEarned %d Points\nCurrent Score: %d\n"
 
 
 func _ready() -> void:
+	$MainMenu.visible = true
+	$Overlay.visible = true
 	$MainMenu/VBoxContainer/CookbookButton.pressed.connect(func(): $EscapeMenu.visible = true; $MainMenu/VBoxContainer/CookbookButton.release_focus())
 
 
 func _process(delta: float) -> void:
-	$CanvasLayer/TopPanel/HBoxContainer/Panel/DayLabel.text = "Day " + str(main.day_num)
-	$CanvasLayer/TopPanel/HBoxContainer/Panel2/TimeLabel.text = str(snapped(main.time_remaining, .1))
-	$CanvasLayer/TopPanel/HBoxContainer/Panel3/ScoreLabel.text = "Score: " + str(main.score)
+	$Overlay/TopPanel/HBoxContainer/Panel/DayLabel.text = "Day " + str(main.day_num)
+	$Overlay/TopPanel/HBoxContainer/Panel2/TimeLabel.text = str(snapped(main.time_remaining, .1))
+	$Overlay/TopPanel/HBoxContainer/Panel3/ScoreLabel.text = "Score: " + str(main.score)
 	
-	$CanvasLayer/BottomPanel/HBoxContainer/Player1/VBoxContainer/GrabLabel1.visible = main.Players[0].can_grab()
-	$CanvasLayer/BottomPanel/HBoxContainer/Player1/VBoxContainer/UseLabel1.visible = main.Players[0].can_use()
+	$Overlay/BottomPanel/HBoxContainer/Player1/VBoxContainer/GrabLabel1.visible = main.Players[0].can_grab()
+	$Overlay/BottomPanel/HBoxContainer/Player1/VBoxContainer/UseLabel1.visible = main.Players[0].can_use()
 	
-	$CanvasLayer/BottomPanel/HBoxContainer/Player2/VBoxContainer/GrabLabel2.visible = main.Players[1].can_grab()
-	$CanvasLayer/BottomPanel/HBoxContainer/Player2/VBoxContainer/UseLabel2.visible = main.Players[1].can_use()
+	$Overlay/BottomPanel/HBoxContainer/Player2/VBoxContainer/GrabLabel2.visible = main.Players[1].can_grab()
+	$Overlay/BottomPanel/HBoxContainer/Player2/VBoxContainer/UseLabel2.visible = main.Players[1].can_use()
 
 
 func startDay() -> void:

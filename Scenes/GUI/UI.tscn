@@ -712,9 +712,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2rnfa")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Overlay" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlay"]
 clip_contents = true
 anchors_preset = 2
 anchor_top = 1.0
@@ -725,29 +726,29 @@ grow_vertical = 0
 theme_override_constants/separation = 0
 alignment = 2
 
-[node name="base" type="Control" parent="CanvasLayer/VBoxContainer"]
+[node name="base" type="Control" parent="Overlay/VBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(64, 96)
 layout_mode = 2
 
-[node name="bg" type="ColorRect" parent="CanvasLayer/VBoxContainer/base"]
+[node name="bg" type="ColorRect" parent="Overlay/VBoxContainer/base"]
 layout_mode = 0
 offset_right = 192.0
 offset_bottom = 96.0
 color = Color(0.513233, 0.513233, 0.513233, 0.815686)
 
-[node name="Customer" type="AnimatedSprite2D" parent="CanvasLayer/VBoxContainer/base"]
+[node name="Customer" type="AnimatedSprite2D" parent="Overlay/VBoxContainer/base"]
 position = Vector2(48, 48)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_adret")
 animation = &"9"
 
-[node name="Food" type="AnimatedSprite2D" parent="CanvasLayer/VBoxContainer/base"]
+[node name="Food" type="AnimatedSprite2D" parent="Overlay/VBoxContainer/base"]
 position = Vector2(144, 48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_huqb3")
 
-[node name="TopPanel" type="Panel" parent="CanvasLayer"]
+[node name="TopPanel" type="Panel" parent="Overlay"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -757,7 +758,7 @@ offset_bottom = 63.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2rnfa")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TopPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Overlay/TopPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -771,13 +772,13 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/TopPanel/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Overlay/TopPanel/HBoxContainer"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="DayLabel" type="Label" parent="CanvasLayer/TopPanel/HBoxContainer/Panel"]
+[node name="DayLabel" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -788,12 +789,12 @@ text = "Day 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/TopPanel/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="Overlay/TopPanel/HBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="TimeLabel" type="Label" parent="CanvasLayer/TopPanel/HBoxContainer/Panel2"]
+[node name="TimeLabel" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel2"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -803,7 +804,7 @@ text = "110"
 label_settings = SubResource("LabelSettings_huqb3")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/TopPanel/HBoxContainer/Panel2"]
+[node name="Label2" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel2"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -816,13 +817,13 @@ text = "Seconds Remaining"
 label_settings = SubResource("LabelSettings_2rnfa")
 horizontal_alignment = 1
 
-[node name="Panel3" type="Panel" parent="CanvasLayer/TopPanel/HBoxContainer"]
+[node name="Panel3" type="Panel" parent="Overlay/TopPanel/HBoxContainer"]
 custom_minimum_size = Vector2(90, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/TopPanel/HBoxContainer/Panel3"]
+[node name="ScoreLabel" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -833,7 +834,7 @@ text = "Score 9999"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BottomPanel" type="Panel" parent="CanvasLayer"]
+[node name="BottomPanel" type="Panel" parent="Overlay"]
 custom_minimum_size = Vector2(315, 115)
 anchors_preset = 7
 anchor_left = 0.5
@@ -847,7 +848,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2rnfa")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BottomPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Overlay/BottomPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -862,13 +863,13 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Player1" type="Panel" parent="CanvasLayer/BottomPanel/HBoxContainer"]
+[node name="Player1" type="Panel" parent="Overlay/BottomPanel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 105)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BottomPanel/HBoxContainer/Player1"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlay/BottomPanel/HBoxContainer/Player1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -876,36 +877,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player1/VBoxContainer"]
+[node name="Label" type="Label" parent="Overlay/BottomPanel/HBoxContainer/Player1/VBoxContainer"]
 layout_mode = 2
 text = "Player 1:"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player1/VBoxContainer"]
+[node name="Label2" type="Label" parent="Overlay/BottomPanel/HBoxContainer/Player1/VBoxContainer"]
 layout_mode = 2
 text = "WASD to move"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="GrabLabel1" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player1/VBoxContainer"]
+[node name="GrabLabel1" type="Label" parent="Overlay/BottomPanel/HBoxContainer/Player1/VBoxContainer"]
 layout_mode = 2
 text = "Press \"E\" to grab"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="UseLabel1" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player1/VBoxContainer"]
+[node name="UseLabel1" type="Label" parent="Overlay/BottomPanel/HBoxContainer/Player1/VBoxContainer"]
 layout_mode = 2
 text = "Press \"Q\" to use"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Player2" type="Panel" parent="CanvasLayer/BottomPanel/HBoxContainer"]
+[node name="Player2" type="Panel" parent="Overlay/BottomPanel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 105)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BottomPanel/HBoxContainer/Player2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlay/BottomPanel/HBoxContainer/Player2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -913,36 +914,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player2/VBoxContainer"]
+[node name="Label" type="Label" parent="Overlay/BottomPanel/HBoxContainer/Player2/VBoxContainer"]
 layout_mode = 2
 text = "Player 2:"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player2/VBoxContainer"]
+[node name="Label2" type="Label" parent="Overlay/BottomPanel/HBoxContainer/Player2/VBoxContainer"]
 layout_mode = 2
 text = "IJKL to move"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="GrabLabel2" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player2/VBoxContainer"]
+[node name="GrabLabel2" type="Label" parent="Overlay/BottomPanel/HBoxContainer/Player2/VBoxContainer"]
 layout_mode = 2
 text = "Press \"O\" to grab"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="UseLabel2" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Player2/VBoxContainer"]
+[node name="UseLabel2" type="Label" parent="Overlay/BottomPanel/HBoxContainer/Player2/VBoxContainer"]
 layout_mode = 2
 text = "Press \"U\" to use"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="TopLeftPanel" type="Panel" parent="CanvasLayer"]
+[node name="TopLeftPanel" type="Panel" parent="Overlay"]
 custom_minimum_size = Vector2(243, 33)
 offset_right = 233.0
 offset_bottom = 23.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2rnfa")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/TopLeftPanel"]
+[node name="Panel" type="Panel" parent="Overlay/TopLeftPanel"]
 custom_minimum_size = Vector2(233, 23)
 layout_mode = 1
 anchors_preset = 8
@@ -959,7 +960,7 @@ grow_vertical = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="Label" type="Label" parent="CanvasLayer/TopLeftPanel/Panel"]
+[node name="Label" type="Label" parent="Overlay/TopLeftPanel/Panel"]
 layout_mode = 1
 offset_right = 224.0
 offset_bottom = 23.0
@@ -1062,6 +1063,7 @@ theme_override_font_sizes/font_size = 80
 text = "Next Day"
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" type="Control" parent="MainMenu"]
 layout_mode = 3

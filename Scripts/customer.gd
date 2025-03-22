@@ -12,7 +12,7 @@ var aStar = AStar2D.new()
 var customerUi:Control
 
 @onready var possible_orders = main.get_available_recipes()
-@onready var baseUi := main.find_child("Ui").find_child("CanvasLayer").find_child("VBoxContainer").find_child("base")
+@onready var baseUi := main.get_node("Ui/Overlay/VBoxContainer/base")
 
 var speed := 50
 var order: FoodItem
