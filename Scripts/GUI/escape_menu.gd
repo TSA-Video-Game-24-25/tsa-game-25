@@ -5,7 +5,7 @@ extends CanvasLayer
 
 @onready var main: Main = get_tree().get_root().get_node("Main")
 
-var page = 1
+var page = 0
 
 enum page_color {
 	BLUE,

@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bw8d66ecksudv" path="res://Art/Recipe Book/Recipe Book Open and Blue turn (1).png" id="3_vlwpb"]
 [ext_resource type="Texture2D" uid="uid://cr1s1y2lvv60g" path="res://Art/Recipe Book/Recipe Book Purple Turning (2).png" id="4_csd48"]
 [ext_resource type="Texture2D" uid="uid://bd1h3nuhlmvwr" path="res://Art/Recipe Book/Recipe Book Green Turning.png" id="5_6yr7l"]
-[ext_resource type="Texture2D" uid="uid://ch383ajlkxs4v" path="res://Art/Recipe Book/1.png" id="7_jcnnf"]
-[ext_resource type="Texture2D" uid="uid://cqj5erbpd5d6a" path="res://Art/Recipe Book/2.png" id="8_jntt5"]
-[ext_resource type="Texture2D" uid="uid://vcybxwnd6xwy" path="res://Art/Recipe Book/3.png" id="9_nkekq"]
-[ext_resource type="Texture2D" uid="uid://crjo5biklbas0" path="res://Art/Recipe Book/4.png" id="10_7xq0j"]
-[ext_resource type="Texture2D" uid="uid://bcibgfkkbmj3j" path="res://Art/Recipe Book/5.png" id="11_6x3wx"]
-[ext_resource type="Texture2D" uid="uid://cyxyin5xevurl" path="res://Art/Recipe Book/6.png" id="12_5hk8p"]
+[ext_resource type="Texture2D" uid="uid://l28faiohxoeq" path="res://Art/Recipe Book/1.png" id="7_jcnnf"]
+[ext_resource type="Texture2D" uid="uid://gq4g1f11rbpw" path="res://Art/Recipe Book/2.png" id="8_jntt5"]
+[ext_resource type="Texture2D" uid="uid://c82lii8fjb3sa" path="res://Art/Recipe Book/3.png" id="9_nkekq"]
+[ext_resource type="Texture2D" uid="uid://c0aq58bwx6n5v" path="res://Art/Recipe Book/4.png" id="10_7xq0j"]
+[ext_resource type="Texture2D" uid="uid://bs0odk1x30nt4" path="res://Art/Recipe Book/5.png" id="11_6x3wx"]
+[ext_resource type="Texture2D" uid="uid://p00mgcmqut1n" path="res://Art/Recipe Book/6.png" id="12_5hk8p"]
 [ext_resource type="Texture2D" uid="uid://dd4j1q1m7kmmw" path="res://Art/Cooking Catastrophe.png" id="13_jntt5"]
 [ext_resource type="StyleBox" uid="uid://bw3opruxk55yk" path="res://new_style_box_flat.tres" id="14_nkekq"]
 [ext_resource type="StyleBox" uid="uid://8hlfar4bq8na" path="res://new_style_box_flat-selected.tres" id="15_7xq0j"]
@@ -676,7 +676,7 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7svds"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xq0j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -1161,11 +1161,13 @@ grow_vertical = 2
 texture_filter = 1
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_3p0y4")
-animation = &"purple_to_purple"
+animation = &"open"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="EscapeMenu/Control"]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_7svds")
+position = Vector2(153, 360)
+scale = Vector2(1.05, 1.05)
+sprite_frames = SubResource("SpriteFrames_7xq0j")
 
 [node name="TopLeftPanel" type="Panel" parent="EscapeMenu"]
 custom_minimum_size = Vector2(243, 33)
