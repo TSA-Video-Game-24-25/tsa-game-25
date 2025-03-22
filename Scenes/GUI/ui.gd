@@ -11,9 +11,9 @@ const DayEndStr = "Day %d\n%d Earned Pts\n%d Total Pts"
 
 
 func _process(delta: float) -> void:
-	$CanvasLayer/Panel/HBoxContainer/Panel/DayLabel.text = "Day " + str(main.day_num)
-	$CanvasLayer/Panel/HBoxContainer/Panel2/TimeLabel.text = str(snapped(main.time_remaining, .1))
-	$CanvasLayer/Panel/HBoxContainer/Panel3/ScoreLabel.text = "Score: " + str(main.score)
+	$CanvasLayer/TopPanel/HBoxContainer/Panel/DayLabel.text = "Day " + str(main.day_num)
+	$CanvasLayer/TopPanel/HBoxContainer/Panel2/TimeLabel.text = str(snapped(main.time_remaining, .1))
+	$CanvasLayer/TopPanel/HBoxContainer/Panel3/ScoreLabel.text = "Score: " + str(main.score)
 
 
 func startDay() -> void:

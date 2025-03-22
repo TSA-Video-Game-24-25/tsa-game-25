@@ -65,6 +65,9 @@ func addToUi() -> void:
 
 
 func _process(delta: float) -> void:
+	if main.paused:
+		return
+	
 	if inLineVertical or inLineHorizontal:
 		setTargetPositionInLine()
 		

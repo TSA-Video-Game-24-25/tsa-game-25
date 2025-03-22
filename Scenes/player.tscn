@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b2550xdxfp71g" path="res://Scripts/player.gd" id="1_lys47"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mmlq"]
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h0sej"]
 radius = 13.0

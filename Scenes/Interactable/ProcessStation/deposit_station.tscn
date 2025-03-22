@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://k2nme2wplxyv"]
+[gd_scene load_steps=9 format=3 uid="uid://k2nme2wplxyv"]
 
 [ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_dyheu"]
 [ext_resource type="Script" uid="uid://c8m837ko0avot" path="res://Scripts/Interactable/ProcessStation/deposit_station.gd" id="2_2tmys"]
@@ -22,6 +22,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cmtu"]
+atlas = ExtResource("3_4cmtu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm0ag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cmtu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="DepositStation" instance=ExtResource("1_dyheu")]
 script = ExtResource("2_2tmys")
 
@@ -34,3 +49,8 @@ sprite_frames = SubResource("SpriteFrames_nrkcc")
 
 [node name="HoldPos" parent="." index="2"]
 position = Vector2(0, -6)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." index="3"]
+position = Vector2(-13, 1)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rm0ag")

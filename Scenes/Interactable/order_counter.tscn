@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx0tpug4tqa5b"]
+[gd_scene load_steps=9 format=3 uid="uid://bx0tpug4tqa5b"]
 
 [ext_resource type="PackedScene" uid="uid://eb65st0khtil" path="res://Scenes/interactable.tscn" id="1_oeyvk"]
 [ext_resource type="Script" uid="uid://exjdv225stl5" path="res://Scripts/Interactable/order_counter.gd" id="2_6l211"]
@@ -22,6 +22,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1b27"]
+atlas = ExtResource("3_v1b27")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1lk78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1b27")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="OrderCounter" instance=ExtResource("1_oeyvk")]
 script = ExtResource("2_6l211")
 
@@ -31,3 +46,8 @@ shape = SubResource("RectangleShape2D_v1b27")
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(0, -0.32)
 sprite_frames = SubResource("SpriteFrames_d5e01")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(8, -7)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_1lk78")

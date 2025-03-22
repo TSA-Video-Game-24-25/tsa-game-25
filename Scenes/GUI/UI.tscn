@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://vkbkwsv4qhrx"]
+[gd_scene load_steps=89 format=3 uid="uid://vkbkwsv4qhrx"]
 
 [ext_resource type="Script" uid="uid://cgh2qpdg3a2vs" path="res://Scenes/GUI/ui.gd" id="1_2rnfa"]
 [ext_resource type="Texture2D" uid="uid://duhj3mbxxwy1l" path="res://Art/Customer Faces.png" id="1_huqb3"]
@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bw8d66ecksudv" path="res://Art/Recipe Book/Recipe Book Open and Blue turn (1).png" id="3_vlwpb"]
 [ext_resource type="Texture2D" uid="uid://cr1s1y2lvv60g" path="res://Art/Recipe Book/Recipe Book Purple Turning (2).png" id="4_csd48"]
 [ext_resource type="Texture2D" uid="uid://bd1h3nuhlmvwr" path="res://Art/Recipe Book/Recipe Book Green Turning.png" id="5_6yr7l"]
+[ext_resource type="Texture2D" uid="uid://ch383ajlkxs4v" path="res://Art/Recipe Book/1.png" id="7_jcnnf"]
+[ext_resource type="Texture2D" uid="uid://cqj5erbpd5d6a" path="res://Art/Recipe Book/2.png" id="8_jntt5"]
+[ext_resource type="Texture2D" uid="uid://vcybxwnd6xwy" path="res://Art/Recipe Book/3.png" id="9_nkekq"]
+[ext_resource type="Texture2D" uid="uid://crjo5biklbas0" path="res://Art/Recipe Book/4.png" id="10_7xq0j"]
+[ext_resource type="Texture2D" uid="uid://bcibgfkkbmj3j" path="res://Art/Recipe Book/5.png" id="11_6x3wx"]
+[ext_resource type="Texture2D" uid="uid://cyxyin5xevurl" path="res://Art/Recipe Book/6.png" id="12_5hk8p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mw1m"]
 atlas = ExtResource("1_huqb3")
@@ -279,6 +285,46 @@ region = Rect2(280, 525, 140, 175)
 atlas = ExtResource("5_6yr7l")
 region = Rect2(420, 525, 140, 175)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fh24"]
+atlas = ExtResource("5_6yr7l")
+region = Rect2(560, 175, 140, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su7b8"]
+atlas = ExtResource("5_6yr7l")
+region = Rect2(420, 175, 140, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyl2m"]
+atlas = ExtResource("5_6yr7l")
+region = Rect2(280, 175, 140, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daqv0"]
+atlas = ExtResource("5_6yr7l")
+region = Rect2(140, 175, 140, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51y4n"]
+atlas = ExtResource("5_6yr7l")
+region = Rect2(0, 175, 140, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vq0b"]
+atlas = ExtResource("5_6yr7l")
+region = Rect2(560, 0, 140, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riond"]
+atlas = ExtResource("5_6yr7l")
+region = Rect2(420, 0, 140, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_823dh"]
+atlas = ExtResource("5_6yr7l")
+region = Rect2(280, 0, 140, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxur2"]
+atlas = ExtResource("5_6yr7l")
+region = Rect2(140, 0, 140, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6mff"]
+atlas = ExtResource("5_6yr7l")
+region = Rect2(0, 0, 140, 175)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bserr"]
 atlas = ExtResource("3_vlwpb")
 region = Rect2(0, 0, 140, 175)
@@ -302,46 +348,6 @@ region = Rect2(0, 175, 140, 175)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pf77j"]
 atlas = ExtResource("3_vlwpb")
 region = Rect2(140, 175, 140, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m6mff"]
-atlas = ExtResource("5_6yr7l")
-region = Rect2(0, 0, 140, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sxur2"]
-atlas = ExtResource("5_6yr7l")
-region = Rect2(140, 0, 140, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_823dh"]
-atlas = ExtResource("5_6yr7l")
-region = Rect2(280, 0, 140, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_riond"]
-atlas = ExtResource("5_6yr7l")
-region = Rect2(420, 0, 140, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1vq0b"]
-atlas = ExtResource("5_6yr7l")
-region = Rect2(560, 0, 140, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_51y4n"]
-atlas = ExtResource("5_6yr7l")
-region = Rect2(0, 175, 140, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_daqv0"]
-atlas = ExtResource("5_6yr7l")
-region = Rect2(140, 175, 140, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lyl2m"]
-atlas = ExtResource("5_6yr7l")
-region = Rect2(280, 175, 140, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_su7b8"]
-atlas = ExtResource("5_6yr7l")
-region = Rect2(420, 175, 140, 175)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7fh24"]
-atlas = ExtResource("5_6yr7l")
-region = Rect2(560, 175, 140, 175)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gvv8s"]
 atlas = ExtResource("4_csd48")
@@ -416,9 +422,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yhlim")
 }],
-"loop": true,
+"loop": false,
 "name": &"blue_to_blue",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -451,9 +457,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tw4qp")
 }],
-"loop": true,
+"loop": false,
 "name": &"blue_to_purple",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -486,9 +492,44 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6yc8b")
 }],
-"loop": true,
+"loop": false,
 "name": &"green_to_green",
-"speed": 5.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fh24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su7b8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyl2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daqv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51y4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vq0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_riond")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_823dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxur2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6mff")
+}],
+"loop": false,
+"name": &"green_to_purple",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -509,9 +550,44 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pf77j")
 }],
-"loop": true,
+"loop": false,
 "name": &"open",
-"speed": 5.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tw4qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qng6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cil77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6ipk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy5jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jer0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80ipn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6s81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhh44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd1wc")
+}],
+"loop": false,
+"name": &"purple_to_blue",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -544,9 +620,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7fh24")
 }],
-"loop": true,
+"loop": false,
 "name": &"purple_to_green",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -579,8 +655,34 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cholm")
 }],
-"loop": true,
+"loop": false,
 "name": &"purple_to_purple",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7svds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jcnnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jntt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nkekq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7xq0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6x3wx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5hk8p")
+}],
+"loop": true,
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -629,7 +731,7 @@ position = Vector2(144, 48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_huqb3")
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="TopPanel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -639,7 +741,7 @@ offset_bottom = 63.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2rnfa")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TopPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -653,13 +755,13 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Panel" type="Panel" parent="CanvasLayer/TopPanel/HBoxContainer"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="DayLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/Panel"]
+[node name="DayLabel" type="Label" parent="CanvasLayer/TopPanel/HBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -670,12 +772,12 @@ text = "Day 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Panel2" type="Panel" parent="CanvasLayer/TopPanel/HBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="TimeLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/Panel2"]
+[node name="TimeLabel" type="Label" parent="CanvasLayer/TopPanel/HBoxContainer/Panel2"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -685,7 +787,7 @@ text = "110"
 label_settings = SubResource("LabelSettings_huqb3")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/Panel/HBoxContainer/Panel2"]
+[node name="Label2" type="Label" parent="CanvasLayer/TopPanel/HBoxContainer/Panel2"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -698,13 +800,76 @@ text = "Seconds Remaining"
 label_settings = SubResource("LabelSettings_2rnfa")
 horizontal_alignment = 1
 
-[node name="Panel3" type="Panel" parent="CanvasLayer/Panel/HBoxContainer"]
+[node name="Panel3" type="Panel" parent="CanvasLayer/TopPanel/HBoxContainer"]
 custom_minimum_size = Vector2(90, 30)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/HBoxContainer/Panel3"]
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/TopPanel/HBoxContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score 9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomPanel" type="Panel" parent="CanvasLayer"]
+custom_minimum_size = Vector2(315, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = -63.0
+offset_right = 146.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2rnfa")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BottomPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.5
+offset_top = -26.5
+offset_right = 152.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/BottomPanel/HBoxContainer"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
+
+[node name="DayLabel" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Day 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/BottomPanel/HBoxContainer"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/BottomPanel/HBoxContainer/Panel3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -787,6 +952,7 @@ text = "Next Day"
 [node name="EscapeMenu" type="CanvasLayer" parent="."]
 visible = false
 script = ExtResource("3_csd48")
+PageColors = Array[int]([0, 0, 1, 1, 2, 2])
 
 [node name="Control" type="Control" parent="EscapeMenu"]
 layout_mode = 3
@@ -803,6 +969,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EscapeMenu/Control"]
+texture_filter = 1
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_3p0y4")
-animation = &"purple_to_green"
+animation = &"purple_to_purple"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="EscapeMenu/Control"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_7svds")

@@ -19,7 +19,7 @@ var day_num := 0
 var time_remaining: float = 0
 var score := 0
 var total_score := 0
-var game_running := false
+var paused = true
 
 enum cameraMode {
 	DEFAULT,
@@ -35,9 +35,15 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	$Camera2D.global_position = get_camera_pos()
 	
+	if paused:
+		return
+	
+	if time_remaining == 0:
+		return
+	
 	time_remaining = max( 0, time_remaining - _delta )
 	
-	if time_remaining == 0 && game_running:
+	if time_remaining == 0:
 		end_day()
 
 
@@ -95,7 +101,7 @@ func start_day():
 	ui.startDay()
 	
 	time_remaining = 150 + (day_num * 20)
-	game_running = true
+	paused = false
 	
 	for player: Player in Players:
 		player.canMove = true
@@ -106,7 +112,7 @@ func start_day():
 
 
 func end_day():
-	game_running = false
+	paused = true
 	total_score += score
 	
 	for player: Player in Players:

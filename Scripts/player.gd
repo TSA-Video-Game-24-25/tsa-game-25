@@ -37,6 +37,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if main.paused:
+		return
+	
 	var direction := get_dir()
 	
 	if direction.length_squared() != 0:
