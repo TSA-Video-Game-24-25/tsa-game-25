@@ -24,6 +24,8 @@ var lineStart: Vector2
 
 
 func _ready() -> void:
+	main.day_starting.connect(delete)
+	
 	set_animation()
 	
 	order = possible_orders.pick_random().instantiate()
@@ -122,4 +124,10 @@ func leave() -> void:
 	customerUi.queue_free()
 	await move_to_pos(main.exit_pos)
 	await move_to_pos(main.out_pos)
+	queue_free()
+
+
+func delete() -> void:
+	if customerUi:
+		customerUi.queue_free()
 	queue_free()

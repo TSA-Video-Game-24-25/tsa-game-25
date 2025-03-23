@@ -50,12 +50,12 @@ func endDay() -> void:
 
 
 func endGame() -> void:
-	$GameEnd/PanelContainer/VBoxContainer/Label.text = DayEndStr % [main.day_num, main.score, main.total_score]
+	$GameEnd/PanelContainer/VBoxContainer/Label.text = GameEndStr % [main.score, main.total_score]
 	$GameEnd.visible = true
 	
 	var gameEndBtn: Button = $GameEnd/PanelContainer/VBoxContainer/Button
 	await gameEndBtn.pressed
 	
-	$DayEnd.visible = false
+	$GameEnd.visible = false
 	$MainMenu.visible = true
 	main.restart_game()

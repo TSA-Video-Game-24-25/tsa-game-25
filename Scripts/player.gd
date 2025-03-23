@@ -149,6 +149,8 @@ func process_if_pressed() -> void:
 	for body in overlapping_bodies:
 		if not body is ProcessStation:
 			continue
+		if not body.can_interact:
+			continue
 		
 		body.process(self)
 		return
@@ -205,6 +207,8 @@ func can_use() -> bool:
 	
 	for body in overlapping_bodies:
 		if not body is ProcessStation:
+			continue
+		if not body.can_interact:
 			continue
 			
 		if body.can_process_item():
