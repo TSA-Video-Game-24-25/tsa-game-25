@@ -22,6 +22,8 @@ var page_color_string = {
 
 func _ready() -> void:
 	visibility_changed.connect(func(): if visible: $Control/AnimatedSprite2D.play("open"))
+	$LeftButton.pressed.connect(turn_page_left)
+	$RightButton.pressed.connect(turn_page_right)
 
 
 func _process(_delta: float) -> void:
@@ -33,15 +35,26 @@ func _process(_delta: float) -> void:
 		return
 	
 	for player: Player in main.Players:
-		if Input.is_action_just_pressed(player.get_input("move_left")) and page >= 1:
-			$Control/AnimatedSprite2D.play_backwards(page_color_string[PageColors[page-1]] + "_to_" + page_color_string[PageColors[page]])
-			page -= 1
+		if Input.is_action_just_pressed(player.get_input("move_left")):
+			turn_page_left()
 	
 	for player: Player in main.Players:
-		if Input.is_action_just_pressed(player.get_input("move_right")) and page <= len(PageColors)-2:
-			$Control/AnimatedSprite2D.play( page_color_string[PageColors[page]] + "_to_" + page_color_string[PageColors[page+1]])
-			page += 1
+		if Input.is_action_just_pressed(player.get_input("move_right")):
+			turn_page_right()
 	
 	$Control/AnimatedSprite2D2.frame = page
 	$Control/AnimatedSprite2D2.visible = !$Control/AnimatedSprite2D.is_playing()
-	
+
+
+func turn_page_left():
+	$LeftButton.release_focus()
+	if page >= 1:
+		$Control/AnimatedSprite2D.play_backwards(page_color_string[PageColors[page-1]] + "_to_" + page_color_string[PageColors[page]])
+		page -= 1
+
+
+func turn_page_right():
+	$RightButton.release_focus()
+	if page <= len(PageColors) - 2:
+		$Control/AnimatedSprite2D.play( page_color_string[PageColors[page]] + "_to_" + page_color_string[PageColors[page+1]])
+		page += 1
