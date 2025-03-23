@@ -1,4 +1,4 @@
-extends "res://Scripts/Interactable/process_station.gd"
+extends ProcessStation
 
 
 func try_add_item(item: Item) -> bool:
