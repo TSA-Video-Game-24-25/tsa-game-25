@@ -1,22 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cl74aqfq8lucr"]
+[gd_scene load_steps=5 format=3 uid="uid://cl74aqfq8lucr"]
 
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_qnvmc"]
+[ext_resource type="Texture2D" uid="uid://bpypo7ho2vl8a" path="res://Art/Food/Tuscan Chicken Pasta.png" id="2_cf7c0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rlca"]
+atlas = ExtResource("2_cf7c0")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qnvmc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rlca")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TuscanChickenPasta" instance=ExtResource("1_qnvmc")]
 IsDone = true
 Score = 250
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_qnvmc")
-
-[node name="Label" type="Label" parent="." index="1"]
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-text = "Chicken
-Pasta"
-horizontal_alignment = 1
-vertical_alignment = 1
