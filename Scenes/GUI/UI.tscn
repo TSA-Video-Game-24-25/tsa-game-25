@@ -7,19 +7,19 @@
 [ext_resource type="Texture2D" uid="uid://cr1s1y2lvv60g" path="res://Art/Recipe Book/Recipe Book Purple Turning (2).png" id="4_csd48"]
 [ext_resource type="Texture2D" uid="uid://bd1h3nuhlmvwr" path="res://Art/Recipe Book/Recipe Book Green Turning.png" id="5_6yr7l"]
 [ext_resource type="Texture2D" uid="uid://bkke85qbahflh" path="res://Art/Tutorial/1.png" id="10_5hk8p"]
-[ext_resource type="Texture2D" uid="uid://l28faiohxoeq" path="res://Art/Recipe Book/1.png" id="10_yhlim"]
+[ext_resource type="Texture2D" uid="uid://baaqtutbcf3k3" path="res://Art/Recipe Book/1.png" id="10_yhlim"]
 [ext_resource type="Texture2D" uid="uid://cw6nsldhqelgx" path="res://Art/Tutorial/2.png" id="11_7svds"]
-[ext_resource type="Texture2D" uid="uid://gq4g1f11rbpw" path="res://Art/Recipe Book/2.png" id="11_rd1wc"]
+[ext_resource type="Texture2D" uid="uid://c2ju58mr2h1xw" path="res://Art/Recipe Book/2.png" id="11_rd1wc"]
 [ext_resource type="Texture2D" uid="uid://mctr12r4p6p4" path="res://Art/Tutorial/3.png" id="12_jb042"]
-[ext_resource type="Texture2D" uid="uid://c82lii8fjb3sa" path="res://Art/Recipe Book/3.png" id="12_lhh44"]
-[ext_resource type="Texture2D" uid="uid://c0aq58bwx6n5v" path="res://Art/Recipe Book/4.png" id="13_a6s81"]
+[ext_resource type="Texture2D" uid="uid://cwkohaaljbib6" path="res://Art/Recipe Book/3.png" id="12_lhh44"]
+[ext_resource type="Texture2D" uid="uid://dcvwf8cqrs6d" path="res://Art/Recipe Book/4.png" id="13_a6s81"]
 [ext_resource type="Texture2D" uid="uid://dd4j1q1m7kmmw" path="res://Art/Cooking Catastrophe.png" id="13_jntt5"]
 [ext_resource type="Texture2D" uid="uid://cjyscwo8m58ng" path="res://Art/Tutorial/4.png" id="13_kh2ux"]
-[ext_resource type="Texture2D" uid="uid://bs0odk1x30nt4" path="res://Art/Recipe Book/5.png" id="14_80ipn"]
+[ext_resource type="Texture2D" uid="uid://be7unqxu84tas" path="res://Art/Recipe Book/5.png" id="14_80ipn"]
 [ext_resource type="Texture2D" uid="uid://ck0wwy1nsi41v" path="res://Art/Tutorial/5.png" id="14_400ke"]
 [ext_resource type="StyleBox" uid="uid://bw3opruxk55yk" path="res://new_style_box_flat.tres" id="14_nkekq"]
 [ext_resource type="StyleBox" uid="uid://8hlfar4bq8na" path="res://new_style_box_flat-selected.tres" id="15_7xq0j"]
-[ext_resource type="Texture2D" uid="uid://p00mgcmqut1n" path="res://Art/Recipe Book/6.png" id="15_jer0g"]
+[ext_resource type="Texture2D" uid="uid://defkcrtwwxp20" path="res://Art/Recipe Book/6.png" id="15_jer0g"]
 [ext_resource type="Texture2D" uid="uid://biwii5qip2cxb" path="res://Art/Tutorial/6.png" id="15_onri8"]
 [ext_resource type="Texture2D" uid="uid://b3asx84jy24pb" path="res://Art/Tutorial/7.png" id="16_yhlim"]
 [ext_resource type="Script" uid="uid://bv4an2ha7owc1" path="res://Scripts/GUI/tutorial.gd" id="17_rd1wc"]
@@ -1414,6 +1414,7 @@ text = ">>
 (D/L)"
 
 [node name="GameEnd" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="GameEnd"]
 anchors_preset = 8
