@@ -4,9 +4,15 @@ class_name ProcessStation
 
 @export var ProcessGUI: PackedScene
 
+@onready var main: Main = get_tree().get_root().get_node("Main")
+
 var heldItem: Item = null
 var gui = null
 var player: Player = null
+
+
+func _ready() -> void:
+	main.day_starting.connect(func(): if gui: gui.queue_free())
 
 
 func try_add_item(item: FoodItem) -> bool:

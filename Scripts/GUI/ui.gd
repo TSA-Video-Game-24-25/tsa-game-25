@@ -14,6 +14,7 @@ func _ready() -> void:
 	$MainMenu.visible = true
 	$Overlay.visible = true
 	$MainMenu/VBoxContainer/CookbookButton.pressed.connect(func(): $EscapeMenu.visible = true; $MainMenu/VBoxContainer/CookbookButton.release_focus())
+	$MainMenu/VBoxContainer/TutorialButton.pressed.connect(func(): $Tutorial.visible = true; $MainMenu/VBoxContainer/TutorialButton.release_focus())
 
 
 func _process(_delta: float) -> void:

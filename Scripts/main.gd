@@ -16,6 +16,7 @@ signal day_starting
 @onready var out_pos: Vector2 = $Kitchen/CustomerOutPos.position
 
 @onready var ui:UI = $Ui
+@onready var soundPlayer: SoundPlayer = $SoundPlayer
 
 var day_num := 0
 var time_remaining: float = 0
@@ -136,3 +137,8 @@ func end_day():
 		player.canMove = false
 	
 	ui.endDay()
+
+
+func restart_game():
+	total_score = 0
+	day_num = 0

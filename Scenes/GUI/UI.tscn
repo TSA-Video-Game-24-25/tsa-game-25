@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://vkbkwsv4qhrx"]
+[gd_scene load_steps=102 format=3 uid="uid://vkbkwsv4qhrx"]
 
 [ext_resource type="Script" uid="uid://cgh2qpdg3a2vs" path="res://Scripts/GUI/ui.gd" id="1_2rnfa"]
 [ext_resource type="Texture2D" uid="uid://duhj3mbxxwy1l" path="res://Art/Customer Faces.png" id="1_huqb3"]
@@ -6,15 +6,23 @@
 [ext_resource type="Texture2D" uid="uid://bw8d66ecksudv" path="res://Art/Recipe Book/Recipe Book Open and Blue turn (1).png" id="3_vlwpb"]
 [ext_resource type="Texture2D" uid="uid://cr1s1y2lvv60g" path="res://Art/Recipe Book/Recipe Book Purple Turning (2).png" id="4_csd48"]
 [ext_resource type="Texture2D" uid="uid://bd1h3nuhlmvwr" path="res://Art/Recipe Book/Recipe Book Green Turning.png" id="5_6yr7l"]
-[ext_resource type="Texture2D" uid="uid://l28faiohxoeq" path="res://Art/Recipe Book/1.png" id="7_jcnnf"]
-[ext_resource type="Texture2D" uid="uid://gq4g1f11rbpw" path="res://Art/Recipe Book/2.png" id="8_jntt5"]
-[ext_resource type="Texture2D" uid="uid://c82lii8fjb3sa" path="res://Art/Recipe Book/3.png" id="9_nkekq"]
-[ext_resource type="Texture2D" uid="uid://c0aq58bwx6n5v" path="res://Art/Recipe Book/4.png" id="10_7xq0j"]
-[ext_resource type="Texture2D" uid="uid://bs0odk1x30nt4" path="res://Art/Recipe Book/5.png" id="11_6x3wx"]
-[ext_resource type="Texture2D" uid="uid://p00mgcmqut1n" path="res://Art/Recipe Book/6.png" id="12_5hk8p"]
+[ext_resource type="Texture2D" uid="uid://bkke85qbahflh" path="res://Art/Tutorial/1.png" id="10_5hk8p"]
+[ext_resource type="Texture2D" uid="uid://l28faiohxoeq" path="res://Art/Recipe Book/1.png" id="10_yhlim"]
+[ext_resource type="Texture2D" uid="uid://cw6nsldhqelgx" path="res://Art/Tutorial/2.png" id="11_7svds"]
+[ext_resource type="Texture2D" uid="uid://gq4g1f11rbpw" path="res://Art/Recipe Book/2.png" id="11_rd1wc"]
+[ext_resource type="Texture2D" uid="uid://mctr12r4p6p4" path="res://Art/Tutorial/3.png" id="12_jb042"]
+[ext_resource type="Texture2D" uid="uid://c82lii8fjb3sa" path="res://Art/Recipe Book/3.png" id="12_lhh44"]
+[ext_resource type="Texture2D" uid="uid://c0aq58bwx6n5v" path="res://Art/Recipe Book/4.png" id="13_a6s81"]
 [ext_resource type="Texture2D" uid="uid://dd4j1q1m7kmmw" path="res://Art/Cooking Catastrophe.png" id="13_jntt5"]
+[ext_resource type="Texture2D" uid="uid://cjyscwo8m58ng" path="res://Art/Tutorial/4.png" id="13_kh2ux"]
+[ext_resource type="Texture2D" uid="uid://bs0odk1x30nt4" path="res://Art/Recipe Book/5.png" id="14_80ipn"]
+[ext_resource type="Texture2D" uid="uid://ck0wwy1nsi41v" path="res://Art/Tutorial/5.png" id="14_400ke"]
 [ext_resource type="StyleBox" uid="uid://bw3opruxk55yk" path="res://new_style_box_flat.tres" id="14_nkekq"]
 [ext_resource type="StyleBox" uid="uid://8hlfar4bq8na" path="res://new_style_box_flat-selected.tres" id="15_7xq0j"]
+[ext_resource type="Texture2D" uid="uid://p00mgcmqut1n" path="res://Art/Recipe Book/6.png" id="15_jer0g"]
+[ext_resource type="Texture2D" uid="uid://biwii5qip2cxb" path="res://Art/Tutorial/6.png" id="15_onri8"]
+[ext_resource type="Texture2D" uid="uid://b3asx84jy24pb" path="res://Art/Tutorial/7.png" id="16_yhlim"]
+[ext_resource type="Script" uid="uid://bv4an2ha7owc1" path="res://Scripts/GUI/tutorial.gd" id="17_rd1wc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mw1m"]
 atlas = ExtResource("1_huqb3")
@@ -680,24 +688,53 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_jcnnf")
+"texture": ExtResource("10_yhlim")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_jntt5")
+"texture": ExtResource("11_rd1wc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_nkekq")
+"texture": ExtResource("12_lhh44")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_7xq0j")
+"texture": ExtResource("13_a6s81")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_6x3wx")
+"texture": ExtResource("14_80ipn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_5hk8p")
+"texture": ExtResource("15_jer0g")
 }],
-"loop": true,
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5hk8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_5hk8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7svds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jb042")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kh2ux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_400ke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_onri8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yhlim")
+}],
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1089,12 +1126,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = 87.0
+offset_top = 71.0
 offset_right = 550.0
 offset_bottom = 550.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="TutorialButton" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = ExtResource("15_7xq0j")
+theme_override_styles/disabled_mirrored = ExtResource("14_nkekq")
+theme_override_styles/disabled = ExtResource("14_nkekq")
+theme_override_styles/hover_pressed_mirrored = ExtResource("15_7xq0j")
+theme_override_styles/hover_pressed = ExtResource("15_7xq0j")
+theme_override_styles/hover_mirrored = ExtResource("15_7xq0j")
+theme_override_styles/hover = ExtResource("15_7xq0j")
+theme_override_styles/pressed_mirrored = ExtResource("14_nkekq")
+theme_override_styles/pressed = ExtResource("14_nkekq")
+theme_override_styles/normal_mirrored = ExtResource("14_nkekq")
+theme_override_styles/normal = ExtResource("14_nkekq")
+text = "Tutorial"
 
 [node name="PlayButton" type="Button" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
@@ -1260,3 +1314,156 @@ theme_override_styles/normal_mirrored = ExtResource("14_nkekq")
 theme_override_styles/normal = ExtResource("14_nkekq")
 text = ">>
 (D/L)"
+
+[node name="Tutorial" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("17_rd1wc")
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -550.0
+offset_right = 550.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.605274, 0.605274, 0.605274, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Tutorial"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -437.5
+offset_top = -437.5
+offset_right = 437.5
+offset_bottom = 437.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="Tutorial"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorial/Control"]
+texture_filter = 1
+scale = Vector2(0.78, 0.78)
+sprite_frames = SubResource("SpriteFrames_5hk8p")
+
+[node name="LeftButton" type="Button" parent="Tutorial"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -65.5
+offset_right = 137.0
+offset_bottom = 65.5
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = ExtResource("15_7xq0j")
+theme_override_styles/disabled_mirrored = ExtResource("14_nkekq")
+theme_override_styles/disabled = ExtResource("14_nkekq")
+theme_override_styles/hover_pressed_mirrored = ExtResource("15_7xq0j")
+theme_override_styles/hover_pressed = ExtResource("15_7xq0j")
+theme_override_styles/hover_mirrored = ExtResource("15_7xq0j")
+theme_override_styles/hover = ExtResource("15_7xq0j")
+theme_override_styles/pressed_mirrored = ExtResource("14_nkekq")
+theme_override_styles/pressed = ExtResource("14_nkekq")
+theme_override_styles/normal_mirrored = ExtResource("14_nkekq")
+theme_override_styles/normal = ExtResource("14_nkekq")
+text = "<<
+(A/J)"
+
+[node name="RightButton" type="Button" parent="Tutorial"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -65.5
+offset_bottom = 65.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = ExtResource("15_7xq0j")
+theme_override_styles/disabled_mirrored = ExtResource("14_nkekq")
+theme_override_styles/disabled = ExtResource("14_nkekq")
+theme_override_styles/hover_pressed_mirrored = ExtResource("15_7xq0j")
+theme_override_styles/hover_pressed = ExtResource("15_7xq0j")
+theme_override_styles/hover_mirrored = ExtResource("15_7xq0j")
+theme_override_styles/hover = ExtResource("15_7xq0j")
+theme_override_styles/pressed_mirrored = ExtResource("14_nkekq")
+theme_override_styles/pressed = ExtResource("14_nkekq")
+theme_override_styles/normal_mirrored = ExtResource("14_nkekq")
+theme_override_styles/normal = ExtResource("14_nkekq")
+text = ">>
+(D/L)"
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -550.0
+offset_right = 550.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 0.501961)
+
+[node name="PanelContainer" type="PanelContainer" parent="GameOver"]
+custom_minimum_size = Vector2(900, 750)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.5
+offset_top = -138.5
+offset_right = 336.5
+offset_bottom = 138.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jcnnf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="GameOver/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Day 0
+10 Pts Earned
+10000 Pts Total
+"
+label_settings = SubResource("LabelSettings_adret")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="GameOver/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "Next Day"

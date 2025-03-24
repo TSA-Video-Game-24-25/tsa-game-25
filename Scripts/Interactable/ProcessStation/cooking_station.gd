@@ -6,6 +6,7 @@ extends "res://Scripts/Interactable/process_station.gd"
 @onready var sprite := $AnimatedSprite2D
 
 var cook_time := 0.0
+var sound: AudioStreamPlayer2D
 
 
 func try_add_item(item: FoodItem) -> bool:
@@ -16,6 +17,7 @@ func try_add_item(item: FoodItem) -> bool:
 
 
 func _on_add_item():
+	sound = main.soundPlayer.PlayAtPosition("Cook", position)
 	cook_time = heldItem.CookTime
 	$ProgressBar.max_value = cook_time
 
@@ -25,6 +27,9 @@ func _process(delta: float) -> void:
 	
 	if heldItem == null:
 		sprite.play("off")
+		if sound:
+			sound.stop()
+			sound = null
 		return
 	else:
 		sprite.play("cooking")

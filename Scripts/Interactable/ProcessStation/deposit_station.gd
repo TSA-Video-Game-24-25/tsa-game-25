@@ -1,7 +1,6 @@
 extends "res://Scripts/Interactable/process_station.gd"
 
 
-@onready var main: Main = get_tree().get_root().get_node("Main")
 var customer: Customer
 
 
@@ -23,6 +22,8 @@ func can_process_item() -> bool:
 
 
 func process_item() -> void:
+	main.soundPlayer.PlayAtPosition("Bell", position)
+	
 	for _customer in main.waiting_customers:
 		if heldItem.name == _customer.order.name:
 			customer = _customer

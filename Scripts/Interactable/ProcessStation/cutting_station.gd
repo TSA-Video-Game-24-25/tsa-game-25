@@ -13,6 +13,8 @@ func can_process_item() -> bool:
 
 
 func process_item() -> void:
+	main.soundPlayer.PlayAtPosition("Cut", position)
+	
 	var newItem = heldItem.CutResult.instantiate()
 	heldItem.queue_free()
 	

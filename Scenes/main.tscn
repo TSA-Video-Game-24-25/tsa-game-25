@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bhbexrfd1uev4"]
+[gd_scene load_steps=37 format=4 uid="uid://bhbexrfd1uev4"]
 
 [ext_resource type="Script" uid="uid://bo3eopk0qerr7" path="res://Scripts/main.gd" id="1_5nuvl"]
 [ext_resource type="PackedScene" uid="uid://bp3u117gx1f5u" path="res://Scenes/player.tscn" id="1_qsjnw"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://c16kec6l8yuek" path="res://Scenes/Interactable/ProcessStation/stove.tscn" id="19_ee4r6"]
 [ext_resource type="Texture2D" uid="uid://bxdroedmdd05u" path="res://Art/Chef Coon.png" id="19_hibaj"]
 [ext_resource type="PackedScene" uid="uid://vkbkwsv4qhrx" path="res://Scenes/GUI/UI.tscn" id="22_ee4r6"]
+[ext_resource type="PackedScene" uid="uid://dc502312j4fe2" path="res://Scenes/SoundPlayer.tscn" id="24_3pmx8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3802"]
 texture = ExtResource("2_h1bgf")
@@ -372,6 +373,8 @@ sprite_frames = SubResource("SpriteFrames_7k868")
 animation = &"down"
 
 [node name="Ui" parent="." instance=ExtResource("22_ee4r6")]
+
+[node name="SoundPlayer" parent="." instance=ExtResource("24_3pmx8")]
 
 [editable path="Player"]
 [editable path="Player2"]

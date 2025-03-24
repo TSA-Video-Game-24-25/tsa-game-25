@@ -52,7 +52,7 @@ func set_recipe_result():
 	CookResult = null
 	
 	for recipe in Recipes.recipes.keys():
-		if not array_has_all(get_names(heldItems), recipe):
+		if not array_has_all(get_names(heldItems), recipe) or len(get_names(heldItems)) != len(recipe):
 			continue
 		
 		var action = Recipes.recipes[recipe][0]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc502312j4fe2"]
+
+[ext_resource type="Script" uid="uid://e6ji0r33mta6" path="res://Scripts/sound_player.gd" id="1_kfq4j"]
+[ext_resource type="AudioStream" uid="uid://bcbsmqijb1upj" path="res://Sounds/Bell_sound1-[AudioTrimmer.com].mp3" id="2_g3yii"]
+[ext_resource type="AudioStream" uid="uid://cvpisqw86jmu3" path="res://Sounds/Cutting_sound1mp3-[AudioTrimmer.com].mp3" id="3_yc40g"]
+[ext_resource type="AudioStream" uid="uid://c3xuprhgw3iad" path="res://Sounds/Cooking_sound1-[AudioTrimmer.com].mp3" id="4_rhtrc"]
+
+[node name="SoundPlayer" type="Node"]
+script = ExtResource("1_kfq4j")
+
+[node name="Bell" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_g3yii")
+
+[node name="Cut" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yc40g")
+
+[node name="Cook" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_rhtrc")
