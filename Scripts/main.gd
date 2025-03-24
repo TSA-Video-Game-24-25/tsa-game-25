@@ -49,7 +49,10 @@ func _process(_delta: float) -> void:
 	time_remaining = max( 0, time_remaining - _delta )
 	
 	if time_remaining == 0:
-		end_day()
+		if day_num == 5:
+			end_game()
+		else:
+			end_day()
 
 
 func get_available_recipes() -> Array[PackedScene]:
@@ -137,6 +140,16 @@ func end_day():
 		player.canMove = false
 	
 	ui.endDay()
+
+
+func end_game():
+	paused = true
+	total_score += score
+	
+	for player: Player in Players:
+		player.canMove = false
+	
+	ui.endGame()
 
 
 func restart_game():

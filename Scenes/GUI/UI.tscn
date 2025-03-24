@@ -1413,10 +1413,9 @@ theme_override_styles/normal = ExtResource("14_nkekq")
 text = ">>
 (D/L)"
 
-[node name="GameOver" type="CanvasLayer" parent="."]
-visible = false
+[node name="GameEnd" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="GameOver"]
+[node name="ColorRect" type="ColorRect" parent="GameEnd"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1430,7 +1429,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.196078, 0.196078, 0.196078, 0.501961)
 
-[node name="PanelContainer" type="PanelContainer" parent="GameOver"]
+[node name="PanelContainer" type="PanelContainer" parent="GameEnd"]
 custom_minimum_size = Vector2(900, 750)
 anchors_preset = 8
 anchor_left = 0.5
@@ -1445,11 +1444,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jcnnf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GameEnd/PanelContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="GameOver/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="GameEnd/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Day 0
 10 Pts Earned
@@ -1458,7 +1457,7 @@ text = "Day 0
 label_settings = SubResource("LabelSettings_adret")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="GameOver/PanelContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="GameEnd/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1466,4 +1465,4 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 80
-text = "Next Day"
+text = "Main Menu"

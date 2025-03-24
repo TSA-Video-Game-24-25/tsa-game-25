@@ -8,6 +8,7 @@ class_name UI
 
 const DayStartStr = "Day %d\nScore: %d"
 const DayEndStr = "Day %d\nEarned %d Points\nCurrent Score: %d\n"
+const GameEndStr = "Game Over\nEarned %d Points\nFinal Score: %d\n"
 
 
 func _ready() -> void:
@@ -46,3 +47,15 @@ func endDay() -> void:
 	await dayEndBtn.pressed
 	$DayEnd.visible = false
 	main.start_day()
+
+
+func endGame() -> void:
+	$GameEnd/PanelContainer/VBoxContainer/Label.text = DayEndStr % [main.day_num, main.score, main.total_score]
+	$GameEnd.visible = true
+	
+	var gameEndBtn: Button = $GameEnd/PanelContainer/VBoxContainer/Button
+	await gameEndBtn.pressed
+	
+	$DayEnd.visible = false
+	$MainMenu.visible = true
+	main.restart_game()
