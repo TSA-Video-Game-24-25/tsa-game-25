@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5l3a8eq4fadk"]
+[gd_scene load_steps=11 format=3 uid="uid://c5l3a8eq4fadk"]
 
 [ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_baftj"]
-[ext_resource type="Script" uid="uid://r5pvyg6iratd" path="res://Scripts/Interactable/ProcessStation/counter.gd" id="2_3fr25"]
+[ext_resource type="Script" uid="uid://by6v281f8c156" path="res://Scripts/Interactable/ProcessStation/counter.gd" id="2_3fr25"]
+[ext_resource type="PackedScene" uid="uid://cyhhoqvrx8f8k" path="res://Scenes/GUI/ProcessGui/mix_gui.tscn" id="3_baftj"]
 [ext_resource type="Texture2D" uid="uid://dwihfj6iwpfqb" path="res://Art/Counter.png" id="4_svfyt"]
 [ext_resource type="Texture2D" uid="uid://c0r784bumr0hh" path="res://Art/Counter-corner.png" id="5_c3rin"]
 [ext_resource type="Texture2D" uid="uid://ctd5iloojljy6" path="res://Art/Counter-corner-2.png" id="6_b0bmq"]
@@ -37,6 +38,7 @@ animations = [{
 
 [node name="Counter" instance=ExtResource("1_baftj")]
 script = ExtResource("2_3fr25")
+ProcessGUI = ExtResource("3_baftj")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_72gsp")
