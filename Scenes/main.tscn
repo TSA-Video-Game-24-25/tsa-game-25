@@ -205,7 +205,7 @@ position = Vector2(60, -60)
 can_interact = false
 
 [node name="Counter5" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(40, 60)
+position = Vector2(44, 60)
 can_interact = false
 
 [node name="Counter26" parent="Kitchen" instance=ExtResource("4_4uqti")]
@@ -215,31 +215,30 @@ position = Vector2(40, -60)
 position = Vector2(-100, -60)
 
 [node name="Counter23" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-100, 60)
+position = Vector2(-110, 60)
+can_interact = false
 
 [node name="Counter22" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(-80, -60)
 can_interact = false
 
-[node name="Counter14" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-20, 60)
-
 [node name="Counter8" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(-40, -60)
 
 [node name="Counter27" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-40, 60)
+position = Vector2(-30, 60)
 
 [node name="Counter28" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-56, 60)
-can_interact = false
+position = Vector2(-50, 60)
 
 [node name="Counter29" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-80, 60)
-can_interact = false
+position = Vector2(-90, 60)
 
 [node name="Counter2" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(0, 60)
+position = Vector2(-10, 60)
+
+[node name="Counter14" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(-4, 60)
 can_interact = false
 
 [node name="Counter13" parent="Kitchen" instance=ExtResource("4_4uqti")]
