@@ -20,7 +20,7 @@ animations = [{
 
 [node name="ChickenSandwich" instance=ExtResource("1_5hts4")]
 IsDone = true
-Score = 220
+Score = 210
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_6oh3e")
