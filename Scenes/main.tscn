@@ -191,7 +191,11 @@ position = Vector2(0, -60)
 position = Vector2(20, -60)
 
 [node name="Counter3" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(60, 60)
+position = Vector2(58, 60)
+can_interact = false
+
+[node name="Counter14" parent="Kitchen" instance=ExtResource("4_4uqti")]
+position = Vector2(78, 60)
 can_interact = false
 
 [node name="Counter7" parent="Kitchen" instance=ExtResource("4_4uqti")]
@@ -205,8 +209,7 @@ position = Vector2(60, -60)
 can_interact = false
 
 [node name="Counter5" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(44, 60)
-can_interact = false
+position = Vector2(38, 60)
 
 [node name="Counter26" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(40, -60)
@@ -236,10 +239,6 @@ position = Vector2(-90, 60)
 
 [node name="Counter2" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(-10, 60)
-
-[node name="Counter14" parent="Kitchen" instance=ExtResource("4_4uqti")]
-position = Vector2(-4, 60)
-can_interact = false
 
 [node name="Counter13" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(-20, 10)
@@ -320,7 +319,7 @@ can_interact = true
 position = Vector2(80, 60)
 
 [node name="OrderCounter" parent="Kitchen" instance=ExtResource("15_k12tt")]
-position = Vector2(20, 60)
+position = Vector2(14, 60)
 
 [node name="CustomerOrderPos" type="Marker2D" parent="Kitchen"]
 position = Vector2(20, 81)
