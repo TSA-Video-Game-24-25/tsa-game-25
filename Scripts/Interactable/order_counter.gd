@@ -5,7 +5,7 @@ extends Interactable
 
 
 func interact(_player: Player):
-	if len(main.waiting_customers) >= 4:
+	if len(main.waiting_customers) >= main.max_waiting_customers:
 		return
 	
 	var customer: Customer = main.new_customers[0]
