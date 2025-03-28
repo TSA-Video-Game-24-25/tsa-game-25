@@ -226,7 +226,6 @@ position = Vector2(-20, 60)
 
 [node name="Counter8" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(-40, -60)
-can_interact = false
 
 [node name="Counter27" parent="Kitchen" instance=ExtResource("4_4uqti")]
 position = Vector2(-40, 60)
@@ -258,10 +257,10 @@ position = Vector2(-40, 10)
 can_interact = false
 
 [node name="cooking_station" parent="Kitchen" instance=ExtResource("5_nrck8")]
-position = Vector2(-71, -40)
+position = Vector2(-80, -40)
 
 [node name="cooking_station2" parent="Kitchen" instance=ExtResource("5_nrck8")]
-position = Vector2(-51, -40)
+position = Vector2(-60, -40)
 
 [node name="ChickenSupplyStation" parent="Kitchen" instance=ExtResource("6_4gyfn")]
 position = Vector2(60, -40)
