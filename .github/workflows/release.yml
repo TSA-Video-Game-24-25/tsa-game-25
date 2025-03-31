@@ -1,6 +1,8 @@
 name: "godot-ci export"
 on: 
   push:
+    branches:
+      - master
     paths:
       - 'Version'
 
