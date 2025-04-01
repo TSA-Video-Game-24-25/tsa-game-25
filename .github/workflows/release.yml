@@ -179,6 +179,11 @@ jobs:
           mv build/windows/app.exe build/Windows.exe
           mv build/linux/app.x86_64 build/Linux.x86_64
           mv build/mac/app.zip build/MacOS.zip
+      - name: Format web URL
+        run: |
+          subdomain=$(echo "$WEB_REPO" | cut -d'/' -f1)
+          path=$(echo "$WEB_REPO" | cut -d'/' -f2)
+          echo "DEPLOY_URL=https://$subdomain.github.io/$path" >> $GITHUB_ENV
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
@@ -189,6 +194,6 @@ jobs:
             build/Windows.exe
             build/Linux.x86_64
             build/MacOS.zip
-          body: "${{ format( 'Web build: [Github Pages]({0})', env.WEB_REPO ) }}"
+          body: "${{ format( 'Web build: [Github Pages]({0})', env.DEPLOY_URL ) }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
