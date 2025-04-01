@@ -124,7 +124,7 @@ func start_day():
 	new_customers = []
 	waiting_customers = []
 	
-	score = 50
+	score = 0
 	day_num += 1
 	ui.startDay()
 	
