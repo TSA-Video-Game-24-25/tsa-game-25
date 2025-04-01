@@ -1,8 +1,6 @@
 name: "godot-ci export"
 on: 
   push:
-    branches:
-      - master
     paths:
       - 'Version'
 
@@ -10,6 +8,14 @@ env:
   GODOT_VERSION: 4.4
   EXPORT_NAME: app
   PROJECT_PATH: .
+  WEB_REPO: ${{ github.ref == "refs/heads/master" && "TSA-Video-Game-24-25/game.github.io" || github.ref == "refs/heads/dev" && "TSA-Video-Game-24-25/devgame.github.io" }}
+  DEPLOY_KEY: ${{ github.ref == "refs/heads/master" && secrets.ACTIONS_DEPLOY_KEY || github.ref == "refs/heads/dev" && secrets.ACTIONS_DEPLOY_KEY_DEV }}
+  PRERELEASE: ${{ github.ref == "refs/heads/dev" && true || false }}
+  WORKFLOW_NAME: ${{ github.event.pull_request.number || inputs.dev-deploy != null && 'dev-build' || github.ref_name }}
+
+concurrency:
+  group: $WORKFLOW_NAME
+  cancel-in-progress: true
 
 jobs:
   export-windows:
@@ -96,8 +102,8 @@ jobs:
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          repository-name: TSA-Video-Game-24-25/game.github.io
-          ssh-key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          repository-name: ${{ env.WEB_REPO }}
+          ssh-key: ${{ env.DEPLOY_KEY }}
           branch: main
           folder: build/web
           git-config-name: 'game-builder[bot]'
@@ -178,10 +184,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ env.VERSION }}
+          prerelease: ${{ env.PRERELEASE }}
           files: |
             build/Windows.exe
             build/Linux.x86_64
             build/MacOS.zip
-          body: "Web build: [Github Pages](https://tsa-video-game-24-25.github.io/game.github.io/)"
+          body: "Web build: [Github Pages]($WEB_REPO)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
