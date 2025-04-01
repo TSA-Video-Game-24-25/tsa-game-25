@@ -5,6 +5,7 @@ class_name UI
 @onready var main: Main = get_tree().get_root().get_node("Main")
 @onready var DayStart = $DayStart
 @onready var DayEnd = $DayEnd
+@onready var Tutorial = $GameTutorial
 
 const DayStartStr = "Day %d\nScore: %d"
 const DayEndStr = "Day %d\nEarned %d Points\nCurrent Score: %d\n"
@@ -20,6 +21,7 @@ func _ready() -> void:
 	$MainMenu/VBoxContainer/TutorialButton.pressed.connect(func(): $Tutorial.visible = true; $MainMenu/VBoxContainer/TutorialButton.release_focus())
 	$MainMenu/ScoresButton.pressed.connect(show_scores_menu)
 	
+	$DifficultySelect/PanelContainer/VBoxContainer/Tutorial.pressed.connect(func(): main.difficulty = -1; main.start_day(); $DifficultySelect.visible = false; $MainMenu.visible = false)
 	$DifficultySelect/PanelContainer/VBoxContainer/Beginner.pressed.connect(func(): main.difficulty = 0; main.start_day(); $DifficultySelect.visible = false; $MainMenu.visible = false)
 	$DifficultySelect/PanelContainer/VBoxContainer/Normal.pressed.connect(func(): main.difficulty = 1; main.start_day(); $DifficultySelect.visible = false; $MainMenu.visible = false)
 

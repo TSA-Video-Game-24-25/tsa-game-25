@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctd5iloojljy6"
-path="res://.godot/imported/Counter-corner-2.png-51446004a2b7520f714c7a6d6c140dad.ctex"
+uid="uid://feoyn6bjjljc"
+path="res://.godot/imported/knife.png-c861c6d78f0df8a09167fed1e618235b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Counter-corner-2.png"
-dest_files=["res://.godot/imported/Counter-corner-2.png-51446004a2b7520f714c7a6d6c140dad.ctex"]
+source_file="res://Art/Interactables/knife.png"
+dest_files=["res://.godot/imported/knife.png-c861c6d78f0df8a09167fed1e618235b.ctex"]
 
 [params]
 

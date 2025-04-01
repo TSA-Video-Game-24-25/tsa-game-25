@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cputwghyptueh"
-path="res://.godot/imported/Chef Rat.png-e355e5e345e650f5cfe078fdb4f6d0ae.ctex"
+uid="uid://ltt1yttr6c6t"
+path="res://.godot/imported/Plate-supply.png-5c42453d1a72908343f20242de5340e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Chef Rat.png"
-dest_files=["res://.godot/imported/Chef Rat.png-e355e5e345e650f5cfe078fdb4f6d0ae.ctex"]
+source_file="res://Art/Interactables/Plate-supply.png"
+dest_files=["res://.godot/imported/Plate-supply.png-5c42453d1a72908343f20242de5340e4.ctex"]
 
 [params]
 

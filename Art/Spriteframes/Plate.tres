@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://cp1qeerhu8w82"]
+
+[ext_resource type="Texture2D" uid="uid://c2sl3fdkx24xq" path="res://Art/Food/Plate.png" id="1_oumti"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1to02"]
+atlas = ExtResource("1_oumti")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1to02")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

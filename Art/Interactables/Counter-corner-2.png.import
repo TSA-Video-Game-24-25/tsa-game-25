@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5nn84jklxhvb"
-path="res://.godot/imported/Customers.png-6c253e8ba50e435d7ca2d5c6765df1a0.ctex"
+uid="uid://ctd5iloojljy6"
+path="res://.godot/imported/Counter-corner-2.png-01dedce16e05d466c1a4c97cc69b2fad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Customers.png"
-dest_files=["res://.godot/imported/Customers.png-6c253e8ba50e435d7ca2d5c6765df1a0.ctex"]
+source_file="res://Art/Interactables/Counter-corner-2.png"
+dest_files=["res://.godot/imported/Counter-corner-2.png-01dedce16e05d466c1a4c97cc69b2fad.ctex"]
 
 [params]
 

@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://jbn0sesrx2lk"]
+
+[ext_resource type="Texture2D" uid="uid://bi8w4agtbrjrl" path="res://Art/Interactables/Greens Storage.png" id="1_qkos5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo2ah"]
+atlas = ExtResource("1_qkos5")
+region = Rect2(0, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jo2ah")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://eb65st0khtil" path="res://Scenes/interactable.tscn" id="1_oeyvk"]
 [ext_resource type="Script" uid="uid://exjdv225stl5" path="res://Scripts/Interactable/order_counter.gd" id="2_6l211"]
-[ext_resource type="Texture2D" uid="uid://cec0b1dycf0xu" path="res://Art/Pick up_Order Counter.png" id="3_v1b27"]
+[ext_resource type="Texture2D" uid="uid://cec0b1dycf0xu" path="res://Art/Interactables/Pick up_Order Counter.png" id="3_v1b27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1b27"]
 size = Vector2(30, 20)

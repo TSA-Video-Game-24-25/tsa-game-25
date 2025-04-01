@@ -7,6 +7,7 @@ enum action {
 	DOWN,
 	RIGHT,
 }
+
 var action_to_string = {
 	action.UP: "move_up",
 	action.LEFT: "move_left",

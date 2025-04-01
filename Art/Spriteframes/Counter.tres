@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://c1bd6rb6ct5nr"]
+
+[ext_resource type="Texture2D" uid="uid://dwihfj6iwpfqb" path="res://Art/Interactables/Counter.png" id="1_4ra4m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prkqd"]
+atlas = ExtResource("1_4ra4m")
+region = Rect2(32, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prkqd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

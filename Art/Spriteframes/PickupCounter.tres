@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://qp7i0foqauc0"]
+
+[ext_resource type="Texture2D" uid="uid://cec0b1dycf0xu" path="res://Art/Interactables/Pick up_Order Counter.png" id="1_r6sw1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6sw1"]
+atlas = ExtResource("1_r6sw1")
+region = Rect2(0, 0, 34, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6sw1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

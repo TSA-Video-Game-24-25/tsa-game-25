@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxdroedmdd05u"
-path="res://.godot/imported/Chef Coon.png-ed045c383db40817a58a8bda515d276c.ctex"
+uid="uid://bmue2bo46s77k"
+path="res://.godot/imported/Oven.png-e2ac4968e0a01581d9734152b98f42b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Chef Coon.png"
-dest_files=["res://.godot/imported/Chef Coon.png-ed045c383db40817a58a8bda515d276c.ctex"]
+source_file="res://Art/Interactables/Oven.png"
+dest_files=["res://.godot/imported/Oven.png-e2ac4968e0a01581d9734152b98f42b1.ctex"]
 
 [params]
 

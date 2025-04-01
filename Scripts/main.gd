@@ -3,6 +3,10 @@ class_name Main
 
 
 signal day_starting
+signal order_taken
+signal item_interact(String)
+signal item_process(String)
+signal item_processed(String)
 
 @export var Players := []
 @export var CameraMode := cameraMode.DEFAULT
@@ -35,6 +39,11 @@ enum cameraMode {
 	FOLLOW_PLAYER_1,
 	NONE,
 }
+
+
+func _ready() -> void:
+	for player: Player in Players:
+		player.item_interact.connect(func(x): item_interact.emit(x))
 
 
 func _process(_delta: float) -> void:
@@ -123,6 +132,7 @@ func start_day():
 	Players[1].position = $Kitchen/Player2Pos.position
 	
 	if difficulty == -1:
+		$Ui.Tutorial.start_tutorial()
 		time_remaining = 0
 		max_waiting_customers = tutorial_max_waiting_customers
 	if difficulty == 0:
@@ -139,6 +149,7 @@ func start_day():
 	
 	if difficulty == -1:
 		spawn_customer_with_order(load("res://Scenes/Item/FoodItem/chicken_salad.tscn"))
+		spawn_customer_with_order(load("res://Scenes/Item/FoodItem/fried_chicken.tscn"))
 	else:
 		for x in range(3):
 			spawn_customer()

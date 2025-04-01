@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7ehom4gyahp4"
-path="res://.godot/imported/Cheese Storage.png-5d2d5ccb5762c612d86dec04adc8bd81.ctex"
+uid="uid://bxdroedmdd05u"
+path="res://.godot/imported/Chef Coon.png-57343f5c81adbc01003bb6e6247b8f54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cheese Storage.png"
-dest_files=["res://.godot/imported/Cheese Storage.png-5d2d5ccb5762c612d86dec04adc8bd81.ctex"]
+source_file="res://Art/Characters/Chef Coon.png"
+dest_files=["res://.godot/imported/Chef Coon.png-57343f5c81adbc01003bb6e6247b8f54.ctex"]
 
 [params]
 

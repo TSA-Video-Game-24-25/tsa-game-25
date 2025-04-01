@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwihfj6iwpfqb"
-path="res://.godot/imported/Counter.png-7d65e59ad78038b4fd6b07058926fef3.ctex"
+uid="uid://7ehom4gyahp4"
+path="res://.godot/imported/Cheese Storage.png-ddd553611cba6b26c4e38b585635a6b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Counter.png"
-dest_files=["res://.godot/imported/Counter.png-7d65e59ad78038b4fd6b07058926fef3.ctex"]
+source_file="res://Art/Interactables/Cheese Storage.png"
+dest_files=["res://.godot/imported/Cheese Storage.png-ddd553611cba6b26c4e38b585635a6b2.ctex"]
 
 [params]
 

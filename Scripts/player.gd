@@ -2,14 +2,10 @@ extends CharacterBody2D
 class_name Player
 
 
+signal item_interact(String)
+
 const SPEED := 100.0
 const ACCELERATION := 800.0
-@onready var sprite := $AnimatedSprite2D
-
-var canMove := true
-
-var heldItem: Item
-var preferredDirection := Vector2.UP
 
 @export var input_map := {
 	"move_up": "w",
@@ -24,8 +20,12 @@ var preferredDirection := Vector2.UP
 		update_input_map()
 
 @onready var main = get_node("/root/Main")
+@onready var sprite := $AnimatedSprite2D
 
 var id: int
+var canMove := true
+var heldItem: Item
+var preferredDirection := Vector2.UP
 
 
 func _ready() -> void:
@@ -93,6 +93,7 @@ func tryAddItemFromScene(item: PackedScene) -> bool:
 	add_child(heldItem)
 	
 	heldItem.position = $HeldItemPos.position
+	item_interact.emit("grab_" + heldItem.name)
 	return true
 
 
@@ -154,6 +155,7 @@ func process_if_pressed() -> void:
 		
 		body.process(self)
 		return
+
 
 func play_animation() -> void:
 	if velocity == Vector2.ZERO:

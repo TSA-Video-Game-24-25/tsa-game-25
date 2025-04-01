@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c7d2atcxh5pxm" path="res://Scenes/Interactable/supply_station.tscn" id="1_s52rt"]
 [ext_resource type="PackedScene" uid="uid://cwdcxnwc2u6st" path="res://Scenes/Item/FoodItem/tomato.tscn" id="2_70nrq"]
-[ext_resource type="Texture2D" uid="uid://cgmi2iepq0td2" path="res://Art/Tomato Storage.png" id="3_70nrq"]
+[ext_resource type="Texture2D" uid="uid://cgmi2iepq0td2" path="res://Art/Interactables/Tomato Storage.png" id="3_70nrq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfnt4"]
 atlas = ExtResource("3_70nrq")

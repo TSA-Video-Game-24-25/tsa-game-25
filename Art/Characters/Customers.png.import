@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw14qhl731shh"
-path="res://.godot/imported/Counter-side.png-ef074df10f53a173b9a264730f5246bd.ctex"
+uid="uid://5nn84jklxhvb"
+path="res://.godot/imported/Customers.png-6849c82eae7ab0e8ca90856dc978b938.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Counter-side.png"
-dest_files=["res://.godot/imported/Counter-side.png-ef074df10f53a173b9a264730f5246bd.ctex"]
+source_file="res://Art/Characters/Customers.png"
+dest_files=["res://.godot/imported/Customers.png-6849c82eae7ab0e8ca90856dc978b938.ctex"]
 
 [params]
 

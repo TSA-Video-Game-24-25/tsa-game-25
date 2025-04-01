@@ -20,3 +20,4 @@ func interact(_player: Player):
 		return
 	
 	main.spawn_customer()
+	main.order_taken.emit()

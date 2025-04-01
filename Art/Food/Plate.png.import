@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cec0b1dycf0xu"
-path="res://.godot/imported/Pick up_Order Counter.png-0e756e6956fb40b842f2e6771d13117c.ctex"
+uid="uid://c2sl3fdkx24xq"
+path="res://.godot/imported/Plate.png-52b19af693265d4dbeadde9e65f947b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Pick up_Order Counter.png"
-dest_files=["res://.godot/imported/Pick up_Order Counter.png-0e756e6956fb40b842f2e6771d13117c.ctex"]
+source_file="res://Art/Food/Plate.png"
+dest_files=["res://.godot/imported/Plate.png-52b19af693265d4dbeadde9e65f947b3.ctex"]
 
 [params]
 

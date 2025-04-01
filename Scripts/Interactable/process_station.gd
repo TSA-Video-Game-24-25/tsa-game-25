@@ -41,12 +41,15 @@ func interact(_player: Player) -> void:
 	player = _player
 	
 	if heldItem is Plate and heldItem.tryAddItem(player.heldItem):
+		player.item_interact.emit("place_" + player.heldItem.name + "_plate")
 		player.heldItem = null
 	
 	elif player.heldItem is FoodItem and try_add_item(player.heldItem):
+		player.item_interact.emit("place_" + player.heldItem.name + "_" + name)
 		player.heldItem = null
 	
 	elif player.tryAddItem(heldItem):
+		player.item_interact.emit("grab_" + heldItem.name)
 		heldItem = null
 
 
@@ -75,6 +78,7 @@ func finish_processing():
 	player.canMove = true
 	player = null
 	process_item()
+	main.item_process.emit(heldItem.name + "_" + name)
 
 
 func process_item():

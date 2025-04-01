@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6j60y16pd8t3"
-path="res://.godot/imported/Grain.png-7a544a807ec087e4a7f9d7a4c48f68d4.ctex"
+uid="uid://cgmi2iepq0td2"
+path="res://.godot/imported/Tomato Storage.png-e60125edab6c6a9f589355941d62b8fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Grain.png"
-dest_files=["res://.godot/imported/Grain.png-7a544a807ec087e4a7f9d7a4c48f68d4.ctex"]
+source_file="res://Art/Interactables/Tomato Storage.png"
+dest_files=["res://.godot/imported/Tomato Storage.png-e60125edab6c6a9f589355941d62b8fa.ctex"]
 
 [params]
 

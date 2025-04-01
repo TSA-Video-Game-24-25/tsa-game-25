@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duhj3mbxxwy1l"
-path="res://.godot/imported/Customer Faces.png-09e167e0e98890410985918da626eaac.ctex"
+uid="uid://bi8w4agtbrjrl"
+path="res://.godot/imported/Greens Storage.png-4032a56f13011f6b2c9ff8bf301ac665.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Customer Faces.png"
-dest_files=["res://.godot/imported/Customer Faces.png-09e167e0e98890410985918da626eaac.ctex"]
+source_file="res://Art/Interactables/Greens Storage.png"
+dest_files=["res://.godot/imported/Greens Storage.png-4032a56f13011f6b2c9ff8bf301ac665.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_1jkpk"]
 [ext_resource type="Script" uid="uid://dq0ua5yjys1nv" path="res://Scripts/Interactable/ProcessStation/cooking_station.gd" id="2_rix4g"]
-[ext_resource type="Texture2D" uid="uid://bmue2bo46s77k" path="res://Art/Oven.png" id="3_lfehd"]
+[ext_resource type="Texture2D" uid="uid://bmue2bo46s77k" path="res://Art/Interactables/Oven.png" id="3_lfehd"]
 
 [sub_resource type="Theme" id="Theme_s0u0n"]
 /colors/a = Color(0, 0.815686, 0, 1)
@@ -63,7 +63,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="cooking_station" instance=ExtResource("1_1jkpk")]
+[node name="Oven" instance=ExtResource("1_1jkpk")]
 script = ExtResource("2_rix4g")
 CookSpeedMult = 1.0
 

@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://drx34qms0bcfj"]
+
+[ext_resource type="Texture2D" uid="uid://6j60y16pd8t3" path="res://Art/Interactables/Grain.png" id="1_l4k24"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p0y4"]
+atlas = ExtResource("1_l4k24")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p0y4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

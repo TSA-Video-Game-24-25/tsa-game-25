@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi8w4agtbrjrl"
-path="res://.godot/imported/Greens Storage.png-7072f95b6515a80a81deb98de10c3443.ctex"
+uid="uid://c0r784bumr0hh"
+path="res://.godot/imported/Counter-corner.png-2fb08ac06d3263375ec5c3f02fffce1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Greens Storage.png"
-dest_files=["res://.godot/imported/Greens Storage.png-7072f95b6515a80a81deb98de10c3443.ctex"]
+source_file="res://Art/Interactables/Counter-corner.png"
+dest_files=["res://.godot/imported/Counter-corner.png-2fb08ac06d3263375ec5c3f02fffce1b.ctex"]
 
 [params]
 

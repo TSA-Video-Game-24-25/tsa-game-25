@@ -1,28 +1,25 @@
-[gd_scene load_steps=102 format=3 uid="uid://vkbkwsv4qhrx"]
+[gd_scene load_steps=103 format=3 uid="uid://vkbkwsv4qhrx"]
 
 [ext_resource type="Script" uid="uid://cgh2qpdg3a2vs" path="res://Scripts/GUI/ui.gd" id="1_2rnfa"]
-[ext_resource type="Texture2D" uid="uid://duhj3mbxxwy1l" path="res://Art/Customer Faces.png" id="1_huqb3"]
+[ext_resource type="Texture2D" uid="uid://duhj3mbxxwy1l" path="res://Art/Characters/Customer Faces.png" id="1_huqb3"]
 [ext_resource type="Script" uid="uid://qi5ix2g2y6bo" path="res://Scripts/GUI/escape_menu.gd" id="3_csd48"]
+[ext_resource type="StyleBox" uid="uid://dl355hhomvfak" path="res://UI.tres" id="3_lhh44"]
 [ext_resource type="Texture2D" uid="uid://bw8d66ecksudv" path="res://Art/Recipe Book/Recipe Book Open and Blue turn (1).png" id="3_vlwpb"]
+[ext_resource type="StyleBox" uid="uid://owiqwsw856se" path="res://UI_grey.tres" id="4_a6s81"]
 [ext_resource type="Texture2D" uid="uid://cr1s1y2lvv60g" path="res://Art/Recipe Book/Recipe Book Purple Turning (2).png" id="4_csd48"]
 [ext_resource type="Texture2D" uid="uid://bd1h3nuhlmvwr" path="res://Art/Recipe Book/Recipe Book Green Turning.png" id="5_6yr7l"]
 [ext_resource type="Texture2D" uid="uid://bkke85qbahflh" path="res://Art/Tutorial/1.png" id="10_5hk8p"]
-[ext_resource type="Texture2D" uid="uid://baaqtutbcf3k3" path="res://Art/Recipe Book/1.png" id="10_yhlim"]
 [ext_resource type="Texture2D" uid="uid://cw6nsldhqelgx" path="res://Art/Tutorial/2.png" id="11_7svds"]
-[ext_resource type="Texture2D" uid="uid://c2ju58mr2h1xw" path="res://Art/Recipe Book/2.png" id="11_rd1wc"]
 [ext_resource type="Texture2D" uid="uid://mctr12r4p6p4" path="res://Art/Tutorial/3.png" id="12_jb042"]
-[ext_resource type="Texture2D" uid="uid://cwkohaaljbib6" path="res://Art/Recipe Book/3.png" id="12_lhh44"]
-[ext_resource type="Texture2D" uid="uid://dcvwf8cqrs6d" path="res://Art/Recipe Book/4.png" id="13_a6s81"]
-[ext_resource type="Texture2D" uid="uid://dd4j1q1m7kmmw" path="res://Art/Cooking Catastrophe.png" id="13_jntt5"]
+[ext_resource type="Texture2D" uid="uid://dd4j1q1m7kmmw" path="res://Art/Interactables/Cooking Catastrophe.png" id="13_jntt5"]
 [ext_resource type="Texture2D" uid="uid://cjyscwo8m58ng" path="res://Art/Tutorial/4.png" id="13_kh2ux"]
-[ext_resource type="Texture2D" uid="uid://be7unqxu84tas" path="res://Art/Recipe Book/5.png" id="14_80ipn"]
 [ext_resource type="Texture2D" uid="uid://ck0wwy1nsi41v" path="res://Art/Tutorial/5.png" id="14_400ke"]
 [ext_resource type="StyleBox" uid="uid://bw3opruxk55yk" path="res://new_style_box_flat.tres" id="14_nkekq"]
 [ext_resource type="StyleBox" uid="uid://8hlfar4bq8na" path="res://new_style_box_flat-selected.tres" id="15_7xq0j"]
-[ext_resource type="Texture2D" uid="uid://defkcrtwwxp20" path="res://Art/Recipe Book/6.png" id="15_jer0g"]
 [ext_resource type="Texture2D" uid="uid://biwii5qip2cxb" path="res://Art/Tutorial/6.png" id="15_onri8"]
 [ext_resource type="Texture2D" uid="uid://b3asx84jy24pb" path="res://Art/Tutorial/7.png" id="16_yhlim"]
 [ext_resource type="Script" path="res://Scripts/GUI/tutorial.gd" id="17_rd1wc"]
+[ext_resource type="Script" uid="uid://dpeeqo6h4op7g" path="res://Scripts/GUI/game_tutorial.gd" id="24_rd1wc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mw1m"]
 atlas = ExtResource("1_huqb3")
@@ -161,12 +158,6 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_huqb3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rnfa"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adret"]
-bg_color = Color(1, 1, 1, 0.376471)
-
 [sub_resource type="LabelSettings" id="LabelSettings_huqb3"]
 font_size = 24
 
@@ -185,6 +176,8 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 corner_detail = 20
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_adret"]
 font_size = 80
@@ -684,26 +677,44 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kh2ux"]
+load_path = "res://.godot/imported/1.png-50f5e0ba413922fc45607ef40f008b4b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_400ke"]
+load_path = "res://.godot/imported/2.png-6d01b951c8b8105a400730d4aeb1e705.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_onri8"]
+load_path = "res://.godot/imported/3.png-0c9b300cb3c80a425ed9836665f0f15c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yhlim"]
+load_path = "res://.godot/imported/4.png-04779e1d5876b1e914357628c56cd56e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rd1wc"]
+load_path = "res://.godot/imported/5.png-12b667add45b697ff91fb336c44e7293.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lhh44"]
+load_path = "res://.godot/imported/6.png-c6d339335b12590aef46df12c151bbe4.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xq0j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_yhlim")
+"texture": SubResource("CompressedTexture2D_kh2ux")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_rd1wc")
+"texture": SubResource("CompressedTexture2D_400ke")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_lhh44")
+"texture": SubResource("CompressedTexture2D_onri8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_a6s81")
+"texture": SubResource("CompressedTexture2D_yhlim")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_80ipn")
+"texture": SubResource("CompressedTexture2D_rd1wc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_jer0g")
+"texture": SubResource("CompressedTexture2D_lhh44")
 }],
 "loop": false,
 "name": &"default",
@@ -790,30 +801,27 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -146.0
-offset_right = 146.0
-offset_bottom = 63.0
+offset_top = 10.0
+offset_right = 154.0
+offset_bottom = 73.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2rnfa")
+theme_override_styles/panel = ExtResource("3_lhh44")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Overlay/TopPanel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -134.0
-offset_top = -25.0
-offset_right = 134.0
-offset_bottom = 25.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
 
 [node name="Panel" type="Panel" parent="Overlay/TopPanel/HBoxContainer"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
+theme_override_styles/panel = ExtResource("4_a6s81")
 
 [node name="DayLabel" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel"]
 layout_mode = 1
@@ -829,7 +837,7 @@ vertical_alignment = 1
 [node name="Panel2" type="Panel" parent="Overlay/TopPanel/HBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
+theme_override_styles/panel = ExtResource("4_a6s81")
 
 [node name="TimeLabel" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel2"]
 layout_mode = 1
@@ -858,7 +866,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(90, 30)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
+theme_override_styles/panel = ExtResource("4_a6s81")
 
 [node name="ScoreLabel" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel3"]
 layout_mode = 1
@@ -878,33 +886,28 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -146.0
-offset_top = -63.0
-offset_right = 146.0
+offset_left = -157.5
+offset_top = -125.0
+offset_right = 157.5
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2rnfa")
+theme_override_styles/panel = ExtResource("3_lhh44")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Overlay/BottomPanel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -151.5
-offset_top = -26.5
-offset_right = 152.5
-offset_bottom = 26.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 15
 alignment = 1
 
 [node name="Player1" type="Panel" parent="Overlay/BottomPanel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 105)
 layout_mode = 2
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
+theme_override_styles/panel = ExtResource("4_a6s81")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Overlay/BottomPanel/HBoxContainer/Player1"]
 layout_mode = 1
@@ -940,8 +943,7 @@ vertical_alignment = 2
 [node name="Player2" type="Panel" parent="Overlay/BottomPanel/HBoxContainer"]
 custom_minimum_size = Vector2(150, 105)
 layout_mode = 2
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
+theme_override_styles/panel = ExtResource("4_a6s81")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Overlay/BottomPanel/HBoxContainer/Player2"]
 layout_mode = 1
@@ -975,27 +977,21 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="TopLeftPanel" type="Panel" parent="Overlay"]
-custom_minimum_size = Vector2(243, 33)
-offset_right = 364.5
-offset_bottom = 49.5
-theme_override_styles/panel = SubResource("StyleBoxFlat_2rnfa")
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 335.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("3_lhh44")
 
 [node name="Panel" type="Panel" parent="Overlay/TopLeftPanel"]
-custom_minimum_size = Vector2(349.5, 34.5)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -116.5
-offset_top = -11.5
-offset_right = 116.5
-offset_bottom = 11.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
+theme_override_styles/panel = ExtResource("4_a6s81")
 
 [node name="Label" type="Label" parent="Overlay/TopLeftPanel/Panel"]
 layout_mode = 1
@@ -1008,6 +1004,56 @@ theme_override_font_sizes/font_size = 23
 text = " Press \"esc\" to view cookbook "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GameTutorial" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("24_rd1wc")
+
+[node name="PanelContainer" type="PanelContainer" parent="GameTutorial"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -174.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("3_lhh44")
+
+[node name="PanelContainer" type="PanelContainer" parent="GameTutorial/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_a6s81")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameTutorial/PanelContainer/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameTutorial/PanelContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Panel" type="Panel" parent="GameTutorial/PanelContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Control" type="Control" parent="GameTutorial/PanelContainer/PanelContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GameTutorial/PanelContainer/PanelContainer/VBoxContainer/Panel/Control"]
+scale = Vector2(5, 5)
 
 [node name="DayStart" type="CanvasLayer" parent="."]
 visible = false
@@ -1249,25 +1295,68 @@ text = "Select Difficulty:
 label_settings = SubResource("LabelSettings_adret")
 horizontal_alignment = 1
 
-[node name="Beginner" type="Button" parent="DifficultySelect/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(500, 0)
+[node name="Tutorial" type="Button" parent="DifficultySelect/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 160)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 80
-text = "Beginner"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DifficultySelect/PanelContainer/VBoxContainer/Tutorial"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=80]Tutorial
+[font_size=30]no timer, learn how to play"
+
+[node name="Beginner" type="Button" parent="DifficultySelect/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DifficultySelect/PanelContainer/VBoxContainer/Beginner"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=80]Easy
+[font_size=30]longer days, easier experience"
 
 [node name="Normal" type="Button" parent="DifficultySelect/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(500, 0)
+custom_minimum_size = Vector2(500, 160)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 80
-text = "Normal"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DifficultySelect/PanelContainer/VBoxContainer/Normal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=80]Normal
+[font_size=26]intended experience with score saving"
 
 [node name="EscapeMenu" type="CanvasLayer" parent="."]
 visible = false
@@ -1288,6 +1377,20 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.196078, 0.196078, 0.196078, 0.501961)
 
+[node name="Panel" type="Panel" parent="EscapeMenu"]
+custom_minimum_size = Vector2(975, 915)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -487.5
+offset_top = -450.0
+offset_right = 487.5
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Control" type="Control" parent="EscapeMenu"]
 layout_mode = 3
 anchors_preset = 8
@@ -1297,57 +1400,45 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
 offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EscapeMenu/Control"]
 texture_filter = 1
+position = Vector2(12, 11)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_3p0y4")
 animation = &"open"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="EscapeMenu/Control"]
 texture_filter = 1
-position = Vector2(153, 360)
+position = Vector2(165, 371)
 scale = Vector2(1.05, 1.05)
 sprite_frames = SubResource("SpriteFrames_7xq0j")
 
-[node name="TopLeftPanel" type="Panel" parent="EscapeMenu"]
-custom_minimum_size = Vector2(243, 33)
-offset_right = 364.5
-offset_bottom = 49.5
-theme_override_styles/panel = SubResource("StyleBoxFlat_2rnfa")
-
-[node name="Panel" type="Panel" parent="EscapeMenu/TopLeftPanel"]
-custom_minimum_size = Vector2(349.5, 34.5)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -116.5
-offset_top = -11.5
-offset_right = 116.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
-
-[node name="Label" type="Label" parent="EscapeMenu/TopLeftPanel/Panel"]
-layout_mode = 1
-anchors_preset = 15
+[node name="QuitButton" type="Button" parent="EscapeMenu"]
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 23
-text = " Press \"esc\" to exit cookbook"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = -271.0
+offset_bottom = 89.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = ExtResource("15_7xq0j")
+theme_override_styles/disabled_mirrored = ExtResource("14_nkekq")
+theme_override_styles/disabled = ExtResource("14_nkekq")
+theme_override_styles/hover_pressed_mirrored = ExtResource("15_7xq0j")
+theme_override_styles/hover_pressed = ExtResource("15_7xq0j")
+theme_override_styles/hover_mirrored = ExtResource("15_7xq0j")
+theme_override_styles/hover = ExtResource("15_7xq0j")
+theme_override_styles/pressed_mirrored = ExtResource("14_nkekq")
+theme_override_styles/pressed = ExtResource("14_nkekq")
+theme_override_styles/normal_mirrored = ExtResource("14_nkekq")
+theme_override_styles/normal = ExtResource("14_nkekq")
+text = "Quit Game"
 
 [node name="LeftButton" type="Button" parent="EscapeMenu"]
 anchors_preset = 4
@@ -1400,11 +1491,40 @@ theme_override_styles/normal = ExtResource("14_nkekq")
 text = ">>
 (D/L)"
 
-[node name="Tutorial" type="CanvasLayer" parent="."]
+[node name="TopLeftPanel" type="Panel" parent="EscapeMenu"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 335.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("3_lhh44")
+
+[node name="Panel" type="Panel" parent="EscapeMenu/TopLeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("4_a6s81")
+
+[node name="Label" type="Label" parent="EscapeMenu/TopLeftPanel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+text = " Press \"esc\" to view cookbook "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TutorialBook" type="CanvasLayer" parent="."]
 visible = false
 script = ExtResource("17_rd1wc")
 
-[node name="ColorRect" type="ColorRect" parent="Tutorial"]
+[node name="ColorRect" type="ColorRect" parent="TutorialBook"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1418,7 +1538,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.605274, 0.605274, 0.605274, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Tutorial"]
+[node name="ColorRect2" type="ColorRect" parent="TutorialBook"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1432,7 +1552,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control" parent="Tutorial"]
+[node name="Control" type="Control" parent="TutorialBook"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -1442,12 +1562,12 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorial/Control"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TutorialBook/Control"]
 texture_filter = 1
 scale = Vector2(0.78, 0.78)
 sprite_frames = SubResource("SpriteFrames_5hk8p")
 
-[node name="LeftButton" type="Button" parent="Tutorial"]
+[node name="LeftButton" type="Button" parent="TutorialBook"]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -1471,7 +1591,7 @@ theme_override_styles/normal = ExtResource("14_nkekq")
 text = "<<
 (A/J)"
 
-[node name="RightButton" type="Button" parent="Tutorial"]
+[node name="RightButton" type="Button" parent="TutorialBook"]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -1603,7 +1723,7 @@ autowrap_mode = 3
 custom_minimum_size = Vector2(243, 33)
 offset_right = 364.5
 offset_bottom = 49.5
-theme_override_styles/panel = SubResource("StyleBoxFlat_2rnfa")
+theme_override_styles/panel = ExtResource("3_lhh44")
 
 [node name="Panel" type="Panel" parent="ScoresMenu/TopLeftPanel"]
 custom_minimum_size = Vector2(349.5, 34.5)
@@ -1620,7 +1740,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_adret")
+theme_override_styles/panel = ExtResource("4_a6s81")
 
 [node name="Label" type="Label" parent="ScoresMenu/TopLeftPanel/Panel"]
 layout_mode = 1

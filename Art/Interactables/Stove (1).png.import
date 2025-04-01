@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd4j1q1m7kmmw"
-path="res://.godot/imported/Cooking Catastrophe.png-999d204aa53f1facd4d823fc17d22abd.ctex"
+uid="uid://bav1kmqt0ci8o"
+path="res://.godot/imported/Stove (1).png-ca24a3614432c12b99b691c7a3312875.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Cooking Catastrophe.png"
-dest_files=["res://.godot/imported/Cooking Catastrophe.png-999d204aa53f1facd4d823fc17d22abd.ctex"]
+source_file="res://Art/Interactables/Stove (1).png"
+dest_files=["res://.godot/imported/Stove (1).png-ca24a3614432c12b99b691c7a3312875.ctex"]
 
 [params]
 

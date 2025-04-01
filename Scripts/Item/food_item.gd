@@ -9,3 +9,8 @@ class_name FoodItem
 @export var CookTime: int = 5
 @export var IsDone := false
 @export var Score := 0
+
+
+func _ready() -> void:
+	if IsDone:
+		main.item_processed.emit(name)

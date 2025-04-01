@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bav1kmqt0ci8o"
-path="res://.godot/imported/Stove (1).png-c3188f551584f4b9df1651522da5060d.ctex"
+uid="uid://kaan4dbou5rq"
+path="res://.godot/imported/Chicken Storage.png-9306def0011ad10eb7a9ca4d1a855560.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Stove (1).png"
-dest_files=["res://.godot/imported/Stove (1).png-c3188f551584f4b9df1651522da5060d.ctex"]
+source_file="res://Art/Interactables/Chicken Storage.png"
+dest_files=["res://.godot/imported/Chicken Storage.png-9306def0011ad10eb7a9ca4d1a855560.ctex"]
 
 [params]
 
