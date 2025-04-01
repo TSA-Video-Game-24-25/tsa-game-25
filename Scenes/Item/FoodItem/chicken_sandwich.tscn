@@ -3,15 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_5hts4"]
 [ext_resource type="Texture2D" uid="uid://bo1xidxpfxbed" path="res://Art/Food/Meals.png" id="2_wqdep"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0kybq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqdep"]
 atlas = ExtResource("2_wqdep")
-region = Rect2(0, 288, 32, 32)
+region = Rect2(0, 128, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6oh3e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0kybq")
+"texture": SubResource("AtlasTexture_wqdep")
 }],
 "loop": true,
 "name": &"default",
