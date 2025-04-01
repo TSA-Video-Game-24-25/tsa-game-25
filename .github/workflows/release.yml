@@ -183,7 +183,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: ${{ format( '{0}{1}', env.VERSION, env.PRERELEASE && '-dev' || '' }}
+          tag_name: ${{ format( '{0}{1}', env.VERSION, env.PRERELEASE && '-dev' || '' ) }}
           prerelease: ${{ env.PRERELEASE }}
           files: |
             build/Windows.exe
