@@ -183,12 +183,12 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: ${{ env.VERSION }}
+          tag_name: ${{ format( '{0}{1}', env.VERSION, env.PRERELEASE && '-dev' || '' }}
           prerelease: ${{ env.PRERELEASE }}
           files: |
             build/Windows.exe
             build/Linux.x86_64
             build/MacOS.zip
-          body: "Web build: [Github Pages]($WEB_REPO)"
+          body: ${{ format( 'Web build: [Github Pages]({0})', env.WEB_REPO ) }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
