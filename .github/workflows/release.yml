@@ -8,9 +8,9 @@ env:
   GODOT_VERSION: 4.4
   EXPORT_NAME: app
   PROJECT_PATH: .
-  WEB_REPO: ${{ github.ref == "refs/heads/master" && "TSA-Video-Game-24-25/game.github.io" || github.ref == "refs/heads/dev" && "TSA-Video-Game-24-25/devgame.github.io" }}
-  DEPLOY_KEY: ${{ github.ref == "refs/heads/master" && secrets.ACTIONS_DEPLOY_KEY || github.ref == "refs/heads/dev" && secrets.ACTIONS_DEPLOY_KEY_DEV }}
-  PRERELEASE: ${{ github.ref == "refs/heads/dev" && true || false }}
+  WEB_REPO: ${{ github.ref == 'refs/heads/master' && 'TSA-Video-Game-24-25/game.github.io' || github.ref == 'refs/heads/dev' && 'TSA-Video-Game-24-25/devgame.github.io' }}
+  DEPLOY_KEY: ${{ github.ref == 'refs/heads/master' && secrets.ACTIONS_DEPLOY_KEY || github.ref == 'refs/heads/dev' && secrets.ACTIONS_DEPLOY_KEY_DEV }}
+  PRERELEASE: ${{ github.ref == 'refs/heads/dev' && true || false }}
   WORKFLOW_NAME: ${{ github.event.pull_request.number || inputs.dev-deploy != null && 'dev-build' || github.ref_name }}
 
 concurrency:
