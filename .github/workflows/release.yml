@@ -189,6 +189,6 @@ jobs:
             build/Windows.exe
             build/Linux.x86_64
             build/MacOS.zip
-          body: ${{ format( 'Web build: [Github Pages]({0})', env.WEB_REPO ) }}
+          body: "${{ format( 'Web build: [Github Pages]({0})', env.WEB_REPO ) }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
