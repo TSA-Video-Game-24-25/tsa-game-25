@@ -4,6 +4,10 @@ extends "res://Scripts/Interactable/process_station.gd"
 var customer: Customer
 
 
+func _ready() -> void:
+	main.day_starting.connect(reset)
+
+
 func try_add_item(item: Item) -> bool:
 	if not item.IsDone:
 		return false
@@ -34,9 +38,13 @@ func process_item() -> void:
 	
 	await customer.pickup_item()
 	
-	heldItem.queue_free()
-	heldItem = null
-	can_interact = true
+	reset()
 	
 	customer.leave()
 	main.score += customer.order.Score
+
+
+func reset():
+	heldItem.queue_free()
+	heldItem = null
+	can_interact = true
