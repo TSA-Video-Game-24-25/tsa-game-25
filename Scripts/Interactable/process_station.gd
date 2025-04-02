@@ -66,6 +66,7 @@ func process(_player: Player):
 	player = _player
 	
 	if ProcessGUI:
+		can_interact = false
 		player.canMove = false
 		gui = ProcessGUI.instantiate()
 		gui.player = player
@@ -75,6 +76,7 @@ func process(_player: Player):
 
 
 func finish_processing():
+	can_interact = true
 	player.canMove = true
 	player = null
 	process_item()
