@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt0iys7usnsc"]
+
+[ext_resource type="PackedScene" uid="uid://eb65st0khtil" path="res://Scenes/interactable.tscn" id="1_yxdqb"]
+[ext_resource type="Script" uid="uid://c22nhqf2g5lln" path="res://Scripts/Interactable/trash_can.gd" id="2_gaqi0"]
+[ext_resource type="Texture2D" uid="uid://ep50dnc4io4g" path="res://Art/Interactables/Counter-7.png (1).png" id="3_orca4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mcke8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_orca4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TrashCan" instance=ExtResource("1_yxdqb")]
+script = ExtResource("2_gaqi0")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_mcke8")
