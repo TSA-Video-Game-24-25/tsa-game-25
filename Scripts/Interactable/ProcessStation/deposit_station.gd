@@ -45,6 +45,7 @@ func process_item() -> void:
 
 
 func reset():
-	heldItem.queue_free()
-	heldItem = null
+	if heldItem:
+		heldItem.queue_free()
+		heldItem = null
 	can_interact = true
