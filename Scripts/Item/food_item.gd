@@ -14,3 +14,4 @@ class_name FoodItem
 func _ready() -> void:
 	if IsDone:
 		main.item_processed.emit(name)
+	super._ready()
