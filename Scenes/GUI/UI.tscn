@@ -761,7 +761,6 @@ grow_vertical = 2
 script = ExtResource("1_2rnfa")
 
 [node name="Overlay" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Overlay"]
 clip_contents = true
@@ -802,8 +801,8 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -146.0
 offset_top = 10.0
-offset_right = 154.0
-offset_bottom = 73.0
+offset_right = 148.0
+offset_bottom = 62.0
 grow_horizontal = 2
 theme_override_styles/panel = ExtResource("3_lhh44")
 
@@ -835,29 +834,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel2" type="Panel" parent="Overlay/TopPanel/HBoxContainer"]
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(94, 52)
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_styles/panel = ExtResource("4_a6s81")
 
-[node name="TimeLabel" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel2"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 45.0
-grow_horizontal = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlay/TopPanel/HBoxContainer/Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeLabel" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel2/VBoxContainer"]
+layout_mode = 2
 text = "110"
 label_settings = SubResource("LabelSettings_huqb3")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel2"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -16.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="Label2" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel2/VBoxContainer"]
+layout_mode = 2
 text = "Seconds Remaining"
 label_settings = SubResource("LabelSettings_2rnfa")
 horizontal_alignment = 1

@@ -151,7 +151,7 @@ tile_map_data = PackedByteArray("AAD5//z/AwAAAAAAAAD5//3/AwAAAAAAAAD5//7/AwAAAAA
 tile_set = SubResource("TileSet_k12tt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(-20, 40)
+offset = Vector2(-20, 35)
 zoom = Vector2(4.5, 4.5)
 
 [node name="Kitchen" type="Node2D" parent="."]
