@@ -6,6 +6,9 @@ class_name UI
 @onready var DayStart = $DayStart
 @onready var DayEnd = $DayEnd
 @onready var Tutorial = $GameTutorial
+@onready var DifficultySelect = $DifficultySelect
+@onready var ScoresMenu = $ScoresMenu
+
 
 const DayStartStr = "Day %d\nScore: %d"
 const DayEndStr = "Day %d\nEarned %d Points\nCurrent Score: %d\n"

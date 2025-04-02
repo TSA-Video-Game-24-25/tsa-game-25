@@ -4,6 +4,7 @@ extends CanvasLayer
 @export var PageColors: Array[page_color]
 
 @onready var main: Main = get_tree().get_root().get_node("Main")
+@onready var ui: UI = get_parent()
 
 var page = 0
 
@@ -28,7 +29,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("open_menu") and (visible or not main.paused):
+	if Input.is_action_just_pressed("open_menu") and (visible or not main.paused) and not (ui.ScoresMenu.visible or ui.DifficultySelect.visible):
 		visible = !visible
 		main.paused = visible
 	
