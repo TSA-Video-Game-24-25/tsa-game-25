@@ -21,6 +21,8 @@ animations = [{
 
 [node name="LettuceSupplyStation" instance=ExtResource("1_x5m2a")]
 SuppliedItem = ExtResource("2_mcyl2")
+enabled = true
+can_interact = true
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_thib0")

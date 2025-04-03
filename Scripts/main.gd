@@ -49,6 +49,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	$Camera2D.global_position = get_camera_pos()
 	
+	for station in [ $Kitchen/CheeseSupplyStation, $Kitchen/TomatoSupplyStation ]:
+		station.enabled = (day_num > 1) or (difficulty == -1)
+	
 	if paused:
 		return
 	

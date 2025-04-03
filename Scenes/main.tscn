@@ -266,18 +266,19 @@ position = Vector2(-60, -40)
 
 [node name="ChickenSupplyStation" parent="Kitchen" instance=ExtResource("6_4gyfn")]
 position = Vector2(60, 0)
+enabled = true
 can_interact = true
 
 [node name="LettuceSupplyStation" parent="Kitchen" instance=ExtResource("7_led01")]
 position = Vector2(60, -20)
-can_interact = true
 
 [node name="DepositStation00" parent="Kitchen" instance=ExtResource("8_rl43a")]
 position = Vector2(-70, 60)
 
 [node name="TomatoSupplyStation" parent="Kitchen" instance=ExtResource("10_d1ilt")]
+visible = false
 position = Vector2(60, -40)
-can_interact = true
+enabled = false
 
 [node name="Counter00" parent="Kitchen" instance=ExtResource("10_6iyac")]
 position = Vector2(80, -40)
@@ -314,6 +315,7 @@ position = Vector2(-120, 60)
 
 [node name="PlateSupplyStation" parent="Kitchen" instance=ExtResource("8_waob2")]
 position = Vector2(-120, -20)
+enabled = true
 can_interact = true
 
 [node name="Counter21" parent="Kitchen" instance=ExtResource("14_wsu2k")]
@@ -335,11 +337,13 @@ position = Vector2(80, 120)
 position = Vector2(120, 120)
 
 [node name="CheeseSupplyStation" parent="Kitchen" instance=ExtResource("17_b3802")]
+visible = false
 position = Vector2(60, 40)
-can_interact = true
+enabled = false
 
 [node name="FlourSupplyStation" parent="Kitchen" instance=ExtResource("18_pdsj5")]
 position = Vector2(60, 20)
+enabled = true
 can_interact = true
 
 [node name="Stove00" parent="Kitchen" instance=ExtResource("19_ee4r6")]
