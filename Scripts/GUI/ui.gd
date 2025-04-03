@@ -24,9 +24,9 @@ func _ready() -> void:
 	$MainMenu/VBoxContainer/TutorialButton.pressed.connect(func(): $Tutorial.visible = true; $MainMenu/VBoxContainer/TutorialButton.release_focus())
 	$MainMenu/ScoresButton.pressed.connect(show_scores_menu)
 	
-	$DifficultySelect/PanelContainer/VBoxContainer/Tutorial.pressed.connect(func(): main.difficulty = -1; main.start_day(); $DifficultySelect.visible = false; $MainMenu.visible = false)
-	$DifficultySelect/PanelContainer/VBoxContainer/Beginner.pressed.connect(func(): main.difficulty = 0; main.start_day(); $DifficultySelect.visible = false; $MainMenu.visible = false)
-	$DifficultySelect/PanelContainer/VBoxContainer/Normal.pressed.connect(func(): main.difficulty = 1; main.start_day(); $DifficultySelect.visible = false; $MainMenu.visible = false)
+	$DifficultySelect/PanelContainer/VBoxContainer/Tutorial.pressed.connect(start_game.bind(-1))
+	$DifficultySelect/PanelContainer/VBoxContainer/Beginner.pressed.connect(start_game.bind(0))
+	$DifficultySelect/PanelContainer/VBoxContainer/Normal.pressed.connect(start_game.bind(1))
 
 
 func _process(_delta: float) -> void:
@@ -73,6 +73,13 @@ func endDay() -> void:
 	await dayEndBtn.pressed
 	$DayEnd.visible = false
 	main.start_day()
+
+
+func start_game(difficulty):
+	main.difficulty = difficulty
+	main.start_day()
+	$DifficultySelect.visible = false
+	$MainMenu.visible = false
 
 
 func endGame() -> void:
