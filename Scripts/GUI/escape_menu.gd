@@ -35,9 +35,11 @@ func _process(delta: float) -> void:
 	cooldown = max(0, cooldown - delta)
 	
 	if Input.is_action_just_pressed("open_menu") and (visible or not main.paused) and not (ui.ScoresMenu.visible or ui.DifficultySelect.visible):
-		if !visible and cooldown > 0:
-			return
-		cooldown = open_cooldown
+		if !visible:
+			if cooldown > 0:
+				return
+			cooldown = open_cooldown
+		
 		visible = !visible
 		main.paused = visible
 	
