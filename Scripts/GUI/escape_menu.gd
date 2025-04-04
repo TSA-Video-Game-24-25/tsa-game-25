@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 
-const open_cooldown = 2
+const open_cooldown = 1
 
 @export var PageColors: Array[page_color]
 
