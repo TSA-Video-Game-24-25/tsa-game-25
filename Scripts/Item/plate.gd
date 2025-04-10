@@ -10,7 +10,12 @@ func tryAddItem(item: FoodItem) -> bool:
 		return false
 	
 	heldItems.append(item)
-	item.reparent(self)
+	
+	if item.get_parent():
+		item.reparent(self)
+	else:
+		add_child(item)
+	
 	item.position = Vector2.ZERO
 	item.scale = Vector2(.5, .5)
 	
@@ -21,6 +26,7 @@ func tryAddItem(item: FoodItem) -> bool:
 func can_add_item(item: FoodItem) -> bool:
 	if item == null:
 		return false
+		
 	var check_recipe = heldItems + [item]
 	
 	for recipe in Recipes.recipes.keys():

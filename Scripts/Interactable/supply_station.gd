@@ -12,13 +12,8 @@ class_name SupplyStation
 
 
 func interact(player: Player):
-	if not player.heldItem:
-		player.tryAddItemFromScene(SuppliedItem)
-		return
-	
-	if player.heldItem is Plate and player.heldItem.heldItems:
-		return
-	
-	if player.heldItem.name == SuppliedItem.instantiate().name:
+	if player.heldItem and player.heldItem.name == SuppliedItem.instantiate().name and not (player.heldItem is Plate):
 		player.heldItem.queue_free()
 		player.heldItem = null
+	else:
+		player.tryAddItemFromScene(SuppliedItem)

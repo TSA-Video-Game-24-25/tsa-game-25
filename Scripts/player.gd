@@ -86,6 +86,9 @@ func get_dir() -> Vector2:
 
 
 func tryAddItemFromScene(item: PackedScene) -> bool:
+	if heldItem is Plate and heldItem.tryAddItem(item.instantiate()):
+		return true
+	
 	if heldItem != null:
 		return false
 	
@@ -98,6 +101,9 @@ func tryAddItemFromScene(item: PackedScene) -> bool:
 
 
 func tryAddItem(item: Item) -> bool:
+	if heldItem is Plate and heldItem.tryAddItem(item):
+		return true
+	
 	if heldItem != null:
 		return false
 	

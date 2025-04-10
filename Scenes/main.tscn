@@ -279,6 +279,7 @@ position = Vector2(-70, 60)
 visible = false
 position = Vector2(60, -40)
 enabled = false
+can_interact = true
 
 [node name="Counter00" parent="Kitchen" instance=ExtResource("10_6iyac")]
 position = Vector2(80, -40)
@@ -340,6 +341,7 @@ position = Vector2(120, 120)
 visible = false
 position = Vector2(60, 40)
 enabled = false
+can_interact = true
 
 [node name="FlourSupplyStation" parent="Kitchen" instance=ExtResource("18_pdsj5")]
 position = Vector2(60, 20)
