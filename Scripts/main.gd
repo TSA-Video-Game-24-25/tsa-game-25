@@ -82,7 +82,7 @@ func get_available_recipes() -> Array[PackedScene]:
 	return available_recipes
 
 
-func get_camera_pos():
+func get_camera_pos() -> Vector2:
 	var new_pos = $Camera2D.position
 	
 	match CameraMode:
