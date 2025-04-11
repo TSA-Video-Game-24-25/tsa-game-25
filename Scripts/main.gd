@@ -61,10 +61,7 @@ func _process(_delta: float) -> void:
 	time_remaining = max( 0, time_remaining - _delta )
 	
 	if time_remaining == 0:
-		if day_num == 5:
-			end_game()
-		else:
-			end_day()
+		end_game() if day_num == 5 else end_day()
 
 
 func get_available_recipes() -> Array[PackedScene]:
@@ -96,7 +93,6 @@ func get_camera_pos():
 				added_positions += player.global_position
 			
 			new_pos = added_positions / len(Players)
-		
 		
 		cameraMode.FOLLOW_PLAYER_1:
 			if not Players: return new_pos
