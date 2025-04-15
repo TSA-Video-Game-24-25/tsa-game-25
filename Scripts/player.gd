@@ -7,7 +7,7 @@ signal item_interact(String)
 const SPEED := 100.0
 const ACCELERATION := 800.0
 
-@export var input_map := {
+@export var input_map: Dictionary[String, String] = {
 	"move_up": "w",
 	"move_left": "a",
 	"move_down": "s",
