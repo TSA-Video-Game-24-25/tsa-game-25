@@ -1,0 +1,189 @@
+[gd_scene load_steps=19 format=4 uid="uid://uhb1kpit11xu"]
+
+[ext_resource type="PackedScene" uid="uid://waklb1sgcto2" path="res://Scenes/Kitchen.tscn" id="1_falpl"]
+[ext_resource type="Texture2D" uid="uid://bliplpjcx64ue" path="res://Art/Interactables/Floor Kitchen-1.png (1).png" id="2_gh2sm"]
+[ext_resource type="PackedScene" uid="uid://dt0iys7usnsc" path="res://Scenes/Interactable/trash_can.tscn" id="3_721my"]
+[ext_resource type="TileSet" uid="uid://c3cicfs5oppf6" path="res://Art/TileSets/kc_tiles.tres" id="3_gh2sm"]
+[ext_resource type="PackedScene" uid="uid://bwreigecxu74a" path="res://Scenes/Interactable/ProcessStation/cutting_station.tscn" id="4_d6kxo"]
+[ext_resource type="PackedScene" uid="uid://cv6cm8ae5vudv" path="res://Scenes/Interactable/ProcessStation/cooking_station.tscn" id="5_pyeef"]
+[ext_resource type="PackedScene" uid="uid://5m36fervimj6" path="res://Scenes/Interactable/SupplyStation/chicken_supply_station.tscn" id="6_2ws8j"]
+[ext_resource type="PackedScene" uid="uid://c77pl81skwluk" path="res://Scenes/Interactable/SupplyStation/lettuce_supply_station.tscn" id="7_aj0tq"]
+[ext_resource type="PackedScene" uid="uid://k2nme2wplxyv" path="res://Scenes/Interactable/ProcessStation/deposit_station.tscn" id="8_e4qsc"]
+[ext_resource type="PackedScene" uid="uid://dthl77ymbu0cj" path="res://Scenes/Interactable/SupplyStation/tomato_supply_station.tscn" id="9_wqi66"]
+[ext_resource type="PackedScene" uid="uid://bae51ksecyhhu" path="res://Scenes/Interactable/SupplyStation/plate_supply_station.tscn" id="10_mkqs0"]
+[ext_resource type="PackedScene" uid="uid://bx0tpug4tqa5b" path="res://Scenes/Interactable/order_counter.tscn" id="11_helbj"]
+[ext_resource type="PackedScene" uid="uid://blxp4mgixcyo5" path="res://Scenes/Interactable/SupplyStation/cheese_supply_station.tscn" id="12_yvwu2"]
+[ext_resource type="PackedScene" uid="uid://bh6kj0jj7ehwr" path="res://Scenes/Interactable/SupplyStation/flour_supply_station.tscn" id="13_htig7"]
+[ext_resource type="PackedScene" uid="uid://c16kec6l8yuek" path="res://Scenes/Interactable/ProcessStation/stove.tscn" id="14_ven5v"]
+[ext_resource type="PackedScene" uid="uid://7e46q445uiq1" path="res://Scenes/Interactable/ProcessStation/counter.tscn" id="16_721my"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_usceb"]
+texture = ExtResource("2_gh2sm")
+texture_region_size = Vector2i(20, 20)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qt1cm"]
+tile_size = Vector2i(20, 20)
+sources/3 = SubResource("TileSetAtlasSource_usceb")
+
+[node name="Kitchen1" instance=ExtResource("1_falpl")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="0"]
+position = Vector2(10, 10)
+tile_map_data = PackedByteArray("AAD5//z/AwAAAAAAAAD5//3/AwAAAAAAAAD5//7/AwAAAAAAAAD5////AwAAAAAAAAD5/wAAAwAAAAAAAAD5/wEAAwAAAAAAAAD5/wIAAwABAAAAAAD6//z/AwAAAAAAAAD6//3/AwAAAAAAAAD6//7/AwAAAAAAAAD6////AwAAAAAAAAD6/wAAAwAAAAAAAAD6/wEAAwAAAAAAAAD6/wIAAwABAAAAAAD7//z/AwAAAAAAAAD7//3/AwAAAAAAAAD7//7/AwAAAAAAAAD7////AwAAAAAAAAD7/wAAAwAAAAAAAAD7/wEAAwAAAAAAAAD7/wIAAwABAAAAAAD8//z/AwAAAAAAAAD8//3/AwAAAAAAAAD8//7/AwAAAAAAAAD8////AwAAAAAAAAD8/wAAAwAAAAAAAAD8/wEAAwAAAAAAAAD8/wIAAwABAAAAAAD9//z/AwAAAAAAAAD9//3/AwAAAAAAAAD9//7/AwAAAAAAAAD9////AwAAAAAAAAD9/wAAAwAAAAAAAAD9/wEAAwAAAAAAAAD9/wIAAwABAAAAAAD+//z/AwAAAAAAAAD+//3/AwAAAAAAAAD+//7/AwAAAAAAAAD+////AwAAAAAAAAD+/wAAAwAAAAAAAAD+/wEAAwAAAAAAAAD+/wIAAwABAAAAAAD///z/AwAAAAAAAAD///3/AwAAAAAAAAD///7/AwAAAAAAAAD/////AwAAAAAAAAD//wAAAwAAAAAAAAD//wEAAwAAAAAAAAD//wIAAwABAAAAAAAAAPz/AwAAAAAAAAAAAP3/AwAAAAAAAAAAAP7/AwAAAAAAAAAAAP//AwAAAAAAAAAAAAAAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAAIAAwABAAAAAAABAPz/AwAAAAAAAAABAP3/AwAAAAAAAAABAP7/AwAAAAAAAAABAP//AwAAAAAAAAABAAAAAwAAAAAAAAABAAEAAwAAAAAAAAABAAIAAwABAAAAAAACAPz/AwAAAAAAAAACAP3/AwAAAAAAAAACAP7/AwAAAAAAAAACAP//AwAAAAAAAAACAAAAAwAAAAAAAAACAAEAAwAAAAAAAAACAAIAAwABAAAAAAADAPz/AwAAAAAAAAADAP3/AwAAAAAAAAADAP7/AwAAAAAAAAADAP//AwAAAAAAAAADAAAAAwAAAAAAAAADAAEAAwAAAAAAAAADAAIAAwABAAAAAAD5/wMAAwAAAAEAAAD5/wQAAwAAAAEAAAD5/wUAAwAAAAEAAAD5/wYAAwAAAAEAAAD6/wMAAwAAAAEAAAD6/wQAAwAAAAEAAAD6/wUAAwAAAAEAAAD6/wYAAwAAAAEAAAD7/wMAAwAAAAEAAAD7/wQAAwAAAAEAAAD7/wUAAwAAAAEAAAD7/wYAAwAAAAEAAAD8/wMAAwAAAAEAAAD8/wQAAwAAAAEAAAD8/wUAAwAAAAEAAAD8/wYAAwAAAAEAAAD9/wMAAwAAAAEAAAD9/wQAAwAAAAEAAAD9/wUAAwAAAAEAAAD9/wYAAwAAAAEAAAD+/wMAAwAAAAEAAAD+/wQAAwAAAAEAAAD+/wUAAwAAAAEAAAD+/wYAAwAAAAEAAAD//wMAAwAAAAEAAAD//wQAAwAAAAEAAAD//wUAAwAAAAEAAAD//wYAAwAAAAEAAAAAAAMAAwAAAAEAAAAAAAQAAwAAAAEAAAAAAAUAAwAAAAEAAAAAAAYAAwAAAAEAAAABAAMAAwAAAAEAAAABAAQAAwAAAAEAAAABAAUAAwAAAAEAAAABAAYAAwAAAAEAAAACAAMAAwAAAAEAAAACAAQAAwAAAAEAAAACAAUAAwAAAAEAAAACAAYAAwAAAAEAAAADAAMAAwAAAAEAAAADAAQAAwAAAAEAAAADAAUAAwAAAAEAAAADAAYAAwAAAAEAAAD4//v/AwAAAAAAAAD4//z/AwAAAAAAAAD4//3/AwAAAAAAAAD4//7/AwAAAAAAAAD4////AwAAAAAAAAD4/wAAAwAAAAAAAAD4/wEAAwAAAAAAAAD5//v/AwAAAAAAAAD6//v/AwAAAAAAAAD7//v/AwAAAAAAAAD8//v/AwAAAAAAAAD9//v/AwAAAAAAAAD+//v/AwAAAAAAAAD///v/AwAAAAAAAAAAAPv/AwAAAAAAAAABAPv/AwAAAAAAAAACAPv/AwAAAAAAAAADAPv/AwAAAAAAAAAEAPv/AwAAAAAAAAAEAPz/AwAAAAAAAAAEAP3/AwAAAAAAAAAEAP7/AwAAAAAAAAAEAP//AwAAAAAAAAAEAAAAAwAAAAAAAAAEAAEAAwAAAAAAAAAEAAIAAwABAAAAAAD4/wIAAwABAAAAAAD4/wMAAwAAAAEAAAD4/wQAAwAAAAEAAAD4/wUAAwAAAAEAAAD4/wYAAwAAAAEAAAD4/wcAAwAAAAEAAAD5/wcAAwAAAAEAAAD6/wcAAwAAAAEAAAD7/wcAAwAAAAEAAAD8/wcAAwAAAAEAAAD9/wcAAwAAAAEAAAD+/wcAAwAAAAEAAAD//wcAAwAAAAEAAAAAAAcAAwAAAAEAAAABAAcAAwAAAAEAAAACAAcAAwAAAAEAAAADAAcAAwAAAAEAAAAEAAcAAwAAAAEAAAAEAAYAAwAAAAEAAAAEAAUAAwAAAAEAAAAEAAQAAwAAAAEAAAAEAAMAAwAAAAEAAAA=")
+tile_set = SubResource("TileSet_qt1cm")
+
+[node name="ColorRect" type="ColorRect" parent="." index="1"]
+offset_left = -150.0
+offset_top = -90.0
+offset_right = 110.0
+offset_bottom = 60.0
+color = Color(0, 0, 0, 0.156863)
+
+[node name="ColorRect2" type="ColorRect" parent="." index="2"]
+offset_left = -150.0
+offset_top = -90.0
+offset_right = -128.0
+offset_bottom = 60.0
+color = Color(0, 0, 0, 0.196078)
+
+[node name="ColorRect3" type="ColorRect" parent="." index="3"]
+offset_left = 88.0
+offset_top = -90.0
+offset_right = 110.0
+offset_bottom = 60.0
+color = Color(0, 0, 0, 0.196078)
+
+[node name="ColorRect4" type="ColorRect" parent="." index="4"]
+offset_left = -128.0
+offset_top = -90.0
+offset_right = 88.0
+offset_bottom = -68.0
+color = Color(0, 0, 0, 0.196078)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." index="5"]
+position = Vector2(10, 10)
+tile_map_data = PackedByteArray("AAD5//z/AAABAAAAAAD6//z/AAACAAMAAAD7//z/AAACAAMAAAD8//z/AAACAAMAAAD9//z/AAACAAMAAAD+//z/AAACAAMAAAD5//3/AAAAAAEAAAD///z/AAACAAMAAAAAAPz/AAACAAMAAAABAPz/AAACAAMAAAACAPz/AAACAAMAAAADAPz/AAADAAAAAAADAP3/AAAAAAEAAAADAP7/AAAAAAEAAAADAP//AAAAAAEAAAADAAAAAAAAAAEAAAADAAEAAAAAAAEAAAADAAIAAAADAAIAAAACAAIAAAACAAMAAAABAAIAAAACAAMAAAAAAAIAAAACAAMAAAD//wIAAAACAAMAAAD+/wIAAAACAAMAAAD9/wIAAAACAAMAAAD8/wIAAAACAAMAAAD7/wIAAAACAAMAAAD6/wIAAAACAAMAAAD5/wIAAAABAAIAAAD5/wEAAAAAAAEAAAD5/wAAAAAAAAEAAAD5////AAAAAAEAAAD5//7/AAAAAAEAAAA=")
+tile_set = ExtResource("3_gh2sm")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." index="6"]
+position = Vector2(10, 0)
+tile_map_data = PackedByteArray("AAD7/wAAAAABAAMAAAD8/wAAAAACAAMAAAD9/wAAAAACAAMAAAD+/wAAAAADAAMAAAA=")
+tile_set = ExtResource("3_gh2sm")
+
+[node name="TrashCan" parent="." index="13" instance=ExtResource("3_721my")]
+position = Vector2(-120, -40)
+
+[node name="CuttingStation00" parent="." index="14" instance=ExtResource("4_d6kxo")]
+position = Vector2(0, -60)
+
+[node name="CuttingStation01" parent="." index="15" instance=ExtResource("4_d6kxo")]
+position = Vector2(20, -60)
+
+[node name="Oven1" parent="." index="16" instance=ExtResource("5_pyeef")]
+position = Vector2(-80, -40)
+
+[node name="Oven2" parent="." index="17" instance=ExtResource("5_pyeef")]
+position = Vector2(-60, -40)
+
+[node name="ChickenSupplyStation" parent="." index="18" instance=ExtResource("6_2ws8j")]
+position = Vector2(60, 0)
+enabled = true
+can_interact = true
+
+[node name="LettuceSupplyStation" parent="." index="19" instance=ExtResource("7_aj0tq")]
+position = Vector2(60, -20)
+
+[node name="DepositStation00" parent="." index="20" instance=ExtResource("8_e4qsc")]
+position = Vector2(-70, 60)
+
+[node name="TomatoSupplyStation" parent="." index="21" instance=ExtResource("9_wqi66")]
+visible = false
+position = Vector2(60, -40)
+enabled = false
+can_interact = true
+
+[node name="PlateSupplyStation" parent="." index="22" instance=ExtResource("10_mkqs0")]
+position = Vector2(-120, -20)
+can_interact = true
+
+[node name="OrderCounter" parent="." index="23" instance=ExtResource("11_helbj")]
+position = Vector2(15, 60)
+
+[node name="CheeseSupplyStation" parent="." index="24" instance=ExtResource("12_yvwu2")]
+visible = false
+position = Vector2(60, 40)
+enabled = false
+can_interact = true
+
+[node name="FlourSupplyStation" parent="." index="25" instance=ExtResource("13_htig7")]
+position = Vector2(60, 20)
+enabled = true
+can_interact = true
+
+[node name="Stove00" parent="." index="26" instance=ExtResource("14_ven5v")]
+position = Vector2(-40, 10)
+
+[node name="Stove01" parent="." index="27" instance=ExtResource("14_ven5v")]
+position = Vector2(-60, 10)
+
+[node name="Counter" parent="." index="28" instance=ExtResource("16_721my")]
+position = Vector2(-20, -60)
+
+[node name="Counter2" parent="." index="29" instance=ExtResource("16_721my")]
+position = Vector2(-40, -60)
+
+[node name="Counter3" parent="." index="30" instance=ExtResource("16_721my")]
+position = Vector2(40, -60)
+
+[node name="Counter5" parent="." index="31" instance=ExtResource("16_721my")]
+position = Vector2(60, -60)
+
+[node name="Counter6" parent="." index="32" instance=ExtResource("16_721my")]
+position = Vector2(80, -40)
+
+[node name="Counter7" parent="." index="33" instance=ExtResource("16_721my")]
+position = Vector2(80, 40)
+
+[node name="Counter8" parent="." index="34" instance=ExtResource("16_721my")]
+position = Vector2(60, 60)
+
+[node name="Counter9" parent="." index="35" instance=ExtResource("16_721my")]
+position = Vector2(40, 60)
+
+[node name="Counter10" parent="." index="36" instance=ExtResource("16_721my")]
+position = Vector2(-10, 60)
+
+[node name="Counter11" parent="." index="37" instance=ExtResource("16_721my")]
+position = Vector2(-29, 60)
+
+[node name="Counter12" parent="." index="38" instance=ExtResource("16_721my")]
+position = Vector2(-48, 60)
+
+[node name="Counter13" parent="." index="39" instance=ExtResource("16_721my")]
+position = Vector2(-88, 60)
+
+[node name="Counter14" parent="." index="40" instance=ExtResource("16_721my")]
+position = Vector2(-104, 60)
+
+[node name="Counter15" parent="." index="41" instance=ExtResource("16_721my")]
+position = Vector2(-120, 40)
+
+[node name="Counter16" parent="." index="42" instance=ExtResource("16_721my")]
+position = Vector2(-120, 20)
+
+[node name="Counter17" parent="." index="43" instance=ExtResource("16_721my")]
+position = Vector2(-120, 0)
+
+[node name="Counter4" parent="." index="44" instance=ExtResource("16_721my")]
+position = Vector2(-100, -60)
+
+[node name="Counter18" parent="." index="45" instance=ExtResource("16_721my")]
+position = Vector2(-80, 10)
+
+[node name="Counter19" parent="." index="46" instance=ExtResource("16_721my")]
+position = Vector2(-20, 10)

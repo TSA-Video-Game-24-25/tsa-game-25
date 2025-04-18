@@ -41,6 +41,7 @@ script = ExtResource("2_p85sc")
 ProcessGUI = ExtResource("3_f4cst")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_72gsp")
 
 [node name="HoldPos" parent="." index="2"]

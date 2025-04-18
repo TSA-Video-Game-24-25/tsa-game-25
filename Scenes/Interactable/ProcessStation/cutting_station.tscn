@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://bjsj0wd06mjy5" path="res://Scenes/Interactable/process_station.tscn" id="1_jcghn"]
 [ext_resource type="Script" uid="uid://c0m46vgj1kpmt" path="res://Scripts/Interactable/ProcessStation/cutting_station.gd" id="2_cfj0t"]
 [ext_resource type="PackedScene" uid="uid://dsoe517nl76mq" path="res://Scenes/GUI/ProcessGui/cutting_gui.tscn" id="3_72dws"]
-[ext_resource type="Texture2D" uid="uid://dwihfj6iwpfqb" path="res://Art/Interactables/Counter.png" id="4_844a5"]
+[ext_resource type="Texture2D" uid="uid://ugbslueon4vh" path="res://Art/Interactables/Counter-7.png (1) (1).png" id="4_844a5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_krvjm"]
 atlas = ExtResource("4_844a5")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(20, 0, 20, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_afo01"]
 animations = [{
@@ -25,6 +25,7 @@ script = ExtResource("2_cfj0t")
 ProcessGUI = ExtResource("3_72dws")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_afo01")
 
 [node name="HoldPos" parent="." index="2"]

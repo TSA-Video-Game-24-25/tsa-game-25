@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://waklb1sgcto2"]
+
+[node name="Kitchen" type="Node2D"]
+
+[node name="CustomerOrderPos" type="Marker2D" parent="."]
+position = Vector2(20, 81)
+
+[node name="CustomerPickupPos" type="Marker2D" parent="."]
+position = Vector2(-69, 81)
+
+[node name="CustomerExitPos" type="Marker2D" parent="."]
+position = Vector2(80, 120)
+
+[node name="CustomerOutPos" type="Marker2D" parent="."]
+position = Vector2(120, 120)
+
+[node name="Player1Pos" type="Marker2D" parent="."]
+position = Vector2(-61, 35)
+
+[node name="Player2Pos" type="Marker2D" parent="."]
+position = Vector2(20, 35)

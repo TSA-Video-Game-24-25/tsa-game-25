@@ -14,10 +14,12 @@ signal item_processed(String)
 @export var new_customers: Array[Customer] = []
 @export var waiting_customers: Array[Customer] = []
 
-@onready var order_pos: Vector2 = $Kitchen/CustomerOrderPos.position
-@onready var pickup_pos: Vector2 = $Kitchen/CustomerPickupPos.position
-@onready var exit_pos: Vector2 = $Kitchen/CustomerExitPos.position
-@onready var out_pos: Vector2 = $Kitchen/CustomerOutPos.position
+@onready var kitchen: Node2D = $Kitchen/Kitchen1
+
+@onready var order_pos: Vector2 = kitchen.get_node("CustomerOrderPos").position
+@onready var pickup_pos: Vector2 = kitchen.get_node("CustomerPickupPos").position
+@onready var exit_pos: Vector2 = kitchen.get_node("CustomerExitPos").position
+@onready var out_pos: Vector2 = kitchen.get_node("CustomerOutPos").position
 
 @onready var ui:UI = $Ui
 @onready var soundPlayer: SoundPlayer = $SoundPlayer
@@ -49,7 +51,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	$Camera2D.global_position = get_camera_pos()
 	
-	for station in [ $Kitchen/CheeseSupplyStation, $Kitchen/TomatoSupplyStation ]:
+	for station in [ kitchen.get_node("CheeseSupplyStation"), kitchen.get_node("TomatoSupplyStation") ]:
 		station.enabled = (day_num > 1) or (difficulty == -1)
 	
 	if paused:
@@ -105,7 +107,7 @@ func spawn_customer() -> Customer:
 	var new_customer = load("res://Scenes/Customer.tscn").instantiate()
 	
 	new_customers.append(new_customer)
-	new_customer.position = $Kitchen/CustomerOutPos.position
+	new_customer.position = kitchen.get_node("CustomerOutPos").position
 	add_child(new_customer)
 	
 	return new_customer
@@ -127,8 +129,8 @@ func start_day():
 	day_num += 1
 	ui.startDay()
 	
-	Players[0].position = $Kitchen/Player1Pos.position
-	Players[1].position = $Kitchen/Player2Pos.position
+	Players[0].position = kitchen.get_node("Player1Pos").position
+	Players[1].position = kitchen.get_node("Player2Pos").position
 	
 	if difficulty == -1:
 		$Ui.Tutorial.start_tutorial()
