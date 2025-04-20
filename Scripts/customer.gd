@@ -68,7 +68,7 @@ func set_order():
 	if len(main.available_dishes) == 1 or randf() <= NEW_DISH_CHANCE:
 		order = main.available_dishes[-1].instantiate()
 	else:
-		order = main.available_dishes.slice(0, -1) .pick_random().instantiate()
+		order = main.available_dishes.pick_random().instantiate()
 	
 	time_left = order.ServeTime
 	$ProgressBar.max_value = time_left
