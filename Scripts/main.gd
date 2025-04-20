@@ -24,7 +24,7 @@ signal overtime_end
 @onready var exit_pos: Vector2 = kitchen.get_node("CustomerExitPos").position
 @onready var out_pos: Vector2 = kitchen.get_node("CustomerOutPos").position
 
-@onready var ui:UI = $Ui
+@onready var ui: UI = $Ui
 @onready var soundPlayer: SoundPlayer = $SoundPlayer
 
 const tutorial_max_waiting_customers = 1
