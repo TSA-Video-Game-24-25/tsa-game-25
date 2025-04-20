@@ -132,12 +132,12 @@ func move_to_pos(pos: Vector2) -> void:
 
 
 func pickup_item() -> void:
+	main.waiting_customers.erase(self)
+	
 	await move_to_pos(main.pickup_pos)
 
 
 func leave() -> void:
-	main.waiting_customers.erase(self)
-	
 	inLineVertical = false
 	inLineHorizontal = false
 	
