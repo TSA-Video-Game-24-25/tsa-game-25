@@ -24,6 +24,8 @@ const oven_dish = "[center][font_size=15]Goal:\nNow you have all the ingredients
 const get_order = "[center][font_size=15]Goal:\nStart by using the order counter to take the next customer's order. (E/O)"
 const order_complete = "[center][font_size=15]Goal:\nThe order is complete! Now you can bring it to the customer pickup station."
 const finish_order = "[center][font_size=15]Goal:\nUse Q/U to ring the bell and let the customer know to grab their food!"
+const complete_quota = "[center][font_size=15]Goal:\nNow keep making this dish until you fill the bar at the top"
+const overtime = "[center][font_size=15]Goal:\nNow that you completed the bar, you have until it empties again to max out your score before unlocking a new dish!"
 
 const tutorial_complete = "[center][font_size=15]Goal:\nThats the end of the tutorial, you can keep practicing or go to the main menu and play the real game!"
 
@@ -65,7 +67,21 @@ func start_tutorial():
 	
 	await main.order_taken
 	
-	await salad_tutorial()
+	await fried_chicken_tutorial()
+	
+	update_goal(
+		complete_quota,
+		load("res://Art/SpriteFrames/FriedChicken.tres")
+	)
+	
+	await main.quota_reached
+	
+	update_goal(
+		overtime,
+		load("res://Art/SpriteFrames/FriedChicken.tres")
+	)
+	
+	await main.overtime_end
 	
 	update_goal(
 		get_order,
@@ -74,7 +90,7 @@ func start_tutorial():
 	
 	await main.order_taken
 	
-	await fried_chicken_tutorial()
+	await salad_tutorial()
 	
 	update_goal(tutorial_complete)
 
