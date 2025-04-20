@@ -4,16 +4,15 @@ class_name Customer
 
 signal done_moving
 
+const SPEED := 50
+const NEW_DISH_CHANCE := .4
+
 @export var targetPos: Vector2
 
 @onready var main: Main = get_tree().get_root().get_node("Main")
-
-var aStar = AStar2D.new()
-var customerUi: Control
-
 @onready var baseUi := main.get_node("Ui/Overlay/VBoxContainer/base")
 
-var speed := 50
+var customerUi: Control
 var order: FoodItem
 
 var inLineVertical: bool = false
@@ -43,7 +42,7 @@ func _process(delta: float) -> void:
 		setTargetPositionInLine()
 		
 	if targetPos:
-		position = position.move_toward(targetPos, speed * delta)
+		position = position.move_toward(targetPos, SPEED * delta)
 	if position == targetPos:
 		done_moving.emit()
 	
@@ -65,12 +64,18 @@ func set_animation():
 		$AnimatedSprite2D.animation = animations[randi_range(0, animations.size() - 2)]
 
 
-
-func set_order() -> void:
-	order = main.available_dishes.pick_random().instantiate()
+func set_order():
+	if len(main.available_dishes) == 1 or randf() <= NEW_DISH_CHANCE:
+		order = main.available_dishes[-1].instantiate()
+	else:
+		order = main.available_dishes.slice(0, -1) .pick_random().instantiate()
+	
 	time_left = order.ServeTime
 	$ProgressBar.max_value = time_left
-	
+	add_to_ui()
+
+
+func add_to_ui() -> void:
 	customerUi = baseUi.duplicate()
 	baseUi.get_parent().add_child(customerUi)
 	

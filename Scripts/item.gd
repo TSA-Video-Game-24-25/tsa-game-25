@@ -14,4 +14,5 @@ func _ready() -> void:
 func delete() -> void:
 	print(name)
 	queue_free()
-	get_parent().heldItem = null
+	if not (get_parent() is Plate):
+		get_parent().heldItem = null

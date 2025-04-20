@@ -90,6 +90,7 @@ func _process(delta: float) -> void:
 
 
 func start_overtime():
+	delete_items.emit()
 	time_remaining = kitchen.dishes.keys()[0].instantiate().OvertimeTime
 	ui.OvertimeBar.max_value = time_remaining
 	ui.QuotaBar.visible = false
@@ -161,6 +162,7 @@ func start_day():
 		break
 	
 	set_quota()
+	ui.NextDishSprite.sprite_frames = kitchen.dishes.keys()[0].instantiate().get_node("AnimatedSprite2D").sprite_frames
 	start_game.emit()
 	
 	new_customers = []
