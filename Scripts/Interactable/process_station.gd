@@ -12,7 +12,7 @@ var player: Player = null
 
 
 func _ready() -> void:
-	main.day_starting.connect(func(): if gui: gui.queue_free())
+	main.delete_items.connect(func(): if gui: gui.queue_free())
 
 
 func try_add_item(item: FoodItem) -> bool:

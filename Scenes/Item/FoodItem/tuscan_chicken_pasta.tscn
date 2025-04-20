@@ -20,7 +20,9 @@ animations = [{
 
 [node name="TuscanChickenPasta" instance=ExtResource("1_qnvmc")]
 IsDone = true
-Score = 275
+Score = 185
+ServeTime = 75
+OvertimeTime = 140
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 scale = Vector2(0.25, 0.25)

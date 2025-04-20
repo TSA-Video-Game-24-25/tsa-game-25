@@ -8,7 +8,7 @@ class_name Item
 
 
 func _ready() -> void:
-	main.day_starting.connect(delete)
+	main.delete_items.connect(delete)
 
 
 func delete() -> void:

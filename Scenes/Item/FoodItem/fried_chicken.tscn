@@ -20,7 +20,9 @@ animations = [{
 
 [node name="FriedChicken" instance=ExtResource("1_7f435")]
 IsDone = true
-Score = 90
+Score = 60
+ServeTime = 45
+OvertimeTime = 0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ftwfa")

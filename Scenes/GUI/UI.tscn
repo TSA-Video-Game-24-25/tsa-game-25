@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://vkbkwsv4qhrx"]
+[gd_scene load_steps=104 format=3 uid="uid://vkbkwsv4qhrx"]
 
 [ext_resource type="Script" uid="uid://cgh2qpdg3a2vs" path="res://Scripts/GUI/ui.gd" id="1_2rnfa"]
 [ext_resource type="Texture2D" uid="uid://duhj3mbxxwy1l" path="res://Art/Characters/Customer Faces.png" id="1_huqb3"]
@@ -158,11 +158,30 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_huqb3"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_huqb3"]
-font_size = 24
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kh2ux"]
+bg_color = Color(0.282566, 0.706913, 0.22648, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
-[sub_resource type="LabelSettings" id="LabelSettings_2rnfa"]
-font_size = 10
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onri8"]
+bg_color = Color(0.968627, 0.34902, 0.0745098, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_400ke"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcnnf"]
 bg_color = Color(0.532454, 0.266153, 0.106721, 1)
@@ -761,7 +780,6 @@ grow_vertical = 2
 script = ExtResource("1_2rnfa")
 
 [node name="Overlay" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Overlay"]
 clip_contents = true
@@ -796,18 +814,18 @@ position = Vector2(144, 48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_huqb3")
 
-[node name="TopPanel" type="Panel" parent="Overlay"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -146.0
+[node name="TopRightPanel" type="Panel" parent="Overlay"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -185.0
 offset_top = 10.0
-offset_right = 148.0
-offset_bottom = 62.0
-grow_horizontal = 2
+offset_right = -10.0
+offset_bottom = 35.0
+grow_horizontal = 0
 theme_override_styles/panel = ExtResource("3_lhh44")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Overlay/TopPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Overlay/TopRightPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -817,53 +835,31 @@ grow_vertical = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Panel" type="Panel" parent="Overlay/TopPanel/HBoxContainer"]
-custom_minimum_size = Vector2(80, 30)
+[node name="Panel" type="Panel" parent="Overlay/TopRightPanel/HBoxContainer"]
+custom_minimum_size = Vector2(70, 25)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = ExtResource("4_a6s81")
 
-[node name="DayLabel" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel"]
+[node name="DayLabel" type="Label" parent="Overlay/TopRightPanel/HBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Day 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="Overlay/TopPanel/HBoxContainer"]
-custom_minimum_size = Vector2(94, 52)
+[node name="Panel3" type="Panel" parent="Overlay/TopRightPanel/HBoxContainer"]
+custom_minimum_size = Vector2(90, 25)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = ExtResource("4_a6s81")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Overlay/TopPanel/HBoxContainer/Panel2"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TimeLabel" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel2/VBoxContainer"]
-layout_mode = 2
-text = "110"
-label_settings = SubResource("LabelSettings_huqb3")
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel2/VBoxContainer"]
-layout_mode = 2
-text = "Seconds Remaining"
-label_settings = SubResource("LabelSettings_2rnfa")
-horizontal_alignment = 1
-
-[node name="Panel3" type="Panel" parent="Overlay/TopPanel/HBoxContainer"]
-custom_minimum_size = Vector2(90, 30)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_styles/panel = ExtResource("4_a6s81")
-
-[node name="ScoreLabel" type="Label" parent="Overlay/TopPanel/HBoxContainer/Panel3"]
+[node name="ScoreLabel" type="Label" parent="Overlay/TopRightPanel/HBoxContainer/Panel3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -974,8 +970,8 @@ vertical_alignment = 2
 [node name="TopLeftPanel" type="Panel" parent="Overlay"]
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 335.0
-offset_bottom = 40.0
+offset_right = 300.0
+offset_bottom = 35.0
 theme_override_styles/panel = ExtResource("3_lhh44")
 
 [node name="Panel" type="Panel" parent="Overlay/TopLeftPanel"]
@@ -995,10 +991,84 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 20
 text = " Press \"esc\" to view cookbook "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TopPanel" type="Panel" parent="Overlay"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("3_lhh44")
+
+[node name="Panel" type="Panel" parent="Overlay/TopPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("4_a6s81")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlay/TopPanel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuotaBar" type="ProgressBar" parent="Overlay/TopPanel/Panel/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_kh2ux")
+value = 50.0
+show_percentage = false
+
+[node name="OvertimeBar" type="ProgressBar" parent="Overlay/TopPanel/Panel/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_onri8")
+value = 50.0
+show_percentage = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Overlay/TopPanel/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Next dish:"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_400ke")
+
+[node name="Control" type="Control" parent="Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/Panel/Control"]
 
 [node name="GameTutorial" type="CanvasLayer" parent="."]
 visible = false

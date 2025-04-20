@@ -12,3 +12,4 @@ StoveResult = null
 CookTime = 5
 IsDone = false
 Score = 0
+ServeTime = 0

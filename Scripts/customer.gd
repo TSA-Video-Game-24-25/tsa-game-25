@@ -9,9 +9,8 @@ signal done_moving
 @onready var main: Main = get_tree().get_root().get_node("Main")
 
 var aStar = AStar2D.new()
-var customerUi:Control
+var customerUi: Control
 
-@onready var possible_orders = main.get_available_recipes()
 @onready var baseUi := main.get_node("Ui/Overlay/VBoxContainer/base")
 
 var speed := 50
@@ -22,17 +21,44 @@ var inLineHorizontal: bool = false
 var line: Array[Customer]
 var lineStart: Vector2
 
+var time_left: float = 0
+
 
 func _ready() -> void:
-	main.day_starting.connect(delete)
+	main.start_game.connect(delete)
 	
 	set_animation()
 	
-	order = possible_orders.pick_random().instantiate()
+	order = main.available_dishes.pick_random().instantiate()
+	time_left = order.ServeTime
+	$ProgressBar.max_value = time_left
+	
 	await move_to_pos(main.exit_pos)
 	
 	if self in main.new_customers:
 		lineUpVertical(main.order_pos, main.new_customers)
+
+
+func _process(delta: float) -> void:
+	if main.paused:
+		return
+	
+	if inLineVertical or inLineHorizontal:
+		setTargetPositionInLine()
+		
+	if targetPos:
+		position = position.move_toward(targetPos, speed * delta)
+	if position == targetPos:
+		done_moving.emit()
+	
+	if not $ProgressBar.visible:
+		return
+	
+	time_left -= delta
+	$ProgressBar.value = time_left
+	
+	if time_left <= 0:
+		leave()
 
 
 func set_animation():
@@ -66,19 +92,6 @@ func addToUi() -> void:
 	customerUi.visible = true
 
 
-func _process(delta: float) -> void:
-	if main.paused:
-		return
-	
-	if inLineVertical or inLineHorizontal:
-		setTargetPositionInLine()
-		
-	if targetPos:
-		position = position.move_toward(targetPos, speed * delta)
-	if position == targetPos:
-		done_moving.emit()
-
-
 func setTargetPositionInLine():
 	var linePosition := line.find(self)
 	if linePosition > 0:
@@ -106,6 +119,8 @@ func lineUpHorizontal(startPos: Vector2, customersArray: Array[Customer]):
 	inLineHorizontal = true
 	inLineVertical = false
 	setTargetPositionInLine()
+	if main.difficulty >= 0:
+		$ProgressBar.visible = true
 
 
 func move_to_pos(pos: Vector2) -> void:
@@ -121,7 +136,14 @@ func pickup_item() -> void:
 
 
 func leave() -> void:
+	main.waiting_customers.erase(self)
+	
+	inLineVertical = false
+	inLineHorizontal = false
+	
 	customerUi.queue_free()
+	$ProgressBar.visible = false
+	
 	await move_to_pos(main.exit_pos)
 	await move_to_pos(main.out_pos)
 	queue_free()

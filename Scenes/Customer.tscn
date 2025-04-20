@@ -142,6 +142,7 @@ animations = [{
 radius = 11.0
 
 [node name="Customer" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_o7g7w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -151,3 +152,11 @@ animation = &"9"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o7g7w")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -12.0
+offset_top = -21.0
+offset_right = 12.0
+offset_bottom = -15.0
+show_percentage = false

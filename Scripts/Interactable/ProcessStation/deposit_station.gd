@@ -5,7 +5,7 @@ var customer: Customer
 
 
 func _ready() -> void:
-	main.day_starting.connect(reset)
+	main.start_game.connect(reset)
 
 
 func try_add_item(item: Item) -> bool:
@@ -34,7 +34,6 @@ func process_item() -> void:
 			break
 	
 	can_interact = false
-	main.waiting_customers.erase(customer)
 	
 	await customer.pickup_item()
 	

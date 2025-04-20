@@ -20,7 +20,9 @@ animations = [{
 
 [node name="Spaghetti" instance=ExtResource("1_5ywwq")]
 IsDone = true
-Score = 180
+Score = 115
+ServeTime = 60
+OvertimeTime = 100
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_cidw4")

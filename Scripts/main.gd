@@ -2,11 +2,14 @@ extends Node2D
 class_name Main
 
 
-signal day_starting
+signal start_game
+signal delete_items
 signal order_taken
 signal item_interact(String)
 signal item_process(String)
 signal item_processed(String)
+signal quota_reached
+signal overtime_end
 
 @export var Players := []
 @export var CameraMode := cameraMode.DEFAULT
@@ -14,7 +17,7 @@ signal item_processed(String)
 @export var new_customers: Array[Customer] = []
 @export var waiting_customers: Array[Customer] = []
 
-@onready var kitchen: Node2D = $Kitchen/Kitchen1
+@onready var kitchen: Kitchen = $Kitchen/Kitchen1
 
 @onready var order_pos: Vector2 = kitchen.get_node("CustomerOrderPos").position
 @onready var pickup_pos: Vector2 = kitchen.get_node("CustomerPickupPos").position
@@ -35,6 +38,15 @@ var total_score := 0
 var paused = true
 var difficulty = 0
 var max_waiting_customers = 0
+var quota = 0
+
+var available_dishes: Array = []
+var game_state: gameState = gameState.QUOTA
+
+enum gameState {
+	QUOTA,
+	OVERTIME,
+}
 
 enum cameraMode {
 	DEFAULT,
@@ -44,11 +56,12 @@ enum cameraMode {
 
 
 func _ready() -> void:
+	start_game.connect(delete_items.emit)
 	for player: Player in Players:
 		player.item_interact.connect(func(x): item_interact.emit(x))
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	$Camera2D.global_position = get_camera_pos()
 	
 	for station in [ kitchen.get_node("CheeseSupplyStation"), kitchen.get_node("TomatoSupplyStation") ]:
@@ -57,31 +70,49 @@ func _process(_delta: float) -> void:
 	if paused:
 		return
 	
-	if time_remaining == 0:
-		return
-	
-	time_remaining = max( 0, time_remaining - _delta )
-	
-	if time_remaining == 0:
-		end_game() if day_num == 5 else end_day()
+	match game_state:
+		gameState.QUOTA when score >= quota:
+			quota_reached.emit()
+			game_state = gameState.OVERTIME
+			start_overtime()
+		
+		gameState.QUOTA:
+			ui.QuotaBar.value = score
+		
+		gameState.OVERTIME when time_remaining <= 0:
+			overtime_end.emit()
+			game_state = gameState.QUOTA
+			start_quota()
+		
+		gameState.OVERTIME:
+			time_remaining -= delta
+			ui.OvertimeBar.value = time_remaining
 
 
-func get_available_recipes() -> Array[PackedScene]:
-	var available_recipes: Array[PackedScene] = [
-		preload("res://Scenes/Item/FoodItem/fried_chicken.tscn"),
-		preload("res://Scenes/Item/FoodItem/chicken_salad.tscn"),
-	]
+func start_overtime():
+	time_remaining = kitchen.dishes.keys()[0].instantiate().OvertimeTime
+	ui.OvertimeBar.max_value = time_remaining
+	ui.QuotaBar.visible = false
+	ui.OvertimeBar.visible = true
+
+
+func start_quota():
+	set_quota()
 	
-	if day_num >= 2:
-		available_recipes.append( preload("res://Scenes/Item/FoodItem/pizza.tscn") )
-	if day_num >= 3:
-		available_recipes.append( preload("res://Scenes/Item/FoodItem/spaghetti.tscn") )
-	if day_num >= 4:
-		available_recipes.append( preload("res://Scenes/Item/FoodItem/chicken_sandwich.tscn") )
-	if day_num >= 5:
-		available_recipes.append( preload("res://Scenes/Item/FoodItem/tuscan_chicken_pasta.tscn") )
+	available_dishes.append( kitchen.dishes.keys()[0] )
+	kitchen.dishes.erase( kitchen.dishes.keys()[0] )
 	
-	return available_recipes
+	ui.NextDishSprite.sprite_frames = kitchen.dishes.keys()[0].instantiate().get_node("AnimatedSprite2D").sprite_frames
+
+
+func set_quota():
+	quota = score + kitchen.dishes.values()[0]
+	
+	ui.QuotaBar.min_value = score
+	ui.QuotaBar.max_value = quota
+	
+	ui.OvertimeBar.visible = false
+	ui.QuotaBar.visible = true
 
 
 func get_camera_pos() -> Vector2:
@@ -120,7 +151,17 @@ func spawn_customer_with_order(order: PackedScene) -> Customer:
 
 
 func start_day():
-	day_starting.emit()
+	kitchen.reset()
+	
+	for value in kitchen.dishes:
+		if kitchen.dishes[value] <= 0:
+			available_dishes.append(value)
+			kitchen.dishes.erase( kitchen.dishes.keys()[0] )
+			continue
+		break
+	
+	set_quota()
+	start_game.emit()
 	
 	new_customers = []
 	waiting_customers = []

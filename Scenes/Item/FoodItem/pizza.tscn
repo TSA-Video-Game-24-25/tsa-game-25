@@ -20,7 +20,9 @@ animations = [{
 
 [node name="Pizza" instance=ExtResource("1_pe6g8")]
 IsDone = true
-Score = 150
+Score = 105
+ServeTime = 60
+OvertimeTime = 80
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_5ayun")

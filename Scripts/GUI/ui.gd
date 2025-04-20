@@ -8,6 +8,9 @@ class_name UI
 @onready var Tutorial = $GameTutorial
 @onready var DifficultySelect = $DifficultySelect
 @onready var ScoresMenu = $ScoresMenu
+@onready var QuotaBar = $Overlay/TopPanel/Panel/VBoxContainer/QuotaBar
+@onready var OvertimeBar = $Overlay/TopPanel/Panel/VBoxContainer/OvertimeBar
+@onready var NextDishSprite = $Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/Panel/Control/AnimatedSprite2D
 
 
 const DayStartStr = "Day %d\nScore: %d"
@@ -30,9 +33,8 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	$Overlay/TopPanel/HBoxContainer/Panel/DayLabel.text = "Day " + str(main.day_num)
-	$Overlay/TopPanel/HBoxContainer/Panel2/VBoxContainer/TimeLabel.text = str(snapped(main.time_remaining, .1))
-	$Overlay/TopPanel/HBoxContainer/Panel3/ScoreLabel.text = "Score: " + str(main.score)
+	$Overlay/TopRightPanel/HBoxContainer/Panel/DayLabel.text = "Day " + str(main.day_num)
+	$Overlay/TopRightPanel/HBoxContainer/Panel3/ScoreLabel.text = "Score: " + str(main.score)
 	
 	$Overlay/BottomPanel/HBoxContainer/Player1/VBoxContainer/GrabLabel1.visible = main.Players[0].can_grab()
 	$Overlay/BottomPanel/HBoxContainer/Player1/VBoxContainer/UseLabel1.visible = main.Players[0].can_use()
