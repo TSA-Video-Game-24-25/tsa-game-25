@@ -29,10 +29,6 @@ func _ready() -> void:
 	
 	set_animation()
 	
-	order = main.available_dishes.pick_random().instantiate()
-	time_left = order.ServeTime
-	$ProgressBar.max_value = time_left
-	
 	await move_to_pos(main.exit_pos)
 	
 	if self in main.new_customers:
@@ -70,7 +66,11 @@ func set_animation():
 
 
 
-func addToUi() -> void:
+func set_order() -> void:
+	order = main.available_dishes.pick_random().instantiate()
+	time_left = order.ServeTime
+	$ProgressBar.max_value = time_left
+	
 	customerUi = baseUi.duplicate()
 	baseUi.get_parent().add_child(customerUi)
 	

@@ -14,7 +14,7 @@ func interact(_player: Player):
 	main.waiting_customers.append(customer)
 
 	customer.lineUpHorizontal(Vector2(-100, 100), main.waiting_customers)
-	customer.addToUi()
+	customer.set_order()
 	
 	if len(main.new_customers) >= 3:
 		return
