@@ -191,13 +191,9 @@ func start_day():
 	for player: Player in Players:
 		player.canMove = true
 	
-	if difficulty == -1:
-		spawn_customer_with_order(load("res://Scenes/Item/FoodItem/chicken_salad.tscn"))
-		spawn_customer_with_order(load("res://Scenes/Item/FoodItem/fried_chicken.tscn"))
-	else:
-		for x in range(3):
-			spawn_customer()
-			await get_tree().create_timer(1).timeout
+	for x in range(3):
+		spawn_customer()
+		await get_tree().create_timer(1).timeout
 
 
 func end_day():
