@@ -146,11 +146,14 @@ func leave() -> void:
 	inLineVertical = false
 	inLineHorizontal = false
 	
-	customerUi.queue_free()
+	if customerUi:
+		customerUi.queue_free()
+	
 	$ProgressBar.visible = false
 	
 	await move_to_pos(main.exit_pos)
 	await move_to_pos(main.out_pos)
+	
 	queue_free()
 
 
