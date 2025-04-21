@@ -1,7 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://cqnnyd6ahx0rf"]
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cqnnyd6ahx0rf"]
 
 [ext_resource type="Texture2D" uid="uid://bo1xidxpfxbed" path="res://Art/Food/Meals.png" id="1_wtkrx"]
-[ext_resource type="Texture2D" uid="uid://dlq0nwcfx2ocm" path="res://Art/Food/Tuscan Chicken Pasta (1).png" id="2_ylaj1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6l652"]
 atlas = ExtResource("1_wtkrx")
@@ -23,10 +22,6 @@ region = Rect2(0, 64, 32, 32)
 atlas = ExtResource("1_wtkrx")
 region = Rect2(0, 128, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vlrjm"]
-atlas = ExtResource("2_ylaj1")
-region = Rect2(0, 0, 32, 32)
-
 [resource]
 animations = [{
 "frames": [{
@@ -44,9 +39,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2ghjo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vlrjm")
 }],
 "loop": true,
 "name": &"default",
