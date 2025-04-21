@@ -79,7 +79,7 @@ func endDay() -> void:
 
 func start_game(difficulty):
 	main.difficulty = difficulty
-	main.start_day()
+	main.start()
 	$DifficultySelect.visible = false
 	$MainMenu.visible = false
 

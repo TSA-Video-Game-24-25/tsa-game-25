@@ -64,8 +64,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$Camera2D.global_position = get_camera_pos()
 	
-	for station in [ kitchen.get_node("CheeseSupplyStation"), kitchen.get_node("TomatoSupplyStation") ]:
+	for station in [ kitchen.get_node("LettuceSupplyStation") ]:
 		station.enabled = (day_num > 1) or (difficulty == -1)
+	
+	for station in [ kitchen.get_node("CheeseSupplyStation"), kitchen.get_node("TomatoSupplyStation") ]:
+		station.enabled = (day_num > 2) or (difficulty == -1)
 	
 	if paused:
 		return
@@ -98,6 +101,8 @@ func start_overtime():
 
 
 func start_quota():
+	day_num += 1
+	
 	available_dishes.append( kitchen.dishes.keys()[0] )
 	kitchen.dishes.erase( kitchen.dishes.keys()[0] )
 	
@@ -151,7 +156,7 @@ func spawn_customer_with_order(order: PackedScene) -> Customer:
 	return new_customer
 
 
-func start_day():
+func start():
 	kitchen.reset()
 	
 	for value in kitchen.dishes:
