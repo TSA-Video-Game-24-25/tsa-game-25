@@ -1051,7 +1051,7 @@ custom_minimum_size = Vector2(100, 32)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "Next dish:"
+text = "Next dish unlock:"
 horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer"]
