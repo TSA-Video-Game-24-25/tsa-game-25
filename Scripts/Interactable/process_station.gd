@@ -65,6 +65,8 @@ func process(_player: Player):
 	
 	player = _player
 	
+	main.item_process.emit(heldItem.name + "_" + name)
+	
 	if ProcessGUI:
 		can_interact = false
 		player.canMove = false
@@ -80,7 +82,7 @@ func finish_processing():
 	player.canMove = true
 	player = null
 	process_item()
-	main.item_process.emit(heldItem.name + "_" + name)
+	main.item_processed.emit(heldItem.name + "_" + name)
 
 
 func process_item():

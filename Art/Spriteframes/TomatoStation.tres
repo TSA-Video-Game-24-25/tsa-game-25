@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://cxoy7qj2iroos"]
+
+[ext_resource type="Texture2D" uid="uid://cgmi2iepq0td2" path="res://Art/Interactables/Tomato Storage.png" id="1_p7nj0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjssx"]
+atlas = ExtResource("1_p7nj0")
+region = Rect2(0, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjssx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

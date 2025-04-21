@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://c1uxj3inuct06"]
+
+[ext_resource type="Texture2D" uid="uid://7ehom4gyahp4" path="res://Art/Interactables/Cheese Storage.png" id="1_amfw1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsaq6"]
+atlas = ExtResource("1_amfw1")
+region = Rect2(0, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsaq6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
