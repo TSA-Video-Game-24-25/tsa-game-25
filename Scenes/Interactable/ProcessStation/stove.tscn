@@ -49,8 +49,8 @@ position = Vector2(0, -2)
 
 [node name="ProgressBar" type="ProgressBar" parent="." index="3"]
 offset_left = -10.0
-offset_top = -15.0
+offset_top = -16.75
 offset_right = 10.0
-offset_bottom = -10.0
+offset_bottom = -11.75
 theme = SubResource("Theme_8kg6b")
 show_percentage = false
