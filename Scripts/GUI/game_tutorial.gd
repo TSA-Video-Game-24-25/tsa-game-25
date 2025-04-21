@@ -66,7 +66,7 @@ func update_goal(new_text := "", new_spriteframes: SpriteFrames = null, new_fram
 func start_tutorial():
 	visible = true
 	
-	await pizza_tutorial()
+	await chicken_sandwich_tutorial()
 	
 	update_goal(
 		get_order,
@@ -411,3 +411,311 @@ func pizza_tutorial():
 	)
 	
 	await action(main.item_process, "Pizza_DepositStation")
+
+
+func spaghetti_tutorial():
+	update_goal(
+		grab_plate,
+		load("res://Art/Spriteframes/PlateStation.tres")
+	)
+	
+	await action(main.item_interact, "grab_Plate")
+	
+	update_goal(
+		place_plate,
+		load("res://Art/Spriteframes/Counter.tres")
+	)
+	
+	await action(main.item_interact, "place_Plate")
+	
+	update_goal(
+		grab_flour,
+		load("res://Art/Spriteframes/FlourStation.tres")
+	)
+	
+	await action(main.item_interact, "grab_Flour")
+	
+	update_goal(
+		place_counter_mix,
+		load("res://Art/Spriteframes/Counter.tres")
+	)
+	
+	await action(main.item_interact, "place_Flour_Counter")
+	
+	update_goal(
+		mix_ingredient,
+		load("res://Art/Spriteframes/Counter.tres")
+	)
+	
+	await action(main.item_process, "Flour")
+	
+	update_goal(
+		process_gui,
+		load("res://Art/Spriteframes/Counter.tres")
+	)
+	
+	await action(main.item_processed, "Dough")
+	
+	update_goal(
+		place_cutting_station,
+		load("res://Art/Spriteframes/CuttingStation.tres")
+	)
+	
+	await action(main.item_interact, "place_Dough_CuttingStation")
+	
+	update_goal(
+		cut_ingredient,
+		load("res://Art/Spriteframes/CuttingStation.tres")
+	)
+	
+	await action(main.item_process, "Dough")
+	
+	update_goal(
+		process_gui,
+		load("res://Art/Spriteframes/CuttingStation.tres")
+	)
+	
+	await action(main.item_processed, "Pasta")
+	
+	update_goal(
+		place_on_plate,
+		load("res://Art/Spriteframes/Plate.tres")
+	)
+	
+	await action(main.item_interact, "place_Pasta_plate")
+	
+	update_goal(
+		grab_tomato,
+		load("res://Art/Spriteframes/TomatoStation.tres")
+	)
+	
+	await action(main.item_interact, "grab_Tomato")
+	
+	update_goal(
+		place_counter_mix,
+		load("res://Art/Spriteframes/Counter.tres")
+	)
+	
+	await action(main.item_interact, "place_Tomato_Counter")
+	
+	update_goal(
+		mix_ingredient,
+		load("res://Art/Spriteframes/Counter.tres")
+	)
+	
+	await action(main.item_process, "Tomato")
+	
+	update_goal(
+		process_gui,
+		load("res://Art/Spriteframes/Counter.tres")
+	)
+	
+	await action(main.item_processed, "TomatoPaste")
+	
+	update_goal(
+		place_on_plate,
+		load("res://Art/Spriteframes/Plate.tres")
+	)
+	
+	await action(main.item_interact, "place_TomatoPaste_plate")
+	
+	update_goal(
+		grab_cheese,
+		load("res://Art/Spriteframes/CheeseStation.tres")
+	)
+	
+	await action(main.item_interact, "grab_Cheese")
+	
+	update_goal(
+		place_cutting_station,
+		load("res://Art/Spriteframes/CuttingStation.tres")
+	)
+	
+	await action(main.item_interact, "place_Cheese_CuttingStation")
+	
+	update_goal(
+		cut_ingredient,
+		load("res://Art/Spriteframes/CuttingStation.tres")
+	)
+	
+	await action(main.item_process, "Cheese")
+	
+	update_goal(
+		process_gui,
+		load("res://Art/Spriteframes/CuttingStation.tres")
+	)
+	
+	await action(main.item_processed, "GratedCheese")
+	
+	update_goal(
+		place_on_plate,
+		load("res://Art/Spriteframes/Plate.tres")
+	)
+	
+	await action(main.item_interact, "place_GratedCheese_plate")
+	
+	update_goal(
+		oven_dish,
+		load("res://Art/Spriteframes/Stove.tres")
+	)
+	
+	await action(main.item_interact, "place_Plate_Stove")
+	
+	update_goal(
+		wait_for_cook,
+		load("res://Art/Spriteframes/Oven.tres"),
+		1
+	)
+	
+	await action(main.item_interact, "grab_Spaghetti")
+	
+	update_goal(
+		order_complete,
+		load("res://Art/Spriteframes/PickupCounter.tres")
+	)
+	
+	await action(main.item_interact, "place_Spaghetti_DepositStation")
+	
+	update_goal(
+		finish_order,
+		load("res://Art/Spriteframes/PickupCounter.tres")
+	)
+	
+	await action(main.item_process, "Spaghetti_DepositStation")
+
+
+func chicken_sandwich_tutorial():
+	update_goal(
+		grab_plate,
+		load("res://Art/Spriteframes/PlateStation.tres")
+	)
+	
+	await action(main.item_interact, "grab_Plate")
+	
+	update_goal(
+		place_plate,
+		load("res://Art/Spriteframes/Counter.tres")
+	)
+	
+	await action(main.item_interact, "place_Plate")
+	
+	update_goal(
+		grab_flour,
+		load("res://Art/Spriteframes/FlourStation.tres")
+	)
+	
+	await action(main.item_interact, "grab_Flour")
+	
+	update_goal(
+		place_counter_mix,
+		load("res://Art/Spriteframes/Counter.tres")
+	)
+	
+	await action(main.item_interact, "place_Flour_Counter")
+	
+	update_goal(
+		mix_ingredient,
+		load("res://Art/Spriteframes/Counter.tres")
+	)
+	
+	await action(main.item_process, "Flour")
+	
+	update_goal(
+		process_gui,
+		load("res://Art/Spriteframes/Counter.tres")
+	)
+	
+	await action(main.item_processed, "Dough")
+	
+	update_goal(
+		oven_ingredient,
+		load("res://Art/Spriteframes/Oven.tres")
+	)
+	
+	await action(main.item_interact, "place_Dough_Oven")
+	
+	update_goal(
+		wait_for_cook,
+		load("res://Art/Spriteframes/Oven.tres"),
+		1
+	)
+	
+	await action(main.item_interact, "grab_Bread")
+	
+	update_goal(
+		place_on_plate,
+		load("res://Art/Spriteframes/Plate.tres")
+	)
+	
+	await action(main.item_interact, "place_Bread_plate")
+	
+	update_goal(
+		grab_chicken,
+		load("res://Art/Spriteframes/ChickenStation.tres")
+	)
+	
+	await action(main.item_interact, "grab_Chicken")
+	
+	update_goal(
+		oven_ingredient,
+		load("res://Art/Spriteframes/Oven.tres")
+	)
+	
+	await action(main.item_interact, "place_Chicken_Oven")
+	
+	update_goal(
+		wait_for_cook,
+		load("res://Art/Spriteframes/Oven.tres"),
+		2
+	)
+	
+	await action(main.item_interact, "grab_CookedChicken")
+	
+	update_goal(
+		place_on_plate,
+		load("res://Art/Spriteframes/Plate.tres")
+	)
+	
+	await action(main.item_interact, "place_CookedChicken_plate")
+	
+	update_goal(
+		grab_cheese,
+		load("res://Art/Spriteframes/CheeseStation.tres")
+	)
+	
+	await action(main.item_interact, "grab_Cheese")
+	
+	update_goal(
+		place_on_plate,
+		load("res://Art/Spriteframes/Plate.tres")
+	)
+	
+	await action(main.item_interact, "place_Cheese_plate")
+	
+	update_goal(
+		grab_cheese,
+		load("res://Art/Spriteframes/LettuceStation.tres")
+	)
+	
+	await action(main.item_interact, "grab_Lettuce")
+	
+	update_goal(
+		place_on_plate,
+		load("res://Art/Spriteframes/Plate.tres")
+	)
+	
+	await action(main.item_interact, "place_Lettuce_plate")
+	
+	update_goal(
+		order_complete,
+		load("res://Art/Spriteframes/PickupCounter.tres")
+	)
+	
+	await action(main.item_interact, "place_ChickenSandwich_DepositStation")
+	
+	update_goal(
+		finish_order,
+		load("res://Art/Spriteframes/PickupCounter.tres")
+	)
+	
+	await action(main.item_process, "ChickenSandwich_DepositStation")
