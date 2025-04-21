@@ -111,12 +111,12 @@ can_interact = true
 
 [node name="LettuceSupplyStation" parent="." index="19" instance=ExtResource("7_aj0tq")]
 position = Vector2(60, -20)
+enabled = false
 
 [node name="DepositStation00" parent="." index="20" instance=ExtResource("8_e4qsc")]
 position = Vector2(-70, 60)
 
 [node name="TomatoSupplyStation" parent="." index="21" instance=ExtResource("9_wqi66")]
-visible = false
 position = Vector2(60, -40)
 enabled = false
 can_interact = true
@@ -129,7 +129,6 @@ can_interact = true
 position = Vector2(15, 60)
 
 [node name="CheeseSupplyStation" parent="." index="24" instance=ExtResource("12_yvwu2")]
-visible = false
 position = Vector2(60, 40)
 enabled = false
 can_interact = true
@@ -154,50 +153,38 @@ position = Vector2(-40, -60)
 [node name="Counter3" parent="." index="30" instance=ExtResource("16_721my")]
 position = Vector2(40, -60)
 
-[node name="Counter5" parent="." index="31" instance=ExtResource("16_721my")]
-position = Vector2(60, -60)
-
-[node name="Counter6" parent="." index="32" instance=ExtResource("16_721my")]
-position = Vector2(80, -40)
-
-[node name="Counter7" parent="." index="33" instance=ExtResource("16_721my")]
-position = Vector2(80, 40)
-
-[node name="Counter8" parent="." index="34" instance=ExtResource("16_721my")]
-position = Vector2(60, 60)
-
-[node name="Counter9" parent="." index="35" instance=ExtResource("16_721my")]
+[node name="Counter9" parent="." index="31" instance=ExtResource("16_721my")]
 position = Vector2(40, 60)
 
-[node name="Counter10" parent="." index="36" instance=ExtResource("16_721my")]
+[node name="Counter10" parent="." index="32" instance=ExtResource("16_721my")]
 position = Vector2(-10, 60)
 
-[node name="Counter11" parent="." index="37" instance=ExtResource("16_721my")]
+[node name="Counter11" parent="." index="33" instance=ExtResource("16_721my")]
 position = Vector2(-29, 60)
 
-[node name="Counter12" parent="." index="38" instance=ExtResource("16_721my")]
+[node name="Counter12" parent="." index="34" instance=ExtResource("16_721my")]
 position = Vector2(-48, 60)
 
-[node name="Counter13" parent="." index="39" instance=ExtResource("16_721my")]
+[node name="Counter13" parent="." index="35" instance=ExtResource("16_721my")]
 position = Vector2(-88, 60)
 
-[node name="Counter14" parent="." index="40" instance=ExtResource("16_721my")]
+[node name="Counter14" parent="." index="36" instance=ExtResource("16_721my")]
 position = Vector2(-104, 60)
 
-[node name="Counter15" parent="." index="41" instance=ExtResource("16_721my")]
+[node name="Counter15" parent="." index="37" instance=ExtResource("16_721my")]
 position = Vector2(-120, 40)
 
-[node name="Counter16" parent="." index="42" instance=ExtResource("16_721my")]
+[node name="Counter16" parent="." index="38" instance=ExtResource("16_721my")]
 position = Vector2(-120, 20)
 
-[node name="Counter17" parent="." index="43" instance=ExtResource("16_721my")]
+[node name="Counter17" parent="." index="39" instance=ExtResource("16_721my")]
 position = Vector2(-120, 0)
 
-[node name="Counter4" parent="." index="44" instance=ExtResource("16_721my")]
+[node name="Counter4" parent="." index="40" instance=ExtResource("16_721my")]
 position = Vector2(-100, -60)
 
-[node name="Counter18" parent="." index="45" instance=ExtResource("16_721my")]
+[node name="Counter18" parent="." index="41" instance=ExtResource("16_721my")]
 position = Vector2(-80, 10)
 
-[node name="Counter19" parent="." index="46" instance=ExtResource("16_721my")]
+[node name="Counter19" parent="." index="42" instance=ExtResource("16_721my")]
 position = Vector2(-20, 10)
