@@ -98,10 +98,10 @@ func start_overtime():
 
 
 func start_quota():
-	set_quota()
-	
 	available_dishes.append( kitchen.dishes.keys()[0] )
 	kitchen.dishes.erase( kitchen.dishes.keys()[0] )
+	
+	set_quota()
 	
 	ui.NextDishSprite.sprite_frames = kitchen.dishes.keys()[0].instantiate().get_node("AnimatedSprite2D").sprite_frames
 

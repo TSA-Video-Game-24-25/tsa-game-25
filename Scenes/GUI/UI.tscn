@@ -1384,6 +1384,7 @@ text = "[center][font_size=80]Tutorial
 [font_size=30]no timer, learn how to play"
 
 [node name="Beginner" type="Button" parent="DifficultySelect/PanelContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(500, 160)
 layout_mode = 2
 size_flags_horizontal = 4
