@@ -1047,7 +1047,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 32)
+custom_minimum_size = Vector2(170, 32)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
