@@ -18,3 +18,12 @@ const recipes = {
 	[ "Bread", "CookedChicken", "Cheese", "Lettuce" ]:		[ actions.AUTO, preload("res://Scenes/Item/FoodItem/chicken_sandwich.tscn") ],
 	[ "Pasta", "CookedChicken", "TomatoPaste", "Lettuce", "GratedCheese" ]:		[ actions.STOVE, preload("res://Scenes/Item/FoodItem/tuscan_chicken_pasta.tscn") ],
 }
+
+const name_to_image = {
+	"FriedChicken": "Art/Meals/meal_05.png",
+	"ChickenSalad": "Art/Meals/meal_07.png",
+	"Pizza": "Art/Meals/meal_03.png",
+	"Spaghetti": "Art/Meals/meal_02.png",
+	"ChickenSandwich": "Art/Meals/meal_04.png",
+	"TuscanChickenPasta": "Art/Food/Tuscan Chicken Pasta (1).png",
+}
