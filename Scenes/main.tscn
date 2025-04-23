@@ -116,7 +116,7 @@ script = ExtResource("1_5nuvl")
 CameraMode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(-20, 35)
+offset = Vector2(-20, 25)
 zoom = Vector2(4.5, 4.5)
 
 [node name="Kitchen" type="Node2D" parent="."]
