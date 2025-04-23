@@ -8,6 +8,7 @@ class_name UI
 @onready var Tutorial = $GameTutorial
 @onready var DifficultySelect = $DifficultySelect
 @onready var ScoresMenu = $ScoresMenu
+@onready var TopPanel = $Overlay/TopPanel
 @onready var QuotaBar = $Overlay/TopPanel/Panel/VBoxContainer/QuotaBar
 @onready var OvertimeBar = $Overlay/TopPanel/Panel/VBoxContainer/OvertimeBar
 @onready var NextDishSprite = $Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/Panel/Control/AnimatedSprite2D
@@ -33,14 +34,16 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	$Overlay/TopRightPanel/HBoxContainer/Panel/DayLabel.text = "Day " + str(main.day_num)
-	$Overlay/TopRightPanel/HBoxContainer/Panel3/ScoreLabel.text = "Score: " + str(main.score)
+	$Overlay/TopRightPanel/VBoxContainer/HBoxContainer/Panel/DayLabel.text = "Day " + str(main.day_num)
+	$Overlay/TopRightPanel/VBoxContainer/HBoxContainer/Panel3/ScoreLabel.text = "Score: " + str(main.score)
 	
 	$Overlay/BottomPanel/HBoxContainer/Player1/VBoxContainer/GrabLabel1.visible = main.Players[0].can_grab()
 	$Overlay/BottomPanel/HBoxContainer/Player1/VBoxContainer/UseLabel1.visible = main.Players[0].can_use()
 	
 	$Overlay/BottomPanel/HBoxContainer/Player2/VBoxContainer/GrabLabel2.visible = main.Players[1].can_grab()
 	$Overlay/BottomPanel/HBoxContainer/Player2/VBoxContainer/UseLabel2.visible = main.Players[1].can_use()
+	
+	$Overlay/TopRightPanel/VBoxContainer/NotificationHolder.visible = !$Overlay/TopRightPanel/VBoxContainer/NotificationHolder.get_children().is_empty()
 	
 	if Input.is_action_just_pressed("open_menu"):
 		if $ScoresMenu.visible:
@@ -130,3 +133,36 @@ func show_scores_menu():
 	
 	$ScoresMenu.visible = true
 	$MainMenu/ScoresButton.release_focus()
+
+
+func expand_panel(panel: Control, new_scale: float, time: float):
+	var scale_vec = Vector2.ONE * new_scale
+	var tween = create_tween()
+	
+	tween.tween_property(panel, "scale", scale_vec, time)
+	tween.tween_property(panel, "scale", Vector2.ONE, time)
+	tween.play()
+	
+	await tween.finished
+	tween.kill()
+
+
+func push_notification(text: String):
+	var notif := Notification.create_notif(text)
+	var notif_holder = $Overlay/TopRightPanel/VBoxContainer/NotificationHolder
+	notif_holder.add_child(notif)
+	notif_holder.move_child(notif, 0)
+	
+	var panel = main.ui.get_node("Overlay/TopRightPanel")
+	panel.scale = Vector2.ONE
+	
+	var tween = create_tween()
+	
+	tween.tween_property(panel, "scale", Vector2(1.1, 1.1), .5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	tween.tween_property(panel, "scale", Vector2.ONE, .5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(notif, "modulate", Color(1, 1, 1, .2), 10)
+	tween.play()
+
+	await tween.finished
+	
+	notif.queue_free()

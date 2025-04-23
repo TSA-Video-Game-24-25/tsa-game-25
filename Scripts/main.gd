@@ -98,6 +98,8 @@ func start_overtime():
 	ui.OvertimeBar.max_value = time_remaining
 	ui.QuotaBar.visible = false
 	ui.OvertimeBar.visible = true
+	
+	ui.expand_panel(ui.TopPanel, 1.5, 0.75)
 
 
 func start_quota():
@@ -109,6 +111,8 @@ func start_quota():
 	set_quota()
 	
 	ui.NextDishSprite.sprite_frames = kitchen.dishes.keys()[0].instantiate().get_node("AnimatedSprite2D").sprite_frames
+	
+	ui.expand_panel(ui.TopPanel, 1.5, 0.75)
 
 
 func set_quota():

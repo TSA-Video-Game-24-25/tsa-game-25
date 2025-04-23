@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 			cooldown = open_cooldown
 		
 		visible = !visible
-		main.paused = visible
+		main.paused = visible or main.day_num == 0
 	
 	$QuitButton.visible = !get_parent().get_node("MainMenu").visible
 	

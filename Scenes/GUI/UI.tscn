@@ -780,7 +780,6 @@ grow_vertical = 2
 script = ExtResource("1_2rnfa")
 
 [node name="Overlay" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Overlay"]
 clip_contents = true
@@ -815,7 +814,7 @@ position = Vector2(144, 48)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_huqb3")
 
-[node name="TopRightPanel" type="Panel" parent="Overlay"]
+[node name="TopRightPanel" type="PanelContainer" parent="Overlay"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -824,25 +823,25 @@ offset_top = 10.0
 offset_right = -10.0
 offset_bottom = 35.0
 grow_horizontal = 0
+pivot_offset = Vector2(185, -10)
 theme_override_styles/panel = ExtResource("3_lhh44")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Overlay/TopRightPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlay/TopRightPanel"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Overlay/TopRightPanel/VBoxContainer"]
+layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Panel" type="Panel" parent="Overlay/TopRightPanel/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Overlay/TopRightPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(70, 25)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = ExtResource("4_a6s81")
 
-[node name="DayLabel" type="Label" parent="Overlay/TopRightPanel/HBoxContainer/Panel"]
+[node name="DayLabel" type="Label" parent="Overlay/TopRightPanel/VBoxContainer/HBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -854,13 +853,13 @@ text = "Day 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel3" type="Panel" parent="Overlay/TopRightPanel/HBoxContainer"]
+[node name="Panel3" type="Panel" parent="Overlay/TopRightPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(90, 25)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/panel = ExtResource("4_a6s81")
 
-[node name="ScoreLabel" type="Label" parent="Overlay/TopRightPanel/HBoxContainer/Panel3"]
+[node name="ScoreLabel" type="Label" parent="Overlay/TopRightPanel/VBoxContainer/HBoxContainer/Panel3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -871,6 +870,11 @@ text = "Score 9999"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="NotificationHolder" type="VBoxContainer" parent="Overlay/TopRightPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 15
+
 [node name="BottomPanel" type="Panel" parent="Overlay"]
 custom_minimum_size = Vector2(315, 115)
 anchors_preset = 7
@@ -878,9 +882,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -157.5
+offset_left = -182.5
 offset_top = -125.0
-offset_right = 157.5
+offset_right = 132.5
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -1006,6 +1010,7 @@ offset_top = 10.0
 offset_right = 150.0
 offset_bottom = 81.0
 grow_horizontal = 2
+pivot_offset = Vector2(150, -10)
 theme_override_styles/panel = ExtResource("3_lhh44")
 
 [node name="Panel" type="Panel" parent="Overlay/TopPanel"]

@@ -137,12 +137,16 @@ func move_to_pos(pos: Vector2) -> void:
 
 
 func pickup_item() -> void:
-	main.waiting_customers.erase(self)
+	if main.waiting_customers.has(self):
+		main.waiting_customers.erase(self)
 	
 	await move_to_pos(main.pickup_pos)
 
 
 func leave() -> void:
+	if main.waiting_customers.has(self):
+		main.waiting_customers.erase(self)
+	
 	inLineVertical = false
 	inLineHorizontal = false
 	
