@@ -95,6 +95,7 @@ func _process(delta: float) -> void:
 func start_overtime():
 	delete_items.emit()
 	time_remaining = kitchen.dishes.keys()[0].instantiate().OvertimeTime
+	
 	ui.OvertimeBar.max_value = time_remaining
 	ui.QuotaBar.visible = false
 	ui.OvertimeBar.visible = true
