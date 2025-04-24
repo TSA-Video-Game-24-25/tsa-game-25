@@ -18,14 +18,13 @@ signal overtime_end
 @export var waiting_customers: Array[Customer] = []
 
 @onready var kitchen: Kitchen = $Kitchen/Kitchen1
+@onready var ui: UI = $Ui
+@onready var soundPlayer: SoundPlayer = $SoundPlayer
 
 @onready var order_pos: Vector2 = kitchen.get_node("CustomerOrderPos").position
 @onready var pickup_pos: Vector2 = kitchen.get_node("CustomerPickupPos").position
 @onready var exit_pos: Vector2 = kitchen.get_node("CustomerExitPos").position
 @onready var out_pos: Vector2 = kitchen.get_node("CustomerOutPos").position
-
-@onready var ui: UI = $Ui
-@onready var soundPlayer: SoundPlayer = $SoundPlayer
 
 const tutorial_max_waiting_customers = 1
 const normal_max_waiting_customers = 3
