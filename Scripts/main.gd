@@ -92,7 +92,7 @@ func _process(delta: float) -> void:
 			ui.OvertimeBar.value = time_remaining
 
 
-func start_overtime():
+func start_overtime() -> void:
 	delete_items.emit()
 	time_remaining = kitchen.dishes.keys()[0].instantiate().OvertimeTime
 	
@@ -103,7 +103,7 @@ func start_overtime():
 	ui.expand_panel(ui.TopPanel, 1.5, 0.75)
 
 
-func start_quota():
+func start_quota() -> void:
 	day_num += 1
 	
 	available_dishes.append( kitchen.dishes.keys()[0] )
@@ -116,7 +116,7 @@ func start_quota():
 	ui.expand_panel(ui.TopPanel, 1.5, 0.75)
 
 
-func set_quota():
+func set_quota() -> void:
 	quota = score + kitchen.dishes.values()[0]
 	
 	ui.QuotaBar.min_value = score
@@ -161,7 +161,7 @@ func spawn_customer_with_order(order: PackedScene) -> Customer:
 	return new_customer
 
 
-func start():
+func start() -> void:
 	kitchen.reset()
 	
 	for value in kitchen.dishes:
@@ -206,7 +206,7 @@ func start():
 		await get_tree().create_timer(1).timeout
 
 
-func end_day():
+func end_day() -> void:
 	paused = true
 	total_score += score
 	
@@ -216,7 +216,7 @@ func end_day():
 	ui.endDay()
 
 
-func end_game():
+func end_game() -> void:
 	paused = true
 	total_score += score
 	
@@ -226,6 +226,6 @@ func end_game():
 	ui.endGame()
 
 
-func restart_game():
+func restart_game() -> void:
 	total_score = 0
 	day_num = 0
