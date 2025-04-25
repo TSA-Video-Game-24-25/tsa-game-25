@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://uhb1kpit11xu"]
+[gd_scene load_steps=26 format=4 uid="uid://uhb1kpit11xu"]
 
 [ext_resource type="PackedScene" uid="uid://waklb1sgcto2" path="res://Scenes/Kitchen.tscn" id="1_falpl"]
 [ext_resource type="Script" uid="uid://dyccvmhj1segk" path="res://Scripts/kitchen.gd" id="2_d6kxo"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c77pl81skwluk" path="res://Scenes/Interactable/SupplyStation/lettuce_supply_station.tscn" id="7_aj0tq"]
 [ext_resource type="PackedScene" uid="uid://cs4jqisssrgip" path="res://Scenes/Item/FoodItem/chicken_sandwich.tscn" id="7_htig7"]
 [ext_resource type="PackedScene" uid="uid://k2nme2wplxyv" path="res://Scenes/Interactable/ProcessStation/deposit_station.tscn" id="8_e4qsc"]
+[ext_resource type="PackedScene" uid="uid://cl74aqfq8lucr" path="res://Scenes/Item/FoodItem/tuscan_chicken_pasta.tscn" id="8_mkqs0"]
 [ext_resource type="PackedScene" uid="uid://dthl77ymbu0cj" path="res://Scenes/Interactable/SupplyStation/tomato_supply_station.tscn" id="9_wqi66"]
 [ext_resource type="PackedScene" uid="uid://bae51ksecyhhu" path="res://Scenes/Interactable/SupplyStation/plate_supply_station.tscn" id="10_mkqs0"]
 [ext_resource type="PackedScene" uid="uid://bx0tpug4tqa5b" path="res://Scenes/Interactable/order_counter.tscn" id="11_helbj"]
@@ -43,7 +44,8 @@ ExtResource("4_mkqs0"): 0,
 ExtResource("3_wqi66"): 300,
 ExtResource("5_helbj"): 600,
 ExtResource("6_yvwu2"): 900,
-ExtResource("7_htig7"): 1200
+ExtResource("7_htig7"): 1200,
+ExtResource("8_mkqs0"): 1500
 })
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." index="0"]
