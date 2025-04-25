@@ -93,7 +93,7 @@ func _process(delta: float) -> void:
 
 func start_overtime() -> void:
 	delete_items.emit()
-	time_remaining = 120 + day_num * 30
+	time_remaining = 120 + day_num * 36
 	
 	ui.overtime(time_remaining)
 
