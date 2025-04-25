@@ -93,12 +93,15 @@ func _process(delta: float) -> void:
 
 func start_overtime() -> void:
 	delete_items.emit()
-	time_remaining = kitchen.dishes.keys()[0].instantiate().OvertimeTime
+	time_remaining = 120 + day_num * 30
 	
 	ui.overtime(time_remaining)
 
 
 func start_quota() -> void:
+	if kitchen.dishes.is_empty():
+		end_game()
+	
 	day_num += 1
 	
 	available_dishes.append( kitchen.dishes.keys()[0] )

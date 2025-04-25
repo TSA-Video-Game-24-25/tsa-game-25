@@ -10,7 +10,6 @@ class_name FoodItem
 @export var IsDone := false
 @export var Score := 0
 @export var ServeTime := 0
-@export var OvertimeTime := 0
 
 
 func _ready() -> void:
