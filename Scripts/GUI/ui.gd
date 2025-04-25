@@ -158,8 +158,8 @@ func push_notification(text: String):
 	
 	var tween = create_tween()
 	
-	tween.tween_property(panel, "scale", Vector2(1.1, 1.1), .5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
-	tween.tween_property(panel, "scale", Vector2.ONE, .5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(panel, "scale", Vector2(1.1, 1.1), .3).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	tween.tween_property(panel, "scale", Vector2.ONE, .3).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	tween.tween_property(notif, "modulate", Color(1, 1, 1, .2), 10)
 	tween.play()
 
