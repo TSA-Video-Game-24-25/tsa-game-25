@@ -847,7 +847,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Day 1"
@@ -1053,9 +1052,8 @@ layout_mode = 2
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(257, 32)
+custom_minimum_size = Vector2(234, 32)
 layout_mode = 2
-size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Fill up the bar to unlock:"

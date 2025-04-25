@@ -20,7 +20,8 @@ var inLineHorizontal: bool = false
 var line: Array[Customer]
 var lineStart: Vector2
 
-var time_left: float = 0
+var time_left: float
+var total_time: float
 
 
 func _ready() -> void:
@@ -48,6 +49,8 @@ func _process(delta: float) -> void:
 	
 	if not $ProgressBar.visible:
 		return
+	if not time_left:
+		return
 	
 	time_left -= delta
 	$ProgressBar.value = time_left
@@ -70,8 +73,9 @@ func set_order():
 	else:
 		order = main.available_dishes.pick_random().instantiate()
 	
-	time_left = order.ServeTime
-	$ProgressBar.max_value = time_left
+	total_time = order.ServeTime
+	time_left = total_time
+	$ProgressBar.max_value = total_time
 	add_to_ui()
 
 
@@ -165,3 +169,9 @@ func delete() -> void:
 	if customerUi:
 		customerUi.queue_free()
 	queue_free()
+
+
+func get_score() -> int:
+	var mult = remap(time_left, 0, total_time, .85, 1.15)
+	
+	return order.Score * mult

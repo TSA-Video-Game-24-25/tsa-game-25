@@ -40,8 +40,9 @@ func process_item() -> void:
 	reset()
 	
 	customer.leave()
-	main.score += customer.order.Score
-	main.ui.push_notification("[font_size=20]+%d Score [img]%s[/img]" % [ customer.order.Score, Recipes.name_to_image[customer.order.name] ])
+	var score = customer.get_score()
+	main.score += score
+	main.ui.push_notification("[font_size=20]+%d Score [img]%s[/img]" % [ score, Recipes.name_to_image[customer.order.name] ])
 
 
 func reset():

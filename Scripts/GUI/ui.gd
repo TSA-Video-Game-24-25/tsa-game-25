@@ -173,6 +173,7 @@ func overtime(time):
 	QuotaBar.visible = false
 	OvertimeBar.visible = true
 	
+	$Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/RichTextLabel.custom_minimum_size = Vector2(257, 32)
 	$Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/RichTextLabel.text = "Score as much as possible!"
 	$Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/Panel.visible = false
 	
@@ -183,6 +184,7 @@ func quota(sprite_frames):
 	NextDishSprite.sprite_frames = sprite_frames
 	
 	$Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/RichTextLabel.text = "Fill the bar to unlock:"
+	$Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/RichTextLabel.custom_minimum_size = Vector2(234, 32)
 	$Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/Panel.visible = true
 	
 	expand_panel(TopPanel, 1.5, 0.75)
