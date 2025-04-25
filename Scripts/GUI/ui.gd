@@ -166,3 +166,21 @@ func push_notification(text: String):
 	await tween.finished
 	
 	notif.queue_free()
+
+
+func overtime(time):
+	OvertimeBar.max_value = time
+	QuotaBar.visible = false
+	OvertimeBar.visible = true
+	$Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/RichTextLabel.text = "Score as much as possible!"
+	$Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/Panel.visible = false
+	
+	expand_panel(TopPanel, 1.5, 0.75)
+
+
+func quota(sprite_frames):
+	NextDishSprite.sprite_frames = sprite_frames
+	$Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/RichTextLabel.text = "Fill the bar to unlock:"
+	$Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/Panel.visible = true
+	
+	expand_panel(TopPanel, 1.5, 0.75)

@@ -95,11 +95,7 @@ func start_overtime() -> void:
 	delete_items.emit()
 	time_remaining = kitchen.dishes.keys()[0].instantiate().OvertimeTime
 	
-	ui.OvertimeBar.max_value = time_remaining
-	ui.QuotaBar.visible = false
-	ui.OvertimeBar.visible = true
-	
-	ui.expand_panel(ui.TopPanel, 1.5, 0.75)
+	ui.overtime(time_remaining)
 
 
 func start_quota() -> void:
@@ -109,10 +105,7 @@ func start_quota() -> void:
 	kitchen.dishes.erase( kitchen.dishes.keys()[0] )
 	
 	set_quota()
-	
-	ui.NextDishSprite.sprite_frames = kitchen.dishes.keys()[0].instantiate().get_node("AnimatedSprite2D").sprite_frames
-	
-	ui.expand_panel(ui.TopPanel, 1.5, 0.75)
+	ui.quota(kitchen.dishes.keys()[0].instantiate().get_node("AnimatedSprite2D").sprite_frames)
 
 
 func set_quota() -> void:

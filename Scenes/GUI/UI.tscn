@@ -1053,11 +1053,12 @@ layout_mode = 2
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(170, 32)
+custom_minimum_size = Vector2(257, 32)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "Next dish unlock:"
+text = "Fill up the bar to unlock:"
 horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer"]
