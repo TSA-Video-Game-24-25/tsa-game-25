@@ -65,7 +65,7 @@ func endDay() -> void:
 	$DayEnd/PanelContainer/VBoxContainer/Label.text = DayEndStr % [main.day_num, main.score, main.total_score]
 	$DayEnd.visible = true
 	
-	save_day_score()
+	save_score()
 	
 	var dayEndBtn: Button = $DayEnd/PanelContainer/VBoxContainer/Button
 	await dayEndBtn.pressed
@@ -74,7 +74,7 @@ func endDay() -> void:
 	main.start_day()
 
 
-func save_day_score() -> void:
+func save_score() -> void:
 	if main.difficulty == 1:
 		var file: ConfigFile = ConfigFile.new()
 		file.load("user://data")
@@ -82,6 +82,11 @@ func save_day_score() -> void:
 		var score = file.get_value("scores", "day%d" % main.day_num) if file.has_section_key("scores", "day%d" % main.day_num) else 0 #w
 		if main.day_score > score:
 			file.set_value("scores", "day%d" % main.day_num, main.day_score)
+		file.save("user://data")
+		
+		var final_score = file.get_value("scores", "final") if file.has_section_key("scores", "final") else 0 #w
+		if main.score > final_score:
+			file.set_value("scores", "final", main.score)
 		file.save("user://data")
 
 
@@ -96,19 +101,7 @@ func endGame() -> void:
 	$GameEnd/PanelContainer/VBoxContainer/Label.text = GameEndStr % main.score
 	$GameEnd.visible = true
 	
-	if main.difficulty == 1:
-		var file: ConfigFile = ConfigFile.new()
-		file.load("user://data")
-		
-		var score = file.get_value("scores", "day%d" % main.day_num) if file.has_section_key("scores", "day%d" % main.day_num) else 0 #w
-		if score < main.day_score:
-			file.set_value("scores", "day%d" % main.day_num, main.day_score)
-		file.save("user://data")
-		
-		var final_score = file.get_value("scores", "final") if file.has_section_key("scores", "final") else 0 #w
-		if final_score < main.score:
-			file.set_value("scores", "final", main.score)
-		file.save("user://data")
+	save_score()
 	
 	var gameEndBtn: Button = $GameEnd/PanelContainer/VBoxContainer/Button
 	await gameEndBtn.pressed

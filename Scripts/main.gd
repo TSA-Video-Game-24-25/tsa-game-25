@@ -103,7 +103,7 @@ func start_quota() -> void:
 		end_game()
 		return
 	
-	ui.save_day_score()
+	ui.save_score()
 	
 	day_num += 1
 	day_score = 0
@@ -171,7 +171,7 @@ func start() -> void:
 		break
 	
 	set_quota()
-	ui.NextDishSprite.sprite_frames = kitchen.dishes.keys()[0].instantiate().get_node("AnimatedSprite2D").sprite_frames
+	ui.quota(kitchen.DISHES.keys()[0].instantiate().get_node("AnimatedSprite2D").sprite_frames)
 	start_game.emit()
 	
 	new_customers = []
@@ -186,14 +186,11 @@ func start() -> void:
 	
 	if difficulty == -1:
 		$Ui.Tutorial.start_tutorial()
-		time_remaining = 0
-		max_waiting_customers = tutorial_max_waiting_customers
-	if difficulty == 0:
-		time_remaining = 200 + (day_num * 30)
-		max_waiting_customers = easy_max_waiting_customers
-	if difficulty == 1:
-		time_remaining = 150 + (day_num * 20)
-		max_waiting_customers = normal_max_waiting_customers
+	
+	max_waiting_customers = \
+		tutorial_max_waiting_customers if difficulty == -1 else \
+		easy_max_waiting_customers if difficulty == 0 else \
+		normal_max_waiting_customers
 	
 	paused = false
 	
@@ -206,14 +203,13 @@ func start() -> void:
 
 
 func end_game() -> void:
-	restart_game()
-	
 	paused = true
 	
 	for player: Player in Players:
 		player.canMove = false
 	
 	ui.endGame()
+	restart_game()
 
 
 func restart_game() -> void:
