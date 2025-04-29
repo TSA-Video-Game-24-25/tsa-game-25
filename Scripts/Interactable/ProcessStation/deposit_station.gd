@@ -42,6 +42,7 @@ func process_item() -> void:
 	customer.leave()
 	var score = customer.get_score()
 	main.score += score
+	main.day_score += score
 	main.ui.push_notification("[font_size=20]+%d Score [img]%s[/img]" % [ score, Recipes.name_to_image[customer.order.name] ])
 
 

@@ -14,9 +14,9 @@ class_name UI
 @onready var NextDishSprite = $Overlay/TopPanel/Panel/VBoxContainer/HBoxContainer/Panel/Control/AnimatedSprite2D
 
 
-const DayStartStr = "Day %d\nScore: %d"
+const DayStartStr = "Level 1"
 const DayEndStr = "Day %d\nEarned %d Points\nCurrent Score: %d\n"
-const GameEndStr = "Game Over\nEarned %d Points\nFinal Score: %d\n"
+const GameEndStr = "Game Over\nFinal Score: %d\n"
 
 
 func _ready() -> void:
@@ -53,7 +53,7 @@ func _process(_delta: float) -> void:
 
 
 func startDay() -> void:
-	$DayStart/PanelContainer/Label.text = DayStartStr % [main.day_num, main.total_score]
+	$DayStart/PanelContainer/Label.text = DayStartStr
 	$DayStart.visible = true
 	$MainMenu.visible = false
 	
@@ -65,19 +65,24 @@ func endDay() -> void:
 	$DayEnd/PanelContainer/VBoxContainer/Label.text = DayEndStr % [main.day_num, main.score, main.total_score]
 	$DayEnd.visible = true
 	
+	save_day_score()
+	
+	var dayEndBtn: Button = $DayEnd/PanelContainer/VBoxContainer/Button
+	await dayEndBtn.pressed
+	
+	$DayEnd.visible = false
+	main.start_day()
+
+
+func save_day_score() -> void:
 	if main.difficulty == 1:
 		var file: ConfigFile = ConfigFile.new()
 		file.load("user://data")
 		
 		var score = file.get_value("scores", "day%d" % main.day_num) if file.has_section_key("scores", "day%d" % main.day_num) else 0 #w
-		if score < main.score:
-			file.set_value("scores", "day%d" % main.day_num, main.score)
+		if main.day_score > score:
+			file.set_value("scores", "day%d" % main.day_num, main.day_score)
 		file.save("user://data")
-	
-	var dayEndBtn: Button = $DayEnd/PanelContainer/VBoxContainer/Button
-	await dayEndBtn.pressed
-	$DayEnd.visible = false
-	main.start_day()
 
 
 func start_game(difficulty):
@@ -88,7 +93,7 @@ func start_game(difficulty):
 
 
 func endGame() -> void:
-	$GameEnd/PanelContainer/VBoxContainer/Label.text = GameEndStr % [main.score, main.total_score]
+	$GameEnd/PanelContainer/VBoxContainer/Label.text = GameEndStr % main.score
 	$GameEnd.visible = true
 	
 	if main.difficulty == 1:

@@ -33,7 +33,7 @@ const easy_max_waiting_customers = 5
 var day_num := 0
 var time_remaining: float = 0
 var score := 0
-var total_score := 0
+var day_score := 0
 var paused = true
 var difficulty = 0
 var max_waiting_customers = 0
@@ -93,7 +93,7 @@ func _process(delta: float) -> void:
 
 func start_overtime() -> void:
 	delete_items.emit()
-	time_remaining = 120 + day_num * 36
+	time_remaining = 80 + day_num * 20
 	
 	ui.overtime(time_remaining)
 
@@ -101,8 +101,12 @@ func start_overtime() -> void:
 func start_quota() -> void:
 	if kitchen.dishes.is_empty():
 		end_game()
+		return
+	
+	ui.save_day_score()
 	
 	day_num += 1
+	day_score = 0
 	
 	available_dishes.append( kitchen.dishes.keys()[0] )
 	kitchen.dishes.erase( kitchen.dishes.keys()[0] )
@@ -201,19 +205,10 @@ func start() -> void:
 		await get_tree().create_timer(1).timeout
 
 
-func end_day() -> void:
-	paused = true
-	total_score += score
-	
-	for player: Player in Players:
-		player.canMove = false
-	
-	ui.endDay()
-
-
 func end_game() -> void:
+	restart_game()
+	
 	paused = true
-	total_score += score
 	
 	for player: Player in Players:
 		player.canMove = false
@@ -222,5 +217,6 @@ func end_game() -> void:
 
 
 func restart_game() -> void:
-	total_score = 0
+	score = 0
+	day_score = 0
 	day_num = 0
