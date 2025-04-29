@@ -6,6 +6,7 @@ signal done_moving
 
 const SPEED := 50
 const NEW_DISH_CHANCE := .4
+const TIME_MULT = .1
 
 @export var targetPos: Vector2
 
@@ -172,6 +173,7 @@ func delete() -> void:
 
 
 func get_score() -> int:
-	var mult = remap(time_left, 0, total_time, .85, 1.15)
+	var time_mult = remap(time_left, 0, total_time, 1-TIME_MULT, 1+TIME_MULT)
+	var day_mult = 1 + main.day_num * .15
 	
-	return order.Score * mult
+	return order.Score * time_mult * day_mult
