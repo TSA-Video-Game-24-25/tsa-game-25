@@ -101,13 +101,13 @@ func endGame() -> void:
 		file.load("user://data")
 		
 		var score = file.get_value("scores", "day%d" % main.day_num) if file.has_section_key("scores", "day%d" % main.day_num) else 0 #w
-		if score < main.score:
-			file.set_value("scores", "day%d" % main.day_num, main.score)
+		if score < main.day_score:
+			file.set_value("scores", "day%d" % main.day_num, main.day_score)
 		file.save("user://data")
 		
 		var final_score = file.get_value("scores", "final") if file.has_section_key("scores", "final") else 0 #w
-		if final_score < main.total_score:
-			file.set_value("scores", "final", main.total_score)
+		if final_score < main.score:
+			file.set_value("scores", "final", main.score)
 		file.save("user://data")
 	
 	var gameEndBtn: Button = $GameEnd/PanelContainer/VBoxContainer/Button
