@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c80ffesavsx7r"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_e4dsm"]
+[ext_resource type="Texture2D" uid="uid://bxpdctbws43nu" path="res://Art/Food/Quesadilla.png" id="2_l4uk6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o604j"]
+atlas = ExtResource("2_l4uk6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmqtj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o604j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Quesadilla" instance=ExtResource("1_e4dsm")]
+GrabRemainder = null
+GrabPiece = null
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_qmqtj")

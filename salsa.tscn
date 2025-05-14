@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2frldth3rn8t"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_cxo0x"]
+[ext_resource type="Texture2D" uid="uid://cdvoeefi88srw" path="res://Art/Food/salsa (1).png" id="2_n4c0t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_py15s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n4c0t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Salsa" instance=ExtResource("1_cxo0x")]
+GrabRemainder = null
+GrabPiece = null
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_py15s")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxtqm6gubmnua"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_ox5dj"]
+[ext_resource type="Texture2D" uid="uid://crs74i6gbf11" path="res://Art/Food/Tortilla.png" id="2_2mqtf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_st53m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2mqtf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tortilla" instance=ExtResource("1_ox5dj")]
+GrabRemainder = null
+GrabPiece = null
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_st53m")
