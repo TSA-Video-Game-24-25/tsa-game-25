@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://vkbkwsv4qhrx"]
+[gd_scene load_steps=106 format=3 uid="uid://vkbkwsv4qhrx"]
 
 [ext_resource type="Script" uid="uid://cgh2qpdg3a2vs" path="res://Scripts/GUI/ui.gd" id="1_2rnfa"]
 [ext_resource type="Texture2D" uid="uid://duhj3mbxxwy1l" path="res://Art/Characters/Customer Faces.png" id="1_huqb3"]
@@ -8,6 +8,8 @@
 [ext_resource type="StyleBox" uid="uid://owiqwsw856se" path="res://UI_grey.tres" id="4_a6s81"]
 [ext_resource type="Texture2D" uid="uid://cr1s1y2lvv60g" path="res://Art/Recipe Book/Recipe Book Purple Turning (2).png" id="4_csd48"]
 [ext_resource type="Texture2D" uid="uid://bd1h3nuhlmvwr" path="res://Art/Recipe Book/Recipe Book Green Turning.png" id="5_6yr7l"]
+[ext_resource type="Texture2D" uid="uid://b74ii6r7ry2vj" path="res://Art/UI/New Piskel (2).png" id="5_onri8"]
+[ext_resource type="Texture2D" uid="uid://v5p473cp7ftg" path="res://Art/UI/New Piskel (1).png" id="6_yhlim"]
 [ext_resource type="Texture2D" uid="uid://bkke85qbahflh" path="res://Art/Tutorial/1.png" id="10_5hk8p"]
 [ext_resource type="Texture2D" uid="uid://cw6nsldhqelgx" path="res://Art/Tutorial/2.png" id="11_7svds"]
 [ext_resource type="Texture2D" uid="uid://mctr12r4p6p4" path="res://Art/Tutorial/3.png" id="12_jb042"]
@@ -849,7 +851,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Day 1"
+text = "Stage 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -866,6 +868,18 @@ offset_bottom = 23.0
 text = "Score 9999"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Overlay/TopRightPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_a6s81")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Overlay/TopRightPanel/VBoxContainer/PanelContainer"]
+layout_mode = 2
+max_value = 3.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_onri8")
+texture_progress = ExtResource("6_yhlim")
 
 [node name="NotificationHolder" type="VBoxContainer" parent="Overlay/TopRightPanel/VBoxContainer"]
 visible = false

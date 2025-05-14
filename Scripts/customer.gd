@@ -57,6 +57,7 @@ func _process(delta: float) -> void:
 	$ProgressBar.value = time_left
 	
 	if time_left <= 0:
+		main.lose_life()
 		leave()
 
 

@@ -38,6 +38,7 @@ var paused = true
 var difficulty = 0
 var max_waiting_customers = 0
 var quota = 0
+var remaining_lives = 0
 
 var available_dishes: Array = []
 var game_state: gameState = gameState.QUOTA
@@ -70,6 +71,10 @@ func _process(delta: float) -> void:
 		station.enabled = (day_num > 2) or (difficulty == -1)
 	
 	if paused:
+		return
+	
+	if remaining_lives <= 0:
+		end_game()
 		return
 	
 	match game_state:
@@ -177,6 +182,7 @@ func start() -> void:
 	new_customers = []
 	waiting_customers = []
 	
+	remaining_lives = 3
 	score = 0
 	day_num += 1
 	ui.startDay()
@@ -216,3 +222,8 @@ func restart_game() -> void:
 	score = 0
 	day_score = 0
 	day_num = 0
+
+
+func lose_life() -> void:
+	remaining_lives -= 1
+	ui.push_notification("[font_size=20]-1 Life [img]%s[/img]" % "res://Art/UI/New Piskel (1) (2).png")

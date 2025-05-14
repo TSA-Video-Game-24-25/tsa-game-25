@@ -34,7 +34,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	$Overlay/TopRightPanel/VBoxContainer/HBoxContainer/Panel/DayLabel.text = "Day " + str(main.day_num)
+	$Overlay/TopRightPanel/VBoxContainer/HBoxContainer/Panel/DayLabel.text = "Stage " + str(main.day_num)
 	$Overlay/TopRightPanel/VBoxContainer/HBoxContainer/Panel3/ScoreLabel.text = "Score: " + str(main.score)
 	
 	$Overlay/BottomPanel/HBoxContainer/Player1/VBoxContainer/GrabLabel1.visible = main.Players[0].can_grab()
@@ -44,6 +44,7 @@ func _process(_delta: float) -> void:
 	$Overlay/BottomPanel/HBoxContainer/Player2/VBoxContainer/UseLabel2.visible = main.Players[1].can_use()
 	
 	$Overlay/TopRightPanel/VBoxContainer/NotificationHolder.visible = !$Overlay/TopRightPanel/VBoxContainer/NotificationHolder.get_children().is_empty()
+	$Overlay/TopRightPanel/VBoxContainer/PanelContainer/TextureProgressBar.value = main.remaining_lives
 	
 	if Input.is_action_just_pressed("open_menu"):
 		if $ScoresMenu.visible:
@@ -151,7 +152,7 @@ func push_notification(text: String):
 	notif_holder.add_child(notif)
 	notif_holder.move_child(notif, 0)
 	
-	var panel = main.ui.get_node("Overlay/TopRightPanel")
+	var panel = $Overlay/TopRightPanel
 	panel.scale = Vector2.ONE
 	
 	var tween = create_tween()
