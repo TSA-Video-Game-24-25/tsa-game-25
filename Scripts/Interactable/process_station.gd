@@ -48,9 +48,12 @@ func interact(_player: Player) -> void:
 		player.item_interact.emit("place_" + player.heldItem.name + "_" + name)
 		player.heldItem = null
 	
-	elif player.tryAddItem(heldItem):
+	elif not heldItem.GrabRemainder and player.tryAddItem(heldItem):
 		player.item_interact.emit("grab_" + heldItem.name)
 		heldItem = null
+	elif heldItem.GrabRemainder and player.tryAddItem(heldItem.GrabPiece):
+		player.item_interact.emit("grab_" + heldItem.GrabPiece.name)
+		heldItem = heldItem.GrabRemainder
 
 
 func process(_player: Player):

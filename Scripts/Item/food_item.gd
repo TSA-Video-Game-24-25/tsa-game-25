@@ -10,6 +10,8 @@ class_name FoodItem
 @export var IsDone := false
 @export var Score := 0
 @export var ServeTime := 0
+@export var GrabRemainder: PackedScene = null
+@export var GrabPiece: PackedScene = null
 
 
 func _ready() -> void:
