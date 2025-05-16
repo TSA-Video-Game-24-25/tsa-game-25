@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://byhpbbgwx7cwm"]
+[gd_scene load_steps=5 format=3 uid="uid://byhpbbgwx7cwm"]
 
 [ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_r6qpd"]
 [ext_resource type="Texture2D" uid="uid://do067etduq03w" path="res://Art/Food/Taco.png" id="2_sa2tp"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ov04r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bsvg"]
+atlas = ExtResource("2_sa2tp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vkly2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_sa2tp")
+"texture": SubResource("AtlasTexture_1bsvg")
 }],
 "loop": true,
 "name": &"default",
@@ -20,4 +24,4 @@ GrabPiece = null
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(0, 3)
-sprite_frames = SubResource("SpriteFrames_ov04r")
+sprite_frames = SubResource("SpriteFrames_vkly2")

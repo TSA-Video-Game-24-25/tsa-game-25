@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjcdmho8o1ffy"]
+
+[ext_resource type="PackedScene" uid="uid://dg67nqellhdvi" path="res://Scenes/Item/food_item.tscn" id="1_skf0y"]
+[ext_resource type="Texture2D" uid="uid://bo1xidxpfxbed" path="res://Art/Food/Meals.png" id="2_xv74o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqr74"]
+atlas = ExtResource("2_xv74o")
+region = Rect2(0, 384, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5qws3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqr74")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Burrito" instance=ExtResource("1_skf0y")]
+GrabRemainder = null
+GrabPiece = null
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_5qws3")
